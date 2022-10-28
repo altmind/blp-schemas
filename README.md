@@ -1,10 +1,17 @@
-## Bloomberg Schemas
+Bloomberg Schemas
+===
 
 You can download the Bloomberg API schema downloader(SchemaDownloader_64.exe) from bloomberg at https://bcms.bloomberg.com/BLPAPI-Generic/
 
 The output of the application is schema files in a custom bloomberg schema format(not to be confused by XSD Xml Schema - BLP Schema is a custom format).
 
 Use the attached blp-schema.xsl to transform the .xsd files to .html. Any XSLTv1 engine should work, such as xsltproc.
+
+```
+SchemaDownloader_64.exe -file schema-apiflds.xml -s apifields
+
+xsltproc -o schema-apiflds.html blp-schema.xsl schema-apiflds.xml
+```
 
 The processed HTMLs are available at:
 
@@ -29,12 +36,15 @@ http://altmind.github.io/blp-schemas/schema-srcref.html
 http://altmind.github.io/blp-schemas/schema-tasvc.html
 
 
-
+SchemaDownloader Readme
+===
 
 `SchemaDownloader` is a standalone tool that is used for obtaining a blpapi service schema for mocking blpapi events.
 It is a statically linked binary that supports Linux and Windows operating systems for both 32 and 64 bits.
 
-### Usage
+Usage
+---
+
 
 ```
         [-zfp-over-leased-line <port>   enable ZFP connections over leased lines on the specified port (8194 or 8196) (default: 8194)
