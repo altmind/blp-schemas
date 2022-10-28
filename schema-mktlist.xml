@@ -1,0 +1,2056 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="blp-schema.xsl"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="blp.mktlist" version="1.1.0.13">
+    <service name="//blp/mktlist" version="1.1.0.13"
+        authorizationService="//blp/apiauth">
+        <operation name="SnapshotRequest" serviceId="14881">
+            <request>Request</request>
+            <requestSelection>SnapshotRequest</requestSelection>
+            <response>Response</response>
+            <responseSelection>SnapshotResponse</responseSelection>
+        </operation>
+        <event name="ListRecap" eventType="ListRecap">
+            <eventId>9999</eventId>
+            <eventId>10000</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <event name="ListData" eventType="ListData">
+            <eventId>300</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <defaultServiceId>16106</defaultServiceId>
+        <publisherSupportsRecap>true</publisherSupportsRecap>
+        <authoritativeSourceSupportsRecap>true</authoritativeSourceSupportsRecap>
+        <SubscriberResolutionServiceId>15393</SubscriberResolutionServiceId>
+        <isInfrastructureService>false</isInfrastructureService>
+        <isMetered>false</isMetered>
+        <appendMtrId>false</appendMtrId>
+        <persistentLastValueCache>false</persistentLastValueCache>
+    </service>
+    <schema>
+        <sequenceType name="ListRecap">
+            <description>ListRecap</description>
+            <element name="LIST_ID" id="1" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>This is the list identifier provided by the service.</description>
+                <fieldset tag="bpipe" name="List.ID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EID" id="2" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>This is the list identifier provided by the service.</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_LISTTYPE" id="3" type="ListType"
+                minOccurs="1" maxOccurs="1">
+                <description>Describes the nature of the members of a list.</description>
+                <fieldset tag="bpipe" name="List.ListType"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_INSERT_ENTRIES" id="4" type="ListEntry"
+                minOccurs="0" maxOccurs="unbounded">
+                <description>List.ListType</description>
+                <fieldset tag="bpipe" name="List.Entry"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_UNDERLYING_ID_BSID" id="5" type="Int64"
+                minOccurs="0" maxOccurs="1">
+                <description>The MD.Security.ID.BSID of the list&apos;s underlying instrument</description>
+                <fieldset tag="bpipe" name="List.Underlying.ID.BSID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_UNDERLYING_FEED_SOURCE" id="6" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The MD.Source of the list&apos;s underlying instrument</description>
+                <fieldset tag="bpipe" name="List.Underlying.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_UNDERLYING_SECURITY_CLASS" id="7"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>The Reference.Security.Class of the list&apos;s underlying instrument</description>
+                <fieldset tag="bpipe" name="List.Underlying.Security.Class"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_UNDERLYING_SECURITY_TYP2" id="8"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>The Reference.Security.Type of the list&apos;s underlying instrument</description>
+                <fieldset tag="bpipe" name="List.Underlying.Security.Type"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_DES" id="9" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Description of a list.</description>
+                <fieldset tag="bpipe" name="List.Description"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_ORDERED" id="10" type="Order" minOccurs="1"
+                maxOccurs="1">
+                <description>Field that indicates whether the list is ordered or not.</description>
+                <fieldset tag="bpipe" name="List.Ordered"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_MUTABLE" id="11" type="Mutable" minOccurs="1"
+                maxOccurs="1">
+                <description>Field that indicates whether list is mutable.</description>
+                <fieldset tag="bpipe" name="List.Mutable"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="RT_API_LIST_MACHINE" id="37" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Name of the machine providing data for the list request</description>
+                <fieldset tag="bpipe" name="List.Machine"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="ListEntry">
+            <description>ListRecap</description>
+            <element name="ID_BB_SEC_NUM_SRC" id="13" type="Int64"
+                minOccurs="0" maxOccurs="1">
+                <description>This is the unique realtime Bloomberg identifier.</description>
+                <fieldset tag="bpipe" name="MD.Security.ID.BSID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_SOURCE" id="14" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Bloomberg identifier for the source of the information.
+          The market data source is the exchange or pricing contributor mnemonic that 
+          uniquely identifies the market data originator. In the case of an NYSE 
+          listed security which trade on multiple exchanges, this would be the market 
+          center originator of the data, such as The Chicago Stock Exchange, The 
+          Archipelago Stock Exchange, or the NYSE. In the case of a composite market 
+          data source such the US composite for exchange-traded securities, it is 
+          possible to have a local market data source in addition to the composite data 
+          source. With a composite daily high price, the security reference may be the 
+          US composite (such as INTC US), and the exchange that generated the high price 
+          may be the Cincinnati Stock Exchange or NASDAQ. The local market data source is 
+          an optional field, so on non-composite securities, it will not be present -- 
+          only the MD.Source will be available.The MD.Source mnemonic will be the same as 
+          the exchange or contributor mnemonic on the Bloomberg professional in many cases, 
+          but is not guaranteed to match.In the case of contributor data the MD.Source 
+          mnemonic will be the same mnemonic for fixed income securities as the Price 
+          Contributor Source or PCS in many cases, but is not guaranteed to match.
+          Contributed currency market data will have also use the XDF code in many cases, 
+          but is not guaranteed to match.</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_SEC_NUM_DES" id="15" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>This identifier is a string that uniquely identifies an instrument.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ID.Bloomberg.Symbol"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_UNIQUE" id="16" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Unique identifier assigned by Bloomberg to all securities.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Bloomberg.UniqueID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="PARSEKYABLE_DES_SOURCE" id="17" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>This identifier is the string that can be entered into the Bloomberg 
+        professional to uniquely select this security.This description includes the source of the 
+        security. The parsekeyable string has the &apos;at sign&apos;  in it when the security has multiple 
+        sources. This is available for fixed income and currency objects. The format is &apos;ticker 
+        at sign pcs yellowkey&apos;. To view on the Bloomberg professional replace the &apos;at sign&apos; with 
+        a space. Equities, index options, currency options, future options and indices have 
+        parsekeyable string &apos;ticker source yellowkey&apos;. Equity options do not have a parsekeyable 
+        string.As for How many spaces exist between the PCS code and the yellow key for 
+        Reference.Security.ID.ParsekeyableDescription?  This is a 4 character field regardless 
+        of the PCS code. For PCS codes that contain 3 letters, there will be 2 spaces before the 
+        yellow key. For PCS codes that contain 4 letters, there will only be 1 space.
+      </description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ID.Bloomberg.ParsekeyableDescription"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SECURITY_TYP2" id="18" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Additional description of the security type that required further 
+        detail. The field value delivered should be used in conjunction with the value 
+        delivered in the Security Type</description>
+                <fieldset tag="bpipe" name="Reference.Security.Class"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_PUT_CALL" id="19" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Indicates whether the contract is a put or a call.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.PutCall.Indicator"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_CONTRACT_DT" id="20" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The month and year of contract expiration</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Future.Expiration"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_EXPIRE_DT" id="21" type="Date" minOccurs="0"
+                maxOccurs="1">
+                <description>The day on which an option contract becomes void.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ExpirationDate"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_STRIKE_PX" id="22" type="Float64"
+                minOccurs="0" maxOccurs="1">
+                <description>Price at which an option holder may buy or sell the underlying security.</description>
+                <fieldset tag="bpipe" name="Reference.Security.StrikePrice"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="REFERENCE_SECURITY_ID_BBGID" id="24" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>BloombBerg Global IDentifier - ID135</description>
+                <fieldset tag="bpipe" name="Reference.Security.ID.BBGID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_GLOBAL" id="25" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>BloombBerg Global IDentifier - ID135</description>
+                <fieldset tag="bpipe" name="Reference.Security.ID.BBGID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID1" id="26" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>The feed entitlement ID for level 1.</description>
+                <fieldset tag="bpipe"
+                    name="MD.Entitlement (Exchange Level 1)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID2" id="27" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>The feed entitlement ID for level 2.</description>
+                <fieldset tag="bpipe"
+                    name="MD.Entitlement (Exchange Level 2)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID3" id="28" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>The feed entitlement ID for level 2.</description>
+                <fieldset tag="bpipe"
+                    name="MD.Entitlement (Exchange Level 3)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID4" id="29" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description> The feed entitlement ID for PCS/class.</description>
+                <fieldset tag="bpipe" name="MD.Entitlement (Contributor)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LAST_UPDATE" id="30" type="Datetime" minOccurs="0"
+                maxOccurs="1">
+                <description>Either the time or date at which the security last traded/updated. All values are translated into the user&apos;s
+                   date and time. If the last trade/update occurred today, it will show the time of the trade/update,
+                   otherwise it will show the date on which the security last traded/updated.  </description>
+                <fieldset tag="bpipe" name="No Bpod Field"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="PRICING_SOURCE" id="31" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description> Acronym or short code for the market pricing source. Returns are based on the user&apos;s settings.
+                    If there is no price from the chosen source, the next available source will be used.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.FixedIncome.PricingSource "/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_ADJ_CONTRACT" id="32" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description> Returns &apos;Y&apos; if the contract terms have been adjusted. This usually occurs 
+       due to a merger, split, or other corporate action </description>
+                <fieldset tag="bpipe" name="No Bpod Field"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_EXER_TYP" id="33" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>There are three ways an option can be exercised: American Style, Bermuda Style
+                   and European Style. </description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Option.ExerciseType "/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_DELAYED_EID1" id="34" type="Int32"
+                minOccurs="0" maxOccurs="1">
+                <description>Entitlement identifier for the level one delayed data feed.</description>
+                <fieldset tag="bpipe" name="MD.Entitlement (Delayed)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BPIPE_REFERENCE_SECURITY_CLASS" id="35"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Top level asset class designation for the reference security event
+                 on the B-Pipe feed.</description>
+                <fieldset tag="bpipe" name="Reference.Security.Class"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_MONTH_YR" id="36" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>The month and year of contract expiration</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Future.Expiration"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_EXCH_SYMBOL" id="38" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Local exchange security symbol.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ID.Exchange.Symbol"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LAST_TRADEABLE_DT" id="39" type="Date"
+                minOccurs="0" maxOccurs="1">
+                <description>Last date that the contract is available for trade.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.[Future|Option].Last.Trade.Date"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_TRADING_SESSION" id="40" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Determines if the data displayed for a contract is from that contract&apos;s day or night session.
+                   Does not apply to all contracts.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CRNCY" id="1473" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Currency in which the security was issued.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="GENERATION_NUMBER" id="17434" type="Int32"
+                minOccurs="0" maxOccurs="1">
+                <description>Number created for new option series that are created after a capital adjustment. All new created series will 
+                   get this number. The generation number stays unchanged for the lifetime of a series.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_FULL_EXCHANGE_SYMBOL" id="15303" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Contains the exchange symbol for futures and options, and indices inclusive of base symbol and other security elements.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_ISIN" id="1444" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>A twelve-character number assigned by the local national numbering agency.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_CUSIP" id="4148" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Security identification number for the U.S. and Canada.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_MIC_LOCAL_EXCH" id="17234" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>ISO Market Identification Code (MIC) of the local exchange on which this instrument is traded for equities</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_MIC_PRIM_EXCH" id="17233" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>ISO Market Identification Code (MIC) of the Bloomberg assigned primary exchange on which this specific security is traded. </description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="NAME" id="1106" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Name of the company or brief description of the instrument.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SECURITY_TYP" id="3694" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Description of the specific instrument type within its market sector.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EXPIRATION_PERIODICITY" id="50898" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Specifies the periodicity of the option&apos;s expiration. Possible values are:
+                   D - Daily Expiration
+                   W - Weekly Expiration
+                   M - Monthly Expiration
+                   Q - End of Month Expiration (includes Quarter End Expirations)</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADING_SYSTEM_IDENTIFIER" id="50102"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Unique identifier for the instrument, as used on the source trading system.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUTURES_CATEGORY" id="8707" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The type of future (or option) the security is.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_UNDL_EXP_DT" id="8166" type="Date"
+                minOccurs="0" maxOccurs="1">
+                <description>The expiration date of the option&apos;s underlying future.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_MIC1" id="17228" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>ISO Market Identification Code (MIC) for the market on which the security trades.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EXCHANGE_ALTERNATIVE_IDENTIFIER" id="79282"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Exchange alternative identifier used in the exchange market data feed or system.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CASH_SETTLED" id="6541" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ISSUER_INDUSTRY" id="1472" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The industry classification of the issuer of the security.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TAPPED_INDICATOR" id="80357" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description>Returns &apos;Y&apos; if the bond has been tapped or reopened allowing borrowers to sell bonds or other debt instruments from past issues.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MTY_TYP" id="1701" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Displays the bond&apos;s structure, i.e., Callable, Putable, Sinkable.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="DAYS_TO_MTY_TDY" id="4358" type="Int32"
+                minOccurs="0" maxOccurs="1">
+                <description>The number of days from today to the maturity date.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="WEEK_NUMBER" id="91458" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>Provides the numerical week number that the weekly option ticker represents in the month.
+                   Valid values are 0 when not applicable, 1 through 5 when applicable.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FLAG_144A" id="7553" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>Returns a Y or N. An N also represents unknown or undisclosed.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MSCI_SEC_CODE" id="14526" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>MSCI Security Code is a unique identifier assigned to each security by MSCI.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="COUNTRY" id="1474" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Bloomberg country code of the issuer.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPTION_ROOT_TICKER" id="15300" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The option root ticker symbol for equity options  and equity index options.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MARKET_STATUS" id="5799" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Trading status of an equity.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CURRENT_CONTRACT_MONTH_YR" id="32194"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Month and year of the current contract, which can be futures, generics, spreads, or generic spreads.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_CONT_SIZE" id="1614" type="Float64"
+                minOccurs="0" maxOccurs="1">
+                <description>The smallest available value of tradable contract.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_CONT_SIZE" id="5849" type="Float64"
+                minOccurs="0" maxOccurs="1">
+                <description>Number of shares that can be exchanged for each option contract exercised.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="ListData">
+            <description>ListData</description>
+            <element name="LIST_ID" id="1" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>This is the list identifier provided by the service.</description>
+                <fieldset tag="bpipe" name="List.ID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EID" id="2" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>This is the list identifier provided by the service.</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LIST_ACTION" id="23" type="ListAction"
+                minOccurs="1" maxOccurs="1">
+                <description>Bitmap with information about how to deal with all the list of members pointed to by List.NextMember.
+                   Possible actions are:
+                   Clear  = Delete all of the existing list members before adding any.
+                   Add    = Add all the list members in this set.
+                   Delete = Delete all the list members in this set. 
+                            Member IDs to be deleted must match exactly current member IDs.
+                   End    = This is the last set in the sequence.
+                             Either Add or Delete, but not both, must be set.
+                   Clear should only be set with Add and for the first set of members in a list.
+      </description>
+                <fieldset tag="bpipe" name="List.Action"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_SEC_NUM_SRC" id="13" type="Int64"
+                minOccurs="0" maxOccurs="1">
+                <description>This is the unique realtime Bloomberg identifier.</description>
+                <fieldset tag="bpipe" name="MD.Security.ID.BSID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_SOURCE" id="14" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Bloomberg identifier for the source of the information.
+          The market data source is the exchange or pricing contributor mnemonic that 
+          uniquely identifies the market data originator. In the case of an NYSE 
+          listed security which trade on multiple exchanges, this would be the market 
+          center originator of the data, such as The Chicago Stock Exchange, The 
+          Archipelago Stock Exchange, or the NYSE. In the case of a composite market 
+          data source such the US composite for exchange-traded securities, it is 
+          possible to have a local market data source in addition to the composite data 
+          source. With a composite daily high price, the security reference may be the 
+          US composite (such as INTC US), and the exchange that generated the high price 
+          may be the Cincinnati Stock Exchange or NASDAQ. The local market data source is 
+          an optional field, so on non-composite securities, it will not be present -- 
+          only the MD.Source will be available.The MD.Source mnemonic will be the same as 
+          the exchange or contributor mnemonic on the Bloomberg professional in many cases, 
+          but is not guaranteed to match.In the case of contributor data the MD.Source 
+          mnemonic will be the same mnemonic for fixed income securities as the Price 
+          Contributor Source or PCS in many cases, but is not guaranteed to match.
+          Contributed currency market data will have also use the XDF code in many cases, 
+          but is not guaranteed to match.</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_SEC_NUM_DES" id="15" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>This identifier is a string that uniquely identifies an instrument.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ID.Bloomberg.Symbol"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_UNIQUE" id="16" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Unique identifier assigned by Bloomberg to all securities.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Bloomberg.UniqueID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="PARSEKYABLE_DES_SOURCE" id="17" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>This identifier is the string that can be entered into the Bloomberg 
+        professional to uniquely select this security.This description includes the source of the 
+        security. The parsekeyable string has the &apos;at sign&apos;  in it when the security has multiple 
+        sources. This is available for fixed income and currency objects. The format is &apos;ticker 
+        at sign pcs yellowkey&apos;. To view on the Bloomberg professional replace the &apos;at sign&apos; with 
+        a space. Equities, index options, currency options, future options and indices have 
+        parsekeyable string &apos;ticker source yellowkey&apos;. Equity options do not have a parsekeyable 
+        string.As for How many spaces exist between the PCS code and the yellow key for 
+        Reference.Security.ID.ParsekeyableDescription?  This is a 4 character field regardless 
+        of the PCS code. For PCS codes that contain 3 letters, there will be 2 spaces before the 
+        yellow key. For PCS codes that contain 4 letters, there will only be 1 space.
+      </description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ID.Bloomberg.ParsekeyableDescription"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SECURITY_TYP2" id="18" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Additional description of the security type that required further 
+        detail. The field value delivered should be used in conjunction with the value 
+        delivered in the Security Type</description>
+                <fieldset tag="bpipe" name="Reference.Security.Class"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_PUT_CALL" id="19" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Indicates whether the contract is a put or a call.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.PutCall.Indicator"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_CONTRACT_DT" id="20" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The month and year of contract expiration</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Future.Expiration"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_EXPIRE_DT" id="21" type="Date" minOccurs="0"
+                maxOccurs="1">
+                <description>The day on which an option contract becomes void.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ExpirationDate"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_STRIKE_PX" id="22" type="Float64"
+                minOccurs="0" maxOccurs="1">
+                <description>Price at which an option holder may buy or sell the underlying security.</description>
+                <fieldset tag="bpipe" name="Reference.Security.StrikePrice"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="REFERENCE_SECURITY_ID_BBGID" id="24" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>BloombBerg Global IDentifier - ID135</description>
+                <fieldset tag="bpipe" name="Reference.Security.ID.BBGID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_BB_GLOBAL" id="25" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>BloombBerg Global IDentifier - ID135</description>
+                <fieldset tag="bpipe" name="Reference.Security.ID.BBGID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID1" id="26" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>The feed entitlement ID for level 1.</description>
+                <fieldset tag="bpipe"
+                    name="MD.Entitlement (Exchange Level 1)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID2" id="27" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>The feed entitlement ID for level 2.</description>
+                <fieldset tag="bpipe"
+                    name="MD.Entitlement (Exchange Level 2)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID3" id="28" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>The feed entitlement ID for level 2.</description>
+                <fieldset tag="bpipe"
+                    name="MD.Entitlement (Exchange Level 3)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID4" id="29" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description> The feed entitlement ID for PCS/class.</description>
+                <fieldset tag="bpipe" name="MD.Entitlement (Contributor)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LAST_UPDATE" id="30" type="Datetime" minOccurs="0"
+                maxOccurs="1">
+                <description>Either the time or date at which the security last traded/updated. All values are translated into the user&apos;s date and time.
+                   If the last trade/update occurred today, it will show the time of the trade/update,
+                   otherwise it will show the date on which the security last traded/updated.  </description>
+                <fieldset tag="bpipe" name="No Bpod Field"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="PRICING_SOURCE" id="31" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description> Acronym or short code for the market pricing source. Returns are based on the user&apos;s settings.
+                     If there is no price from the chosen source, the next available source will be used.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.FixedIncome.PricingSource "/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_ADJ_CONTRACT" id="32" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description> Returns &apos;Y&apos; if the contract terms have been adjusted. This usually occurs 
+                    due to a merger, split, or other corporate action </description>
+                <fieldset tag="bpipe" name="No Bpod Field"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_EXER_TYP" id="33" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>There are three ways an option can be exercised: American Style, Bermuda Style
+                   and European Style. </description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Option.ExerciseType "/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_DELAYED_EID1" id="34" type="Int32"
+                minOccurs="0" maxOccurs="1">
+                <description>Entitlement identifier for the level one delayed data feed.</description>
+                <fieldset tag="bpipe" name="MD.Entitlement (Delayed)"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BPIPE_REFERENCE_SECURITY_CLASS" id="35"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Top level asset class designation for the reference security event
+                   on the B-Pipe feed.</description>
+                <fieldset tag="bpipe" name="Reference.Security.Class"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_MONTH_YR" id="36" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>The month and year of contract expiration</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.Future.Expiration"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_EXCH_SYMBOL" id="38" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Local exchange security symbol.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.ID.Exchange.Symbol"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LAST_TRADEABLE_DT" id="39" type="Date"
+                minOccurs="0" maxOccurs="1">
+                <description>Last date that the contract is available for trade.</description>
+                <fieldset tag="bpipe"
+                    name="Reference.Security.[Future|Option].Last.Trade.Date"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_TRADING_SESSION" id="40" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Determines if the data displayed for a contract is from that contract&apos;s day or night session.
+                   Does not apply to all contracts.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CRNCY" id="1473" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Currency in which the security was issued.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="GENERATION_NUMBER" id="17434" type="Int32"
+                minOccurs="0" maxOccurs="1">
+                <description>Number created for new option series that are created after a capital adjustment. All new created series will 
+                   get this number. The generation number stays unchanged for the lifetime of a series.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_FULL_EXCHANGE_SYMBOL" id="15303" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Contains the exchange symbol for futures and options, and indices inclusive of base symbol and other security elements.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_ISIN" id="1444" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>A twelve-character number assigned by the local national numbering agency.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_CUSIP" id="4148" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Security identification number for the U.S. and Canada.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_MIC_LOCAL_EXCH" id="17234" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>ISO Market Identification Code (MIC) of the local exchange on which this instrument is traded for equities</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_MIC_PRIM_EXCH" id="17233" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>ISO Market Identification Code (MIC) of the Bloomberg assigned primary exchange on which this specific security is traded. </description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="NAME" id="1106" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Name of the company or brief description of the instrument.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SECURITY_TYP" id="3694" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Description of the specific instrument type within its market sector.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EXPIRATION_PERIODICITY" id="50898" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Specifies the periodicity of the option&apos;s expiration. Possible values are:
+                   D - Daily Expiration
+                   W - Weekly Expiration
+                   M - Monthly Expiration
+                   Q - End of Month Expiration (includes Quarter End Expirations)</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADING_SYSTEM_IDENTIFIER" id="50102"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Unique identifier for the instrument, as used on the source trading system.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUTURES_CATEGORY" id="8707" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The type of future (or option) the security is.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_UNDL_EXP_DT" id="8166" type="Date"
+                minOccurs="0" maxOccurs="1">
+                <description>The expiration date of the option&apos;s underlying future.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ID_MIC1" id="17228" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>ISO Market Identification Code (MIC) for the market on which the security trades.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EXCHANGE_ALTERNATIVE_IDENTIFIER" id="79282"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Exchange alternative identifier used in the exchange market data feed or system.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CASH_SETTLED" id="6541" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ISSUER_INDUSTRY" id="1472" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The industry classification of the issuer of the security.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TAPPED_INDICATOR" id="80357" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description>Returns &apos;Y&apos; if the bond has been tapped or reopened allowing borrowers to sell bonds or other debt instruments from past issues.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MTY_TYP" id="1701" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Displays the bond&apos;s structure, i.e., Callable, Putable, Sinkable.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="DAYS_TO_MTY_TDY" id="4358" type="Int32"
+                minOccurs="0" maxOccurs="1">
+                <description>The number of days from today to the maturity date.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="WEEK_NUMBER" id="91458" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>Provides the numerical week number that the weekly option ticker represents in the month.
+                   Valid values are 0 when not applicable, 1 through 5 when applicable.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FLAG_144A" id="7553" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>Returns a Y or N. An N also represents unknown or undisclosed.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MSCI_SEC_CODE" id="14526" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>MSCI Security Code is a unique identifier assigned to each security by MSCI.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="COUNTRY" id="1474" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Bloomberg country code of the issuer.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPTION_ROOT_TICKER" id="15300" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>The option root ticker symbol for equity options  and equity index options.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MARKET_STATUS" id="5799" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Trading status of an equity.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CURRENT_CONTRACT_MONTH_YR" id="32194"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Month and year of the current contract, which can be futures, generics, spreads, or generic spreads.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FUT_CONT_SIZE" id="1614" type="Float64"
+                minOccurs="0" maxOccurs="1">
+                <description>The smallest available value of tradable contract.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPT_CONT_SIZE" id="5849" type="Float64"
+                minOccurs="0" maxOccurs="1">
+                <description>Number of shares that can be exchanged for each option contract exercised.</description>
+                <fieldset tag="bpipe" name="N.A."/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SnapshotRequest">
+            <description>seqSnapshotRequest</description>
+            <element name="security" type="String">
+                <description>The security for which snapshot is requested</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SnapshotResponse" status="Active">
+            <description>seqSnapshotResponse</description>
+            <element name="responseCode" type="ResultCode" minOccurs="1"
+                maxOccurs="1" status="Active">
+                <description>Response Information Metadata</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="snapshot" type="ListRecap" minOccurs="0"
+                maxOccurs="1" status="Active">
+                <description>The actual response data</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="ResultCode" status="Active">
+            <description>Descriptor for the result of a operation</description>
+            <element name="resultText" type="String" minOccurs="1"
+                maxOccurs="1" status="Active">
+                <description>Description of the result </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="sourceId" type="String" minOccurs="0"
+                maxOccurs="1" status="Active">
+                <description>SouceID of the result</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="resultCode" type="Int32" minOccurs="1"
+                maxOccurs="1" status="Active">
+                <description>Result Code</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <choiceType name="Request">
+            <description>choiceRequest</description>
+            <element name="SnapshotRequest" type="SnapshotRequest">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <choiceType name="Response">
+            <description>choiceResponse</description>
+            <element name="SnapshotResponse" type="SnapshotResponse">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <enumerationType name="ListAction" type="Int32">
+            <description>ListAction</description>
+            <enumerator name="UNASSIGNED_0">
+                <description>UNASSIGNED_0</description>
+                <value>
+                    <Int32>0</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="CLEAR">
+                <description>CLEAR</description>
+                <value>
+                    <Int32>1</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="ADD">
+                <description>ADD</description>
+                <value>
+                    <Int32>2</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="CLEAR_AND_ADD">
+                <description>CLEAR|ADD</description>
+                <value>
+                    <Int32>3</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="DELETE">
+                <description>DELETE</description>
+                <value>
+                    <Int32>4</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_5">
+                <description>UNASSIGNED_5</description>
+                <value>
+                    <Int32>5</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_6">
+                <description>UNASSIGNED_6</description>
+                <value>
+                    <Int32>6</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_7">
+                <description>UNASSIGNED_7</description>
+                <value>
+                    <Int32>7</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="END">
+                <description>END</description>
+                <value>
+                    <Int32>8</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="CLEAR_AND_END">
+                <description>CLEAR_AND_END</description>
+                <value>
+                    <Int32>9</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="ADD_AND_END">
+                <description>ADD|END</description>
+                <value>
+                    <Int32>10</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="CLEAR_AND_ADD_AND_END">
+                <description>CLEAR_AND_ADD_AND_END</description>
+                <value>
+                    <Int32>11</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="DELETE_AND_END">
+                <description>DELETE|END</description>
+                <value>
+                    <Int32>12</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_13">
+                <description>UNASSIGNED_13</description>
+                <value>
+                    <Int32>13</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_14">
+                <description>UNASSIGNED_14</description>
+                <value>
+                    <Int32>14</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_15">
+                <description>UNASSIGNED_15</description>
+                <value>
+                    <Int32>15</Int32>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="ListType" type="Int32">
+            <description>ListType</description>
+            <enumerator name="Currency Options">
+                <description>Currency Options</description>
+                <value>
+                    <Int32>0</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="EID List">
+                <description>EID List</description>
+                <value>
+                    <Int32>1</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Source List">
+                <description>Source List</description>
+                <value>
+                    <Int32>2</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="GDCO List">
+                <description>GDCO List</description>
+                <value>
+                    <Int32>3</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Index Options">
+                <description>Index Options</description>
+                <value>
+                    <Int32>4</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Index Futures">
+                <description>Index Futures</description>
+                <value>
+                    <Int32>5</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Index Warrants">
+                <description>Index Warrants</description>
+                <value>
+                    <Int32>6</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_7">
+                <description>UNASSIGNED_7</description>
+                <value>
+                    <Int32>7</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_8">
+                <description>UNASSIGNED_8</description>
+                <value>
+                    <Int32>8</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_9">
+                <description>UNASSIGNED_9</description>
+                <value>
+                    <Int32>9</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_10">
+                <description>UNASSIGNED_10</description>
+                <value>
+                    <Int32>10</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_11">
+                <description>UNASSIGNED_11</description>
+                <value>
+                    <Int32>11</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_12">
+                <description>UNASSIGNED_12</description>
+                <value>
+                    <Int32>12</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_13">
+                <description>UNASSIGNED_13</description>
+                <value>
+                    <Int32>13</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_14">
+                <description>UNASSIGNED_14</description>
+                <value>
+                    <Int32>14</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_15">
+                <description>UNASSIGNED_15</description>
+                <value>
+                    <Int32>15</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_16">
+                <description>UNASSIGNED_16</description>
+                <value>
+                    <Int32>16</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_17">
+                <description>UNASSIGNED_17</description>
+                <value>
+                    <Int32>17</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_18">
+                <description>UNASSIGNED_18</description>
+                <value>
+                    <Int32>18</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_19">
+                <description>UNASSIGNED_19</description>
+                <value>
+                    <Int32>19</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_20">
+                <description>UNASSIGNED_20</description>
+                <value>
+                    <Int32>20</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_21">
+                <description>UNASSIGNED_21</description>
+                <value>
+                    <Int32>21</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_22">
+                <description>UNASSIGNED_22</description>
+                <value>
+                    <Int32>22</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_23">
+                <description>UNASSIGNED_23</description>
+                <value>
+                    <Int32>23</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_24">
+                <description>UNASSIGNED_24</description>
+                <value>
+                    <Int32>24</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_25">
+                <description>UNASSIGNED_25</description>
+                <value>
+                    <Int32>25</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_26">
+                <description>UNASSIGNED_26</description>
+                <value>
+                    <Int32>26</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_27">
+                <description>UNASSIGNED_27</description>
+                <value>
+                    <Int32>27</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_28">
+                <description>UNASSIGNED_28</description>
+                <value>
+                    <Int32>28</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_29">
+                <description>UNASSIGNED_29</description>
+                <value>
+                    <Int32>29</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_30">
+                <description>UNASSIGNED_30</description>
+                <value>
+                    <Int32>30</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_31">
+                <description>UNASSIGNED_31</description>
+                <value>
+                    <Int32>31</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_32">
+                <description>UNASSIGNED_32</description>
+                <value>
+                    <Int32>32</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_33">
+                <description>UNASSIGNED_33</description>
+                <value>
+                    <Int32>33</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_34">
+                <description>UNASSIGNED_34</description>
+                <value>
+                    <Int32>34</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_35">
+                <description>UNASSIGNED_35</description>
+                <value>
+                    <Int32>35</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_36">
+                <description>UNASSIGNED_36</description>
+                <value>
+                    <Int32>36</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_37">
+                <description>UNASSIGNED_37</description>
+                <value>
+                    <Int32>37</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_38">
+                <description>UNASSIGNED_38</description>
+                <value>
+                    <Int32>38</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_39">
+                <description>UNASSIGNED_39</description>
+                <value>
+                    <Int32>39</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_40">
+                <description>UNASSIGNED_40</description>
+                <value>
+                    <Int32>40</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_41">
+                <description>UNASSIGNED_41</description>
+                <value>
+                    <Int32>41</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_42">
+                <description>UNASSIGNED_42</description>
+                <value>
+                    <Int32>42</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_43">
+                <description>UNASSIGNED_43</description>
+                <value>
+                    <Int32>43</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_44">
+                <description>UNASSIGNED_44</description>
+                <value>
+                    <Int32>44</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_45">
+                <description>UNASSIGNED_45</description>
+                <value>
+                    <Int32>45</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_46">
+                <description>UNASSIGNED_46</description>
+                <value>
+                    <Int32>46</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_47">
+                <description>UNASSIGNED_47</description>
+                <value>
+                    <Int32>47</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_48">
+                <description>UNASSIGNED_48</description>
+                <value>
+                    <Int32>48</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_49">
+                <description>UNASSIGNED_49</description>
+                <value>
+                    <Int32>49</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_50">
+                <description>UNASSIGNED_50</description>
+                <value>
+                    <Int32>50</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_51">
+                <description>UNASSIGNED_51</description>
+                <value>
+                    <Int32>51</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_52">
+                <description>UNASSIGNED_52</description>
+                <value>
+                    <Int32>52</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_53">
+                <description>UNASSIGNED_53</description>
+                <value>
+                    <Int32>53</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_54">
+                <description>UNASSIGNED_54</description>
+                <value>
+                    <Int32>54</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_55">
+                <description>UNASSIGNED_55</description>
+                <value>
+                    <Int32>55</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_56">
+                <description>UNASSIGNED_56</description>
+                <value>
+                    <Int32>56</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_57">
+                <description>UNASSIGNED_57</description>
+                <value>
+                    <Int32>57</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_58">
+                <description>UNASSIGNED_58</description>
+                <value>
+                    <Int32>58</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_59">
+                <description>UNASSIGNED_59</description>
+                <value>
+                    <Int32>59</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_60">
+                <description>UNASSIGNED_60</description>
+                <value>
+                    <Int32>60</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_61">
+                <description>UNASSIGNED_61</description>
+                <value>
+                    <Int32>61</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_62">
+                <description>UNASSIGNED_62</description>
+                <value>
+                    <Int32>62</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_63">
+                <description>UNASSIGNED_63</description>
+                <value>
+                    <Int32>63</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_64">
+                <description>UNASSIGNED_64</description>
+                <value>
+                    <Int32>64</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_65">
+                <description>UNASSIGNED_65</description>
+                <value>
+                    <Int32>65</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_66">
+                <description>UNASSIGNED_66</description>
+                <value>
+                    <Int32>66</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_67">
+                <description>UNASSIGNED_67</description>
+                <value>
+                    <Int32>67</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_68">
+                <description>UNASSIGNED_68</description>
+                <value>
+                    <Int32>68</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_69">
+                <description>UNASSIGNED_69</description>
+                <value>
+                    <Int32>69</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_70">
+                <description>UNASSIGNED_70</description>
+                <value>
+                    <Int32>70</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_71">
+                <description>UNASSIGNED_71</description>
+                <value>
+                    <Int32>71</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_72">
+                <description>UNASSIGNED_72</description>
+                <value>
+                    <Int32>72</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_73">
+                <description>UNASSIGNED_73</description>
+                <value>
+                    <Int32>73</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_74">
+                <description>UNASSIGNED_74</description>
+                <value>
+                    <Int32>74</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_75">
+                <description>UNASSIGNED_75</description>
+                <value>
+                    <Int32>75</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_76">
+                <description>UNASSIGNED_76</description>
+                <value>
+                    <Int32>76</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_77">
+                <description>UNASSIGNED_77</description>
+                <value>
+                    <Int32>77</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_78">
+                <description>UNASSIGNED_78</description>
+                <value>
+                    <Int32>78</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_79">
+                <description>UNASSIGNED_79</description>
+                <value>
+                    <Int32>79</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_80">
+                <description>UNASSIGNED_80</description>
+                <value>
+                    <Int32>80</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_81">
+                <description>UNASSIGNED_81</description>
+                <value>
+                    <Int32>81</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_82">
+                <description>UNASSIGNED_82</description>
+                <value>
+                    <Int32>82</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_83">
+                <description>UNASSIGNED_83</description>
+                <value>
+                    <Int32>83</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_84">
+                <description>UNASSIGNED_84</description>
+                <value>
+                    <Int32>84</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_85">
+                <description>UNASSIGNED_85</description>
+                <value>
+                    <Int32>85</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_86">
+                <description>UNASSIGNED_86</description>
+                <value>
+                    <Int32>86</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_87">
+                <description>UNASSIGNED_87</description>
+                <value>
+                    <Int32>87</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_88">
+                <description>UNASSIGNED_88</description>
+                <value>
+                    <Int32>88</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_89">
+                <description>UNASSIGNED_89</description>
+                <value>
+                    <Int32>89</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_90">
+                <description>UNASSIGNED_90</description>
+                <value>
+                    <Int32>90</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_91">
+                <description>UNASSIGNED_91</description>
+                <value>
+                    <Int32>91</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_92">
+                <description>UNASSIGNED_92</description>
+                <value>
+                    <Int32>92</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_93">
+                <description>UNASSIGNED_93</description>
+                <value>
+                    <Int32>93</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_94">
+                <description>UNASSIGNED_94</description>
+                <value>
+                    <Int32>94</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_95">
+                <description>UNASSIGNED_95</description>
+                <value>
+                    <Int32>95</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_96">
+                <description>UNASSIGNED_96</description>
+                <value>
+                    <Int32>96</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_97">
+                <description>UNASSIGNED_97</description>
+                <value>
+                    <Int32>97</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_98">
+                <description>UNASSIGNED_98</description>
+                <value>
+                    <Int32>98</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_99">
+                <description>UNASSIGNED_99</description>
+                <value>
+                    <Int32>99</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_100">
+                <description>UNASSIGNED_100</description>
+                <value>
+                    <Int32>100</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_101">
+                <description>UNASSIGNED_101</description>
+                <value>
+                    <Int32>101</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_102">
+                <description>UNASSIGNED_102</description>
+                <value>
+                    <Int32>102</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_103">
+                <description>UNASSIGNED_103</description>
+                <value>
+                    <Int32>103</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_104">
+                <description>UNASSIGNED_104</description>
+                <value>
+                    <Int32>104</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_105">
+                <description>UNASSIGNED_105</description>
+                <value>
+                    <Int32>105</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_106">
+                <description>UNASSIGNED_106</description>
+                <value>
+                    <Int32>106</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_107">
+                <description>UNASSIGNED_107</description>
+                <value>
+                    <Int32>107</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_108">
+                <description>UNASSIGNED_108</description>
+                <value>
+                    <Int32>108</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_109">
+                <description>UNASSIGNED_109</description>
+                <value>
+                    <Int32>109</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_110">
+                <description>UNASSIGNED_110</description>
+                <value>
+                    <Int32>110</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_111">
+                <description>UNASSIGNED_111</description>
+                <value>
+                    <Int32>111</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_112">
+                <description>UNASSIGNED_112</description>
+                <value>
+                    <Int32>112</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_113">
+                <description>UNASSIGNED_113</description>
+                <value>
+                    <Int32>113</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_114">
+                <description>UNASSIGNED_114</description>
+                <value>
+                    <Int32>114</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_115">
+                <description>UNASSIGNED_115</description>
+                <value>
+                    <Int32>115</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_116">
+                <description>UNASSIGNED_116</description>
+                <value>
+                    <Int32>116</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_117">
+                <description>UNASSIGNED_117</description>
+                <value>
+                    <Int32>117</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_118">
+                <description>UNASSIGNED_118</description>
+                <value>
+                    <Int32>118</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_119">
+                <description>UNASSIGNED_119</description>
+                <value>
+                    <Int32>119</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_120">
+                <description>UNASSIGNED_120</description>
+                <value>
+                    <Int32>120</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_121">
+                <description>UNASSIGNED_121</description>
+                <value>
+                    <Int32>121</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_122">
+                <description>UNASSIGNED_122</description>
+                <value>
+                    <Int32>122</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="UNASSIGNED_123">
+                <description>UNASSIGNED_123</description>
+                <value>
+                    <Int32>123</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Fixed Income Agency Tenors">
+                <description>Fixed Income Agency Tenors</description>
+                <value>
+                    <Int32>124</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Fund Warrants">
+                <description>Fund Warrants</description>
+                <value>
+                    <Int32>125</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Fund Futures">
+                <description>Fund Futures</description>
+                <value>
+                    <Int32>126</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Fund Options">
+                <description>Fund Options</description>
+                <value>
+                    <Int32>127</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Equity Options">
+                <description>Equity Options</description>
+                <value>
+                    <Int32>128</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Equity Warrants">
+                <description>Equity Warrants</description>
+                <value>
+                    <Int32>129</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Equity Futures">
+                <description>Equity Futures</description>
+                <value>
+                    <Int32>130</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Futures">
+                <description>Futures</description>
+                <value>
+                    <Int32>131</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Future Options">
+                <description>Future Options</description>
+                <value>
+                    <Int32>132</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Index Members">
+                <description>Index Members</description>
+                <value>
+                    <Int32>133</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Yield Curve">
+                <description>Yield Curve</description>
+                <value>
+                    <Int32>134</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Unknown">
+                <description>Unknown</description>
+                <value>
+                    <Int32>135</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="Security IDs">
+                <description>Security IDs</description>
+                <value>
+                    <Int32>136</Int32>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="Mutable" type="Int32">
+            <description>Mutable</description>
+            <enumerator name="MUTABLE">
+                <description>MUTABLE</description>
+                <value>
+                    <Int32>0</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="IMMUTABLE">
+                <description>IMMUTABLE</description>
+                <value>
+                    <Int32>1</Int32>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="Order" type="Int32">
+            <description>Order</description>
+            <enumerator name="ORDERED">
+                <description>ORDERED</description>
+                <value>
+                    <Int32>0</Int32>
+                </value>
+            </enumerator>
+            <enumerator name="NOTORDERED">
+                <description>NOTORDERED</description>
+                <value>
+                    <Int32>1</Int32>
+                </value>
+            </enumerator>
+        </enumerationType>
+    </schema>
+</ServiceDefinition>

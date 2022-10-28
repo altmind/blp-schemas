@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="blp-schema.xsl"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="blp.apiflds" version="1.0.11.0">
+    <service name="//blp/apiflds" version="1.0.11.0">
+        <operation name="FieldInfoRequest" serviceId="96">
+            <request>Requests</request>
+            <requestSelection>fieldInfoRequest</requestSelection>
+            <response>Responses</response>
+            <responseSelection>fieldResponse</responseSelection>
+        </operation>
+        <operation name="FieldSearchRequest" serviceId="96">
+            <request>Requests</request>
+            <requestSelection>fieldSearchRequest</requestSelection>
+            <response>Responses</response>
+            <responseSelection>fieldResponse</responseSelection>
+        </operation>
+        <operation name="CategorizedFieldSearchRequest" serviceId="96">
+            <request>Requests</request>
+            <requestSelection>categorizedFieldSearchRequest</requestSelection>
+            <response>Responses</response>
+            <responseSelection>categorizedFieldResponse</responseSelection>
+        </operation>
+        <operation name="FieldListRequest" serviceId="96">
+            <request>Requests</request>
+            <requestSelection>fieldListRequest</requestSelection>
+            <response>Responses</response>
+            <responseSelection>fieldResponse</responseSelection>
+        </operation>
+        <operation name="APITerminalFieldSearchRequest" serviceId="96">
+            <request>Requests</request>
+            <requestSelection>apiTerminalFieldSearchRequest</requestSelection>
+            <response>Responses</response>
+            <responseSelection>fieldResponse</responseSelection>
+        </operation>
+        <publisherSupportsRecap>false</publisherSupportsRecap>
+        <authoritativeSourceSupportsRecap>true</authoritativeSourceSupportsRecap>
+        <isInfrastructureService>false</isInfrastructureService>
+        <isMetered>false</isMetered>
+        <appendMtrId>false</appendMtrId>
+        <persistentLastValueCache>false</persistentLastValueCache>
+    </service>
+    <schema>
+        <sequenceType name="FieldInfoRequest">
+            <description>seqFieldInfoRequest</description>
+            <element name="id" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnFieldDocumentation" type="Boolean">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="properties" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="language" type="Language" minOccurs="0"
+                maxOccurs="1">
+                <description>Optional selector of the language in which the
+                    response is returned. Default is &apos;ENGLISH&apos;. The response is
+                    encoded in UTF-8.
+                </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="Criteria">
+            <description>seqCriteria</description>
+            <element name="category" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="productType" type="ProductType">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldType" type="FieldType">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="bpsRequirement" type="BpsRequirement">
+                <description>Filter the fields returned by their requirement
+                    for a BPS subscription.
+                </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldSearchRequest">
+            <description>seqFieldSearchRequest</description>
+            <element name="searchSpec" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="include" type="Criteria" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="exclude" type="Criteria" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnFieldDocumentation" type="Boolean">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="properties" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="language" type="Language" minOccurs="0"
+                maxOccurs="1">
+                <description>Optional selector of the language in which the
+                    response is returned. Default is &apos;ENGLISH&apos;. The response is
+                    encoded in UTF-8.
+                </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldListRequest">
+            <description>seqFieldListRequest</description>
+            <element name="fieldType" type="FieldType">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnFieldDocumentation" type="Boolean">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="properties" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="language" type="Language" minOccurs="0"
+                maxOccurs="1">
+                <description>Optional selector of the language in which the
+                    response is returned. Default is &apos;ENGLISH&apos;. The response is
+                    encoded in UTF-8.
+                </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="CategorizedFieldSearchRequest">
+            <description>seqCategorizedFieldSearchRequest</description>
+            <element name="searchSpec" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="exclude" type="Criteria" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnFieldDocumentation" type="Boolean">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="properties" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="language" type="Language" minOccurs="0"
+                maxOccurs="1">
+                <description>Optional selector of the language in which the
+                    response is returned. Default is &apos;ENGLISH&apos;. The response is
+                    encoded in UTF-8.
+                </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="Property">
+            <description>seqProperty</description>
+            <element name="id" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="value" type="String" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldInfo">
+            <description>seqFieldInfo</description>
+            <element name="mnemonic" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="description" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="datatype" type="DataType" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="documentation" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="categoryName" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="property" type="Property" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrides" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ftype" type="FType" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="ErrorInfo">
+            <description>seqErrorInfo</description>
+            <element name="source" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="code" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="category" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="message" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldData">
+            <description>seqFieldData</description>
+            <element name="id" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldInfo" type="FieldInfo" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldError" type="ErrorInfo" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="CategoryData">
+            <description>seqCategoryData</description>
+            <element name="categoryName" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="categoryId" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="numFields" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="description" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="isLeafNode" type="Boolean">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldData" type="FieldData" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <choiceType name="Requests">
+            <description>choiceRequests</description>
+            <element name="fieldInfoRequest" type="FieldInfoRequest">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldSearchRequest" type="FieldSearchRequest">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldListRequest" type="FieldListRequest">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="categorizedFieldSearchRequest"
+                type="CategorizedFieldSearchRequest">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="apiTerminalFieldSearchRequest"
+                type="FieldSearchRequest">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <choiceType name="FieldResponse">
+            <description>choiceFieldResponse</description>
+            <element name="fieldData" type="FieldData" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldSearchError" type="ErrorInfo">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <choiceType name="CategorizedFieldResponse">
+            <description>choiceCategorizedFieldResponse</description>
+            <element name="category" type="CategoryData"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="categorizedFieldSearchError" type="ErrorInfo">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <choiceType name="Responses">
+            <description>choiceResponses</description>
+            <element name="fieldResponse" type="FieldResponse">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="categorizedFieldResponse"
+                type="CategorizedFieldResponse">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <enumerationType name="ProductType" type="String">
+            <description></description>
+            <enumerator name="All">
+                <description></description>
+                <value>
+                    <String>All</String>
+                </value>
+            </enumerator>
+            <enumerator name="Govt">
+                <description></description>
+                <value>
+                    <String>Govt</String>
+                </value>
+            </enumerator>
+            <enumerator name="Corp">
+                <description></description>
+                <value>
+                    <String>Corp</String>
+                </value>
+            </enumerator>
+            <enumerator name="Mtge">
+                <description></description>
+                <value>
+                    <String>Mtge</String>
+                </value>
+            </enumerator>
+            <enumerator name="M-Mkt">
+                <description></description>
+                <value>
+                    <String>M-Mkt</String>
+                </value>
+            </enumerator>
+            <enumerator name="Muni">
+                <description></description>
+                <value>
+                    <String>Muni</String>
+                </value>
+            </enumerator>
+            <enumerator name="Pfd">
+                <description></description>
+                <value>
+                    <String>Pfd</String>
+                </value>
+            </enumerator>
+            <enumerator name="Equity">
+                <description></description>
+                <value>
+                    <String>Equity</String>
+                </value>
+            </enumerator>
+            <enumerator name="Cmdty">
+                <description></description>
+                <value>
+                    <String>Cmdty</String>
+                </value>
+            </enumerator>
+            <enumerator name="Index">
+                <description></description>
+                <value>
+                    <String>Index</String>
+                </value>
+            </enumerator>
+            <enumerator name="Curncy">
+                <description></description>
+                <value>
+                    <String>Curncy</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="FieldType" type="String">
+            <description></description>
+            <enumerator name="All">
+                <description></description>
+                <value>
+                    <String>All</String>
+                </value>
+            </enumerator>
+            <enumerator name="RealTime">
+                <description></description>
+                <value>
+                    <String>RealTime</String>
+                </value>
+            </enumerator>
+            <enumerator name="Static">
+                <description></description>
+                <value>
+                    <String>Static</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="BpsRequirement" type="String">
+            <description></description>
+            <enumerator name="All">
+                <description>No requirement.</description>
+                <value>
+                    <String>All</String>
+                </value>
+            </enumerator>
+            <enumerator name="BPS">
+                <description>Bloomberg Professional Service subscription
+                    required
+                </description>
+                <value>
+                    <String>BPS</String>
+                </value>
+            </enumerator>
+            <enumerator name="NoBPS">
+                <description>Bloomberg Professional Service subscription not
+                    required
+                </description>
+                <value>
+                    <String>NoBPS</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="DataType" type="String">
+            <description></description>
+            <enumerator name="Bool">
+                <description></description>
+                <value>
+                    <String>Bool</String>
+                </value>
+            </enumerator>
+            <enumerator name="Char">
+                <description></description>
+                <value>
+                    <String>Char</String>
+                </value>
+            </enumerator>
+            <enumerator name="Int16">
+                <description></description>
+                <value>
+                    <String>Int16</String>
+                </value>
+            </enumerator>
+            <enumerator name="UInt16">
+                <description></description>
+                <value>
+                    <String>UInt16</String>
+                </value>
+            </enumerator>
+            <enumerator name="Int32">
+                <description></description>
+                <value>
+                    <String>Int32</String>
+                </value>
+            </enumerator>
+            <enumerator name="UInt32">
+                <description></description>
+                <value>
+                    <String>UInt32</String>
+                </value>
+            </enumerator>
+            <enumerator name="Int64">
+                <description></description>
+                <value>
+                    <String>Int64</String>
+                </value>
+            </enumerator>
+            <enumerator name="UInt64">
+                <description></description>
+                <value>
+                    <String>UInt64</String>
+                </value>
+            </enumerator>
+            <enumerator name="Float">
+                <description></description>
+                <value>
+                    <String>Float</String>
+                </value>
+            </enumerator>
+            <enumerator name="Double">
+                <description></description>
+                <value>
+                    <String>Double</String>
+                </value>
+            </enumerator>
+            <enumerator name="String">
+                <description></description>
+                <value>
+                    <String>String</String>
+                </value>
+            </enumerator>
+            <enumerator name="Datetime">
+                <description></description>
+                <value>
+                    <String>Datetime</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="FType" type="String">
+            <description>
+                An enumeration based on XDM&apos;s FType &quot;Description&quot; values.
+                See: XDM &gt; Options &gt; Metamodel &gt; FType &gt; Field type
+            </description>
+            <enumerator name="Reserved">
+                <description>not used in XDM</description>
+                <value>
+                    <String>Reserved</String>
+                </value>
+            </enumerator>
+            <enumerator name="Character">
+                <description>ftype=1</description>
+                <value>
+                    <String>Character</String>
+                </value>
+            </enumerator>
+            <enumerator name="StringOrReal">
+                <description>ftype=2</description>
+                <value>
+                    <String>StringOrReal</String>
+                </value>
+            </enumerator>
+            <enumerator name="Price">
+                <description>ftype=3</description>
+                <value>
+                    <String>Price</String>
+                </value>
+            </enumerator>
+            <enumerator name="SecurityDescription">
+                <description>ftype=4</description>
+                <value>
+                    <String>SecurityDescription</String>
+                </value>
+            </enumerator>
+            <enumerator name="Date">
+                <description>ftype=5</description>
+                <value>
+                    <String>Date</String>
+                </value>
+            </enumerator>
+            <enumerator name="Time">
+                <description>ftype=6</description>
+                <value>
+                    <String>Time</String>
+                </value>
+            </enumerator>
+            <enumerator name="DateOrTime">
+                <description>ftype=7</description>
+                <value>
+                    <String>DateOrTime</String>
+                </value>
+            </enumerator>
+            <enumerator name="BulkFormat">
+                <description>ftype=8</description>
+                <value>
+                    <String>BulkFormat</String>
+                </value>
+            </enumerator>
+            <enumerator name="Month_Year">
+                <description>ftype=9</description>
+                <value>
+                    <String>Month_Year</String>
+                </value>
+            </enumerator>
+            <enumerator name="Boolean">
+                <description>ftype=10</description>
+                <value>
+                    <String>Boolean</String>
+                </value>
+            </enumerator>
+            <enumerator name="Currency">
+                <description>ftype=11 (obsolete, not used in XDM)</description>
+                <value>
+                    <String>Currency</String>
+                </value>
+            </enumerator>
+            <enumerator name="String">
+                <description>ftype=12</description>
+                <value>
+                    <String>String</String>
+                </value>
+            </enumerator>
+            <enumerator name="Real">
+                <description>ftype=13</description>
+                <value>
+                    <String>Real</String>
+                </value>
+            </enumerator>
+            <enumerator name="LongCharacter">
+                <description>ftype=14</description>
+                <value>
+                    <String>LongCharacter</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="Language" type="String">
+            <description>An enum of supported languages</description>
+            <enumerator name="ENGLISH">
+                <description></description>
+                <value>
+                    <String>ENGLISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="JAPANESE">
+                <description></description>
+                <value>
+                    <String>JAPANESE</String>
+                </value>
+            </enumerator>
+            <enumerator name="FRENCH">
+                <description></description>
+                <value>
+                    <String>FRENCH</String>
+                </value>
+            </enumerator>
+            <enumerator name="GERMAN">
+                <description></description>
+                <value>
+                    <String>GERMAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="SPANISH">
+                <description></description>
+                <value>
+                    <String>SPANISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="PORTUGUESE">
+                <description></description>
+                <value>
+                    <String>PORTUGUESE</String>
+                </value>
+            </enumerator>
+            <enumerator name="ITALIAN">
+                <description></description>
+                <value>
+                    <String>ITALIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="CHINESE_TRAD">
+                <description></description>
+                <value>
+                    <String>CHINESE_TRAD</String>
+                </value>
+            </enumerator>
+            <enumerator name="KOREAN">
+                <description></description>
+                <value>
+                    <String>KOREAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="CHINESE_SIMP">
+                <description></description>
+                <value>
+                    <String>CHINESE_SIMP</String>
+                </value>
+            </enumerator>
+            <enumerator name="RUSSIAN">
+                <description></description>
+                <value>
+                    <String>RUSSIAN</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+    </schema>
+</ServiceDefinition>

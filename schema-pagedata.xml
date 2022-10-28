@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="blp-schema.xsl"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="blp.pagedata" version="1.0.0.0">
+    <service name="//blp/pagedata" version="1.0.0.0"
+        authorizationService="//blp/apiauth">
+        <event name="PageUpdate" eventType="PageUpdate">
+            <eventId>9999</eventId>
+            <eventId>10000</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <event name="RowUpdate" eventType="RowUpdate">
+            <eventId>1</eventId>
+            <eventId>2</eventId>
+            <eventId>3</eventId>
+            <eventId>4</eventId>
+            <eventId>5</eventId>
+            <eventId>6</eventId>
+            <eventId>7</eventId>
+            <eventId>8</eventId>
+            <eventId>9</eventId>
+            <eventId>10</eventId>
+            <eventId>11</eventId>
+            <eventId>12</eventId>
+            <eventId>13</eventId>
+            <eventId>14</eventId>
+            <eventId>15</eventId>
+            <eventId>16</eventId>
+            <eventId>17</eventId>
+            <eventId>18</eventId>
+            <eventId>19</eventId>
+            <eventId>20</eventId>
+            <eventId>21</eventId>
+            <eventId>22</eventId>
+            <eventId>23</eventId>
+            <eventId>24</eventId>
+            <eventId>25</eventId>
+            <eventId>26</eventId>
+            <eventId>27</eventId>
+            <eventId>28</eventId>
+            <eventId>29</eventId>
+            <eventId>30</eventId>
+            <eventId>31</eventId>
+            <eventId>32</eventId>
+            <eventId>33</eventId>
+            <eventId>34</eventId>
+            <eventId>35</eventId>
+            <eventId>36</eventId>
+            <eventId>37</eventId>
+            <eventId>38</eventId>
+            <eventId>39</eventId>
+            <eventId>40</eventId>
+            <eventId>41</eventId>
+            <eventId>42</eventId>
+            <eventId>43</eventId>
+            <eventId>44</eventId>
+            <eventId>45</eventId>
+            <eventId>46</eventId>
+            <eventId>47</eventId>
+            <eventId>48</eventId>
+            <eventId>49</eventId>
+            <eventId>50</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <defaultServiceId>12295</defaultServiceId>
+        <publisherSupportsRecap>true</publisherSupportsRecap>
+        <authoritativeSourceSupportsRecap>false</authoritativeSourceSupportsRecap>
+        <SubscriberResolutionServiceId>12294</SubscriberResolutionServiceId>
+        <isInfrastructureService>false</isInfrastructureService>
+        <isMetered>false</isMetered>
+        <appendMtrId>false</appendMtrId>
+        <persistentLastValueCache>false</persistentLastValueCache>
+    </service>
+    <schema>
+        <sequenceType name="SpanUpdate">
+            <description>seqSpanUpdate</description>
+            <element name="startCol" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="length" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="text" type="String" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="attr" type="Attribute" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fgColor" type="Color" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="bgColor" type="Color" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="RowUpdate">
+            <description>seqRowUpdate</description>
+            <element name="rowNum" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="spanUpdate" type="SpanUpdate"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="Eids" type="Int32" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="PageUpdate">
+            <description>seqPageUpdate</description>
+            <element name="numRows" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="numCols" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="rowUpdate" type="RowUpdate" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="Eids" type="Int32" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <enumerationType name="Attribute" type="String">
+            <description></description>
+            <enumerator name="BLINK">
+                <description></description>
+                <value>
+                    <String>BLINK</String>
+                </value>
+            </enumerator>
+            <enumerator name="DOUBLEWIDTH">
+                <description></description>
+                <value>
+                    <String>DOUBLEWIDTH</String>
+                </value>
+            </enumerator>
+            <enumerator name="INTENSIFY">
+                <description></description>
+                <value>
+                    <String>INTENSIFY</String>
+                </value>
+            </enumerator>
+            <enumerator name="POINTANDCLICK">
+                <description></description>
+                <value>
+                    <String>POINTANDCLICK</String>
+                </value>
+            </enumerator>
+            <enumerator name="REVERSE">
+                <description></description>
+                <value>
+                    <String>REVERSE</String>
+                </value>
+            </enumerator>
+            <enumerator name="UNDERLINE">
+                <description></description>
+                <value>
+                    <String>UNDERLINE</String>
+                </value>
+            </enumerator>
+            <enumerator name="OVERLINE">
+                <description></description>
+                <value>
+                    <String>OVERLINE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="Color" type="String">
+            <description></description>
+            <enumerator name="AMBER">
+                <description></description>
+                <value>
+                    <String>AMBER</String>
+                </value>
+            </enumerator>
+            <enumerator name="BLACK">
+                <description></description>
+                <value>
+                    <String>BLACK</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKBLUE">
+                <description></description>
+                <value>
+                    <String>DARKBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKGREEN">
+                <description></description>
+                <value>
+                    <String>DARKGREEN</String>
+                </value>
+            </enumerator>
+            <enumerator name="DEEPBLUE">
+                <description></description>
+                <value>
+                    <String>DEEPBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="FLASHINGBLUE">
+                <description></description>
+                <value>
+                    <String>FLASHINGBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="FLASHINGRED">
+                <description></description>
+                <value>
+                    <String>FLASHINGRED</String>
+                </value>
+            </enumerator>
+            <enumerator name="GRAY">
+                <description></description>
+                <value>
+                    <String>GRAY</String>
+                </value>
+            </enumerator>
+            <enumerator name="LIGHTBLUE">
+                <description></description>
+                <value>
+                    <String>LIGHTBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="LIGHTGREEN">
+                <description></description>
+                <value>
+                    <String>LIGHTGREEN</String>
+                </value>
+            </enumerator>
+            <enumerator name="ORANGE">
+                <description></description>
+                <value>
+                    <String>ORANGE</String>
+                </value>
+            </enumerator>
+            <enumerator name="PINK">
+                <description></description>
+                <value>
+                    <String>PINK</String>
+                </value>
+            </enumerator>
+            <enumerator name="RED">
+                <description></description>
+                <value>
+                    <String>RED</String>
+                </value>
+            </enumerator>
+            <enumerator name="VIOLET">
+                <description></description>
+                <value>
+                    <String>VIOLET</String>
+                </value>
+            </enumerator>
+            <enumerator name="WHITE">
+                <description></description>
+                <value>
+                    <String>WHITE</String>
+                </value>
+            </enumerator>
+            <enumerator name="YELLOW">
+                <description></description>
+                <value>
+                    <String>YELLOW</String>
+                </value>
+            </enumerator>
+            <enumerator name="CASPERGREY">
+                <description></description>
+                <value>
+                    <String>CASPERGREY</String>
+                </value>
+            </enumerator>
+            <enumerator name="CERULIANBLUE">
+                <description></description>
+                <value>
+                    <String>CERULIANBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="CHARCOAL">
+                <description></description>
+                <value>
+                    <String>CHARCOAL</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKAMBER">
+                <description></description>
+                <value>
+                    <String>DARKAMBER</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKARMYGREEN">
+                <description></description>
+                <value>
+                    <String>DARKARMYGREEN</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKGREY">
+                <description></description>
+                <value>
+                    <String>DARKGREY</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKMAGENTA">
+                <description></description>
+                <value>
+                    <String>DARKMAGENTA</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKNEUTRALGREY">
+                <description></description>
+                <value>
+                    <String>DARKNEUTRALGREY</String>
+                </value>
+            </enumerator>
+            <enumerator name="DARKRED">
+                <description></description>
+                <value>
+                    <String>DARKRED</String>
+                </value>
+            </enumerator>
+            <enumerator name="DIMBLUE">
+                <description></description>
+                <value>
+                    <String>DIMBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="DOWNTOWNRED">
+                <description></description>
+                <value>
+                    <String>DOWNTOWNRED</String>
+                </value>
+            </enumerator>
+            <enumerator name="DUSK">
+                <description></description>
+                <value>
+                    <String>DUSK</String>
+                </value>
+            </enumerator>
+            <enumerator name="GOLD">
+                <description></description>
+                <value>
+                    <String>GOLD</String>
+                </value>
+            </enumerator>
+            <enumerator name="GRIME">
+                <description></description>
+                <value>
+                    <String>GRIME</String>
+                </value>
+            </enumerator>
+            <enumerator name="HONEYAMBER">
+                <description></description>
+                <value>
+                    <String>HONEYAMBER</String>
+                </value>
+            </enumerator>
+            <enumerator name="HYPERLINKBLUE">
+                <description></description>
+                <value>
+                    <String>HYPERLINKBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="LIGHTAMBER">
+                <description></description>
+                <value>
+                    <String>LIGHTAMBER</String>
+                </value>
+            </enumerator>
+            <enumerator name="MAUVE">
+                <description></description>
+                <value>
+                    <String>MAUVE</String>
+                </value>
+            </enumerator>
+            <enumerator name="MEDIUMBLUE">
+                <description></description>
+                <value>
+                    <String>MEDIUMBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="MIDNIGHT">
+                <description></description>
+                <value>
+                    <String>MIDNIGHT</String>
+                </value>
+            </enumerator>
+            <enumerator name="NEUTRALGREY">
+                <description></description>
+                <value>
+                    <String>NEUTRALGREY</String>
+                </value>
+            </enumerator>
+            <enumerator name="NOON">
+                <description></description>
+                <value>
+                    <String>NOON</String>
+                </value>
+            </enumerator>
+            <enumerator name="OFFWHITE">
+                <description></description>
+                <value>
+                    <String>OFFWHITE</String>
+                </value>
+            </enumerator>
+            <enumerator name="OLIVE">
+                <description></description>
+                <value>
+                    <String>OLIVE</String>
+                </value>
+            </enumerator>
+            <enumerator name="PALEBLUE">
+                <description></description>
+                <value>
+                    <String>PALEBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="PRIMARYBLUE">
+                <description></description>
+                <value>
+                    <String>PRIMARYBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="PUMPKIN">
+                <description></description>
+                <value>
+                    <String>PUMPKIN</String>
+                </value>
+            </enumerator>
+            <enumerator name="PURPLE">
+                <description></description>
+                <value>
+                    <String>PURPLE</String>
+                </value>
+            </enumerator>
+            <enumerator name="SAPPHIRE">
+                <description></description>
+                <value>
+                    <String>SAPPHIRE</String>
+                </value>
+            </enumerator>
+            <enumerator name="SEABLUE">
+                <description></description>
+                <value>
+                    <String>SEABLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="SKY">
+                <description></description>
+                <value>
+                    <String>SKY</String>
+                </value>
+            </enumerator>
+            <enumerator name="SMOKEGREY">
+                <description></description>
+                <value>
+                    <String>SMOKEGREY</String>
+                </value>
+            </enumerator>
+            <enumerator name="SOOT">
+                <description></description>
+                <value>
+                    <String>SOOT</String>
+                </value>
+            </enumerator>
+            <enumerator name="SUBMARINE">
+                <description></description>
+                <value>
+                    <String>SUBMARINE</String>
+                </value>
+            </enumerator>
+            <enumerator name="SUPERGREY">
+                <description></description>
+                <value>
+                    <String>SUPERGREY</String>
+                </value>
+            </enumerator>
+            <enumerator name="TAFFY">
+                <description></description>
+                <value>
+                    <String>TAFFY</String>
+                </value>
+            </enumerator>
+            <enumerator name="TRUEBLUE">
+                <description></description>
+                <value>
+                    <String>TRUEBLUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="TRUEGREEN">
+                <description></description>
+                <value>
+                    <String>TRUEGREEN</String>
+                </value>
+            </enumerator>
+            <enumerator name="TRUERED">
+                <description></description>
+                <value>
+                    <String>TRUERED</String>
+                </value>
+            </enumerator>
+            <enumerator name="UPTOWNGREEN">
+                <description></description>
+                <value>
+                    <String>UPTOWNGREEN</String>
+                </value>
+            </enumerator>
+            <enumerator name="GREEN">
+                <description></description>
+                <value>
+                    <String>GREEN</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+    </schema>
+</ServiceDefinition>

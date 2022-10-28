@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="blp-schema.xsl"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="blp.mktbar" version="1.0.0.4">
+    <service name="//blp/mktbar" version="1.0.0.4"
+        authorizationService="//blp/apiauth">
+        <event name="MarketBarStart" eventType="MarketBarEvent">
+            <eventId>1</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <event name="MarketBarUpdate" eventType="MarketBarEvent">
+            <eventId>2</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <event name="MarketBarEnd" eventType="MarketBarEvent">
+            <eventId>3</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <event name="MarketBarIntervalEnd" eventType="MarketBarEvent">
+            <eventId>4</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <publisherSupportsRecap>false</publisherSupportsRecap>
+        <authoritativeSourceSupportsRecap>true</authoritativeSourceSupportsRecap>
+        <isInfrastructureService>false</isInfrastructureService>
+        <isMetered>false</isMetered>
+        <appendMtrId>false</appendMtrId>
+        <persistentLastValueCache>false</persistentLastValueCache>
+    </service>
+    <schema>
+        <sequenceType name="MarketBarEvent">
+            <description>fields in bar subscription</description>
+            <element name="TIME" id="1" type="Datetime" minOccurs="0"
+                maxOccurs="1">
+                <description>Time of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="OPEN" id="2" type="Float64" minOccurs="0"
+                maxOccurs="1">
+                <description>Open Price of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="HIGH" id="3" type="Float64" minOccurs="0"
+                maxOccurs="1">
+                <description>High Price of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="LOW" id="4" type="Float64" minOccurs="0"
+                maxOccurs="1">
+                <description>Low Price of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CLOSE" id="5" type="Float64" minOccurs="0"
+                maxOccurs="1">
+                <description>Close Price of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="NUMBER_OF_TICKS" id="6" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>Number of Ticks in the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="VOLUME" id="7" type="Int64" minOccurs="0"
+                maxOccurs="1">
+                <description>Volume of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="DATE_TIME" id="8" type="Datetime" minOccurs="0"
+                maxOccurs="1">
+                <description>Date and Time of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EID" id="65523" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>Entitlement Id</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="VALUE" id="10" type="Float64" minOccurs="0"
+                maxOccurs="1">
+                <description>Value of the Bar</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+    </schema>
+</ServiceDefinition>

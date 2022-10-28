@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="blp-schema.xsl"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="blp.refdata" version="1.0.33.10">
+    <service name="//blp/refdata" version="1.0.33.10"
+        authorizationService="//blp/apiauth">
+        <operation name="IntradayBarDateTimeChoiceRequest" serviceId="120">
+            <request>IntradayBarDateTimeChoiceRequest</request>
+        </operation>
+        <operation name="PingRequest" serviceId="119">
+            <request>PingRequest</request>
+        </operation>
+        <operation name="BeqsRequest" serviceId="117">
+            <request>BeqsRequest</request>
+        </operation>
+        <operation name="PortfolioDataRequest" serviceId="114">
+            <request>PortfolioDataRequest</request>
+            <pivotElementName>securities</pivotElementName>
+            <maxPivotElementsPerRequest>1</maxPivotElementsPerRequest>
+        </operation>
+        <operation name="ReferenceDataSlowMtgeRequest" serviceId="112">
+            <request>ReferenceDataRequest</request>
+            <pivotElementName>securities</pivotElementName>
+            <maxPivotElementsPerRequest>10</maxPivotElementsPerRequest>
+        </operation>
+        <operation name="CustomEqsRequest" serviceId="103">
+            <request>CustomEqsRequest</request>
+            <pivotElementName>securities</pivotElementName>
+            <maxPivotElementsPerRequest>10</maxPivotElementsPerRequest>
+        </operation>
+        <operation name="ReferenceDataSlowRequest" serviceId="94">
+            <request>ReferenceDataRequest</request>
+            <pivotElementName>securities</pivotElementName>
+            <maxPivotElementsPerRequest>10</maxPivotElementsPerRequest>
+        </operation>
+        <operation name="ReferenceDataRequest" serviceId="84">
+            <request>ReferenceDataRequest</request>
+            <pivotElementName>securities</pivotElementName>
+            <maxPivotElementsPerRequest>10</maxPivotElementsPerRequest>
+        </operation>
+        <operation name="HistoricalDataRequest" serviceId="85">
+            <request>HistoricalDataRequest</request>
+            <pivotElementName>securities</pivotElementName>
+            <maxPivotElementsPerRequest>8</maxPivotElementsPerRequest>
+        </operation>
+        <operation name="IntradayBarRequest" serviceId="83">
+            <request>IntradayBarRequest</request>
+        </operation>
+        <operation name="IntradayTickRequest" serviceId="82">
+            <request>IntradayTickRequest</request>
+        </operation>
+        <publisherSupportsRecap>false</publisherSupportsRecap>
+        <authoritativeSourceSupportsRecap>true</authoritativeSourceSupportsRecap>
+        <isInfrastructureService>false</isInfrastructureService>
+        <isMetered>false</isMetered>
+        <appendMtrId>false</appendMtrId>
+        <persistentLastValueCache>false</persistentLastValueCache>
+    </service>
+    <schema>
+        <sequenceType name="StartEndDateInterval">
+            <description></description>
+            <element name="startDateTime" type="Datetime">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="endDateTime" type="Datetime">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="StartDateRangeDuration">
+            <description></description>
+            <element name="rangeStartDateTimeList" type="Datetime"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="duration" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldOverride">
+            <description>seqFieldOverride</description>
+            <element name="fieldId" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="value" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldOverrideRow">
+            <description>seqFieldOverrideRow</description>
+            <element name="value" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FieldOverrideTable">
+            <description>seqFieldOverrideTable</description>
+            <element name="fieldId" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="row" type="FieldOverrideRow" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="GfutOption">
+            <description></description>
+            <element name="includeSerialContracts" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="PortfolioDataRequest">
+            <description>seqPortfolioDataRequest</description>
+            <element name="securities" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fields" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrides" type="FieldOverride" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startSequenceNumber" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="ReferenceDataRequest">
+            <description>seqReferenceDataRequest</description>
+            <element name="securities" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fields" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrides" type="FieldOverride" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnEids" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnFormattedValue" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startSequenceNumber" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="useUTCTime" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="forcedDelay" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="tableOverrides" type="FieldOverrideTable"
+                minOccurs="0" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnNullValue" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="gfutOption" type="GfutOption" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="querySnapshot" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="CustomEqsRequest">
+            <description>seqCustomEqsRequest</description>
+            <element name="securities" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fields" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="currency" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startSequenceNumber" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrides" type="FieldOverride" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="PingRequest">
+            <description>seqPingRequest</description>
+        </sequenceType>
+        <sequenceType name="BeqsRequest">
+            <description>seqBeqsRequest</description>
+            <element name="screenName" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="screenType" type="ScreenValues" minOccurs="1"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="languageId" type="LanguageType" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="Group" type="String" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrides" type="FieldOverride" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="pxnum" type="Int32" minOccurs="0" maxOccurs="1">
+                <description>Optional Pricing Number</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="IntradayBarRequest">
+            <description>seqIntradayBarRequest</description>
+            <element name="security" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="eventType" type="EventType">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startDateTime" type="Datetime">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="endDateTime" type="Datetime">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="interval" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="gapFillInitialBar" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnEids" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentNormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CshAdjNormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentAbnormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CshAdjAbnormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentSplit" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CapChg</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentFollowDPDF" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>UseDPDF</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPoints" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="forcedDelay" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPointsOrigin" type="DataPointsOrigin"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="intervalHasSeconds" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>flag that indicates that value of interval is in seconds</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="IntradayBarDateTimeChoiceRequest">
+            <description>seqIntradayBarDateTimeChoiceRequest</description>
+            <element name="security" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="eventType" type="BarEventType">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="interval" type="Int32">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="dateTimeInfo" type="DateTimeInfo">
+                <description>choice of setting start end datetime or list start datetimes and duration </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="gapFillInitialBar" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnEids" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentNormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CshAdjNormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentAbnormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CshAdjAbnormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentSplit" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CapChg</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentFollowDPDF" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>UseDPDF</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPoints" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="forcedDelay" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPointsOrigin" type="DataPointsOrigin"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="intervalHasSeconds" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>flag that indicates that value of interval is in seconds</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="IntradayTickRequest">
+            <description>seqIntradayTickRequest</description>
+            <element name="security" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startDateTime" type="Datetime">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="endDateTime" type="Datetime">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="eventTypes" type="EventType" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeConditionCodes" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeNonPlottableEvents" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeExchangeCodes" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnEids" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeBrokerCodes" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowBrkCode</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeRpsCodes" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowRpsCode</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPoints" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeBicMicCodes" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowBicMicCode</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="forcedDelay" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeSpreadPrice" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowSpreadPrice</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeYield" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowYield</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeActionCodes" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowActionCode</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeIndicatorCodes" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <alternateName>ShowIndicatorCode</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeTradeTime" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowTrdTimeCode</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeUpfrontPrice" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowUpfrontPrice</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeEqRefPrice" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>ShowEquityRefPrice</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentNormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>Adjust historical pricing to reflect: Regular Cash, Interim, 1st Interim, 2nd Interim, 3rd Interim, 4th
+                        Interim, 5th Interim, Income, Estimated, Partnership Distribution, Final, Interest on Capital, 
+                        Distribution, Prorated.
+            </description>
+                <alternateName>CshAdjNormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentAbnormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>Adjust historical pricing to reflect: Special Cash, Liquidation, Capital Gains, Long-Term Capital Gains, 
+                         Short-Term Capital Gains, Memorial, Return of Capital, Rights Redemption, Miscellaneous, Return 
+                         Premium, Preferred Rights Redemption, Proceeds/Rights, Proceeds/Shares, Proceeds/Warrants.</description>
+                <alternateName>CshAdjAbnormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentSplit" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>Adjust historical pricing and/or volume to reflect: Spin-Offs, Stock Splits/Consolidations, Stock 
+                         Dividend/Bonus, Rights Offerings/Entitlement.
+            </description>
+                <alternateName>CapChg</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentFollowDPDF" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>Adjust historical pricing and/or volume as per user&apos;s DPDF screen</description>
+                <alternateName>UseDPDF</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeClientSpecificFields" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description>option to retrieve custom fields for new XDF source for currency trades: 
+                   ClientDomicile
+                   ClientSegment
+                   ClientSubsegment
+                   ClientIdentifier
+                   Direction
+                   TradeId
+            </description>
+                <alternateName>ClientSpecificFields</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeTradeId" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>option to retrieve unique identifier for a trade event.                
+            </description>
+                <alternateName>showTradeId</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPointsOrigin" type="DataPointsOrigin"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="filter" type="String" minOccurs="0" maxOccurs="1">
+                <description>format example: &quot;size&gt;10 &amp;&amp; cc=ob&quot;</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeTradeDate" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>option to retrieve the date of the trade.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeDirtyTicks" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>option to retrieve ticks that had been subsequently cancelled or amended.  Return cancelledFlag, correctionFlag, and nativeTradeId.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeSubSecondTimestamps" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description>option to retrieve sub-second timestamps - where available 
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeBloombergStandardConditionCodes"
+                type="Boolean" minOccurs="0" maxOccurs="1">
+                <description>option to retrieve the Bloomberg Standard Condition Codes. Return bloombergStandardConditionCodes.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeMarketModelTypology" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description>option to retrieve the Market Model Typology trade type, where available. Return marketModelTypology.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeNativeTradeId" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>option to retrieve he Trade Aggressor. Return tradeAggressor.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeAggressor" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>option to the Market Model Typology trade type, where available. Return marketModelTypology.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeSecurityStatusEvents" type="Boolean"
+                minOccurs="0" maxOccurs="1">
+                <description>option to retrieve trading phase, suspension status and auction status changes. Return tradingPhase, suspensionState, auctionState and simplifiedState.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="includeESMATradeFlag" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description>option to retrieve ESMA Trade flag. Return ESMATradeFlag
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="filters" type="FDMFilterType" minOccurs="0"
+                maxOccurs="unbounded">
+                <description>define intraday tick request FDM filter.
+            </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="HistoricalDataRequest">
+            <description>seqHistoricalDataRequest</description>
+            <element name="securities" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fields" type="String" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startDate" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="endDate" type="String">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="periodicityAdjustment"
+                type="PeriodicityAdjustmentType" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="periodicitySelection"
+                type="PeriodicitySelectionType" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="currency" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrideOption" type="OverrideOption"
+                minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="pricingOption" type="PricingOption" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="nonTradingDayFillOption"
+                type="NonTradingDayFillOption" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="nonTradingDayFillMethod"
+                type="NonTradingDayFillMethod" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="maxDataPoints" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnRelativeDate" type="Boolean">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnEids" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="overrides" type="FieldOverride"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startSequenceNumber" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentNormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CshAdjNormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentAbnormal" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CshAdjAbnormal</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentSplit" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CapChg</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="adjustmentFollowDPDF" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>UseDPDF</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="calendarCodeOverride" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>CDR</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="calendarOverridesInfo"
+                type="CalendarOverridesInfo" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <alternateName>CDROI</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="forcedDelay" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnDataIndicator" type="Boolean" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="returnFundamentalPeriodicDateFormat"
+                type="Boolean" minOccurs="0" maxOccurs="1">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="FDMFilterType">
+            <description></description>
+            <element name="filterName" type="String">
+                <description>name of the filter: have to be unique, e.g. &quot;filter_0&quot;</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="fieldId" type="String">
+                <description>ticker plant FDM field ID string:e.g. &quot;EVENT_PRICE&quot;</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="filterRule" type="String">
+                <description>rule apply on this field: e.g. &quot;[10.5, 11.5]&quot;</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="CalendarOverridesInfo">
+            <description></description>
+            <element name="calendarOverrides" type="String" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <alternateName>CDRS</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="calendarOverridesOperation"
+                type="CalendarOverridesOperationType" minOccurs="0"
+                maxOccurs="1">
+                <description></description>
+                <alternateName>cdrOp</alternateName>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <choiceType name="DateTimeInfo">
+            <description></description>
+            <element name="dateTimeRange" type="StartEndDateInterval">
+                <description>provides start/end datetime</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="startDateDuration" type="StartDateRangeDuration">
+                <description>provides array of start datetime and duration for every day</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </choiceType>
+        <enumerationType name="BarEventType" type="String">
+            <description></description>
+            <enumerator name="TRADE">
+                <description></description>
+                <value>
+                    <String>TRADE</String>
+                </value>
+            </enumerator>
+            <enumerator name="BID">
+                <description></description>
+                <value>
+                    <String>BID</String>
+                </value>
+            </enumerator>
+            <enumerator name="ASK">
+                <description></description>
+                <value>
+                    <String>ASK</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="EventType" type="String">
+            <description></description>
+            <enumerator name="TRADE">
+                <description></description>
+                <value>
+                    <String>TRADE</String>
+                </value>
+            </enumerator>
+            <enumerator name="BID">
+                <description></description>
+                <value>
+                    <String>BID</String>
+                </value>
+            </enumerator>
+            <enumerator name="ASK">
+                <description></description>
+                <value>
+                    <String>ASK</String>
+                </value>
+            </enumerator>
+            <enumerator name="BID_BEST">
+                <description></description>
+                <value>
+                    <String>BID_BEST</String>
+                </value>
+            </enumerator>
+            <enumerator name="ASK_BEST">
+                <description></description>
+                <value>
+                    <String>ASK_BEST</String>
+                </value>
+            </enumerator>
+            <enumerator name="BID_YIELD">
+                <description></description>
+                <value>
+                    <String>BID_YIELD</String>
+                </value>
+            </enumerator>
+            <enumerator name="ASK_YIELD">
+                <description></description>
+                <value>
+                    <String>ASK_YIELD</String>
+                </value>
+            </enumerator>
+            <enumerator name="MID_PRICE">
+                <description></description>
+                <value>
+                    <String>MID_PRICE</String>
+                </value>
+            </enumerator>
+            <enumerator name="AT_TRADE">
+                <description></description>
+                <value>
+                    <String>AT_TRADE</String>
+                </value>
+            </enumerator>
+            <enumerator name="BEST_BID">
+                <description></description>
+                <value>
+                    <String>BEST_BID</String>
+                </value>
+            </enumerator>
+            <enumerator name="BEST_ASK">
+                <description></description>
+                <value>
+                    <String>BEST_ASK</String>
+                </value>
+            </enumerator>
+            <enumerator name="SETTLE">
+                <description></description>
+                <value>
+                    <String>SETTLE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="PeriodicityAdjustmentType" type="String">
+            <description></description>
+            <enumerator name="ACTUAL">
+                <description></description>
+                <value>
+                    <String>ACTUAL</String>
+                </value>
+            </enumerator>
+            <enumerator name="CALENDAR">
+                <description></description>
+                <value>
+                    <String>CALENDAR</String>
+                </value>
+            </enumerator>
+            <enumerator name="FISCAL">
+                <description></description>
+                <value>
+                    <String>FISCAL</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="PeriodicitySelectionType" type="String">
+            <description></description>
+            <enumerator name="DAILY">
+                <description></description>
+                <value>
+                    <String>DAILY</String>
+                </value>
+            </enumerator>
+            <enumerator name="WEEKLY">
+                <description></description>
+                <value>
+                    <String>WEEKLY</String>
+                </value>
+            </enumerator>
+            <enumerator name="MONTHLY">
+                <description></description>
+                <value>
+                    <String>MONTHLY</String>
+                </value>
+            </enumerator>
+            <enumerator name="QUARTERLY">
+                <description></description>
+                <value>
+                    <String>QUARTERLY</String>
+                </value>
+            </enumerator>
+            <enumerator name="SEMI_ANNUALLY">
+                <description></description>
+                <value>
+                    <String>SEMI_ANNUALLY</String>
+                </value>
+            </enumerator>
+            <enumerator name="YEARLY">
+                <description></description>
+                <value>
+                    <String>YEARLY</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="OverrideOption" type="String">
+            <description></description>
+            <enumerator name="OVERRIDE_OPTION_CLOSE">
+                <description></description>
+                <value>
+                    <String>OVERRIDE_OPTION_CLOSE</String>
+                </value>
+            </enumerator>
+            <enumerator name="OVERRIDE_OPTION_GPA">
+                <description></description>
+                <value>
+                    <String>OVERRIDE_OPTION_GPA</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="PricingOption" type="String">
+            <description></description>
+            <enumerator name="PRICING_OPTION_PRICE">
+                <description></description>
+                <value>
+                    <String>PRICING_OPTION_PRICE</String>
+                </value>
+            </enumerator>
+            <enumerator name="PRICING_OPTION_YIELD">
+                <description></description>
+                <value>
+                    <String>PRICING_OPTION_YIELD</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="NonTradingDayFillOption" type="String">
+            <description></description>
+            <enumerator name="NON_TRADING_WEEKDAYS">
+                <description></description>
+                <value>
+                    <String>NON_TRADING_WEEKDAYS</String>
+                </value>
+            </enumerator>
+            <enumerator name="ALL_CALENDAR_DAYS">
+                <description></description>
+                <value>
+                    <String>ALL_CALENDAR_DAYS</String>
+                </value>
+            </enumerator>
+            <enumerator name="ACTIVE_DAYS_ONLY">
+                <description></description>
+                <value>
+                    <String>ACTIVE_DAYS_ONLY</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="NonTradingDayFillMethod" type="String">
+            <description></description>
+            <enumerator name="PREVIOUS_VALUE">
+                <description></description>
+                <value>
+                    <String>PREVIOUS_VALUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="NIL_VALUE">
+                <description></description>
+                <value>
+                    <String>NIL_VALUE</String>
+                </value>
+            </enumerator>
+            <enumerator name="NEXTDAY_VALUE">
+                <description></description>
+                <value>
+                    <String>NEXTDAY_VALUE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="ScreenValues" type="String">
+            <description></description>
+            <enumerator name="GLOBAL">
+                <description></description>
+                <value>
+                    <String>GLOBAL</String>
+                </value>
+            </enumerator>
+            <enumerator name="PRIVATE">
+                <description></description>
+                <value>
+                    <String>PRIVATE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="LanguageType" type="String">
+            <description></description>
+            <enumerator name="ENGLISH">
+                <description></description>
+                <value>
+                    <String>ENGLISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="KANJI">
+                <description></description>
+                <value>
+                    <String>KANJI</String>
+                </value>
+            </enumerator>
+            <enumerator name="FRENCH">
+                <description></description>
+                <value>
+                    <String>FRENCH</String>
+                </value>
+            </enumerator>
+            <enumerator name="GERMAN">
+                <description></description>
+                <value>
+                    <String>GERMAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="SPANISH">
+                <description></description>
+                <value>
+                    <String>SPANISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="PORTUGUESE">
+                <description></description>
+                <value>
+                    <String>PORTUGUESE</String>
+                </value>
+            </enumerator>
+            <enumerator name="ITALIAN">
+                <description></description>
+                <value>
+                    <String>ITALIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="CHINESE_TRAD">
+                <description></description>
+                <value>
+                    <String>CHINESE_TRAD</String>
+                </value>
+            </enumerator>
+            <enumerator name="KOREAN">
+                <description></description>
+                <value>
+                    <String>KOREAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="CHINESE_SIMP">
+                <description></description>
+                <value>
+                    <String>CHINESE_SIMP</String>
+                </value>
+            </enumerator>
+            <enumerator name="THAI">
+                <description></description>
+                <value>
+                    <String>THAIK</String>
+                </value>
+            </enumerator>
+            <enumerator name="SWED">
+                <description></description>
+                <value>
+                    <String>SWED</String>
+                </value>
+            </enumerator>
+            <enumerator name="FINNISH">
+                <description></description>
+                <value>
+                    <String>FINNISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="DUTCH">
+                <description></description>
+                <value>
+                    <String>DUTCH</String>
+                </value>
+            </enumerator>
+            <enumerator name="MALAY">
+                <description></description>
+                <value>
+                    <String>MALAY</String>
+                </value>
+            </enumerator>
+            <enumerator name="RUSSIAN">
+                <description></description>
+                <value>
+                    <String>RUSSIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="GREEK">
+                <description></description>
+                <value>
+                    <String>GREEK</String>
+                </value>
+            </enumerator>
+            <enumerator name="POLISH">
+                <description></description>
+                <value>
+                    <String>POLISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="DANISH">
+                <description></description>
+                <value>
+                    <String>DANISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="FLEMISH">
+                <description></description>
+                <value>
+                    <String>FLEMISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="ESTONIAN">
+                <description></description>
+                <value>
+                    <String>ESTONIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="TURKISH">
+                <description></description>
+                <value>
+                    <String>TURKISH</String>
+                </value>
+            </enumerator>
+            <enumerator name="NORWEGIAN">
+                <description></description>
+                <value>
+                    <String>NORWEGIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="LATVIAN">
+                <description></description>
+                <value>
+                    <String>LATVIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="LITHUANIAN">
+                <description></description>
+                <value>
+                    <String>LITHUANIAN</String>
+                </value>
+            </enumerator>
+            <enumerator name="INDONESIAN">
+                <description></description>
+                <value>
+                    <String>INDONESIAN</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="CalendarOverridesOperationType" type="String">
+            <description></description>
+            <enumerator name="CDR_AND">
+                <description></description>
+                <value>
+                    <String>CDR_AND</String>
+                </value>
+            </enumerator>
+            <enumerator name="CDR_OR">
+                <description></description>
+                <value>
+                    <String>CDR_OR</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="DataPointsOrigin" type="String">
+            <description></description>
+            <enumerator name="AT_END_TIME">
+                <description></description>
+                <value>
+                    <String>AT_END_TIME</String>
+                </value>
+            </enumerator>
+            <enumerator name="AT_START_TIME">
+                <description></description>
+                <value>
+                    <String>AT_START_TIME</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+    </schema>
+</ServiceDefinition>

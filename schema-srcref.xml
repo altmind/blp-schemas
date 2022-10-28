@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="blp-schema.xsl"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="blp.srcref" version="1.0.0.20">
+    <service name="//blp/srcref" version="1.0.0.20"
+        authorizationService="//blp/apiauth">
+        <event name="SourceReferenceUpdates"
+            eventType="SourceReferenceUpdates">
+            <eventId>9999</eventId>
+            <eventId>10000</eventId>
+            <eventId>10</eventId>
+            <eventId>11</eventId>
+            <eventId>12</eventId>
+            <eventId>13</eventId>
+            <eventId>14</eventId>
+            <eventId>15</eventId>
+            <eventId>16</eventId>
+            <eventId>17</eventId>
+            <cacheable>true</cacheable>
+        </event>
+        <defaultServiceId>16131</defaultServiceId>
+        <publisherSupportsRecap>false</publisherSupportsRecap>
+        <authoritativeSourceSupportsRecap>true</authoritativeSourceSupportsRecap>
+        <isInfrastructureService>false</isInfrastructureService>
+        <isMetered>false</isMetered>
+        <appendMtrId>false</appendMtrId>
+        <persistentLastValueCache>false</persistentLastValueCache>
+    </service>
+    <schema>
+        <sequenceType name="SourceReferenceUpdates">
+            <description>Source Reference events:such as recap, condition code, ticksize, etc </description>
+            <element name="SOURCE_REF_EVENT_TYPE_RT" id="1"
+                type="SrcrefEventType" minOccurs="1" maxOccurs="1">
+                <description>This specifies the Event Type</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SOURCE_REF_EVENT_SUBTYPE_RT" id="2"
+                type="SrcrefEventSubType" minOccurs="1" maxOccurs="1">
+                <description>This specifies the Event SubType </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EID" id="3" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Entitlement</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="DESCRIPTIONS" id="10"
+                type="SourceReferenceDescriptions" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BROKER_CODES" id="11"
+                type="SourceReferenceBrokerCodes" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADE_COND_CODES" id="12"
+                type="SourceReferenceTradeConditionCodes" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="QUOTE_COND_CODES" id="13"
+                type="SourceReferenceQuoteConditionCodes" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MKTDEPTH_COND_CODES" id="14"
+                type="SourceReferenceMarketDepthConditionCodes" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADING_PERIODS" id="15"
+                type="SourceReferenceTradingPeriods" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADING_STATUSES" id="16"
+                type="SourceReferenceTradingStatuses" minOccurs="0"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLES" id="17" type="TickSizeTable"
+                minOccurs="0" maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceDescriptions">
+            <description> list of Source Reference Description events </description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="DESCRIPTION" id="30"
+                type="SourceReferenceDescription" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceBrokerCodes">
+            <description>list of SourceReferenceBrokerCode </description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BROKER_CODE" id="31"
+                type="SourceReferenceBrokerCode" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceTradeConditionCodes">
+            <description>list of SourceReferenceTradeConditionCode</description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADE_COND_CODE" id="32"
+                type="SourceReferenceTradeConditionCode" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceQuoteConditionCodes">
+            <description>list of SourceReferenceQuoteConditionCode</description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="QUOTE_COND_CODE" id="33"
+                type="SourceReferenceQuoteConditionCode" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceMarketDepthConditionCodes">
+            <description>list of SourceReferenceMarketDepthConditionCode</description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MKTDEPTH_COND_CODE" id="34"
+                type="SourceReferenceMarketDepthConditionCode" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceTradingPeriods">
+            <description>list of SourceReference Trading Period &quot;</description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADING_PERIOD" id="35"
+                type="SourceReferenceTradingPeriod" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceTradingStatuses">
+            <description>list of SourceReference Trading Status &quot;</description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="1"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TRADING_STATUS" id="36"
+                type="SourceReferenceTradingStatus" minOccurs="1"
+                maxOccurs="unbounded">
+                <description></description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="TickSizeTable">
+            <description>TickSizeTable</description>
+            <element name="FEED_SOURCE" id="50" type="String" minOccurs="0"
+                maxOccurs="1">
+                <description>Feed Source</description>
+                <fieldset tag="bpipe" name="MD.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_EID" id="51" type="Int32" minOccurs="0"
+                maxOccurs="1">
+                <description>Feed Entitlement</description>
+                <fieldset tag="bpipe" name="MD.Entitlement"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLE_IDENTIFIER_RT" id="52"
+                type="Int32" minOccurs="1" maxOccurs="1">
+                <description> The unique ID assigned to each tick size table </description>
+                <fieldset tag="bpipe" name="TickSize.Table.TableID"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLE_TYPE_RT" id="53"
+                type="TickSizeTableTypes" minOccurs="1" maxOccurs="1">
+                <description>The type of data in a tick size table </description>
+                <fieldset tag="bpipe" name="TickSize.Table.TableType"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLE_UPDATE_FREQ_RT" id="54"
+                type="UpdateFrequency" minOccurs="1" maxOccurs="1">
+                <description>An indication of the frequency at which the tick size can change</description>
+                <fieldset tag="bpipe" name="TickSize.Table.UpdateFrequency"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLE_FIELD_NAME_RT" id="55"
+                type="String" minOccurs="1" maxOccurs="1">
+                <description>The name of the field whose value is used to determine the tick size based on the values in each row of the table</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLE_PCT_FLD_NAME_RT" id="56"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>The name of the field whose value is used to determine the tick size when TickSizeTableRowsValueType is &quot;PERCENT&quot;</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TABLE_ROW" id="57"
+                type="TickSizeTableRow" minOccurs="1" maxOccurs="unbounded">
+                <description> one ticksize price band, including ticksize price type, ticksize value, low/high value range
+                  </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceDescription">
+            <description>maintain source and descriptive information </description>
+            <element name="LOCAL_SOURCE_OF_COMPOSITE_RT" id="58"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description> local source of composite source for lookup to condition code and broker,etc.
+                </description>
+                <fieldset tag="bpipe" name="Reference.Source.Locals"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="FEED_SOURCE_DES_RT" id="59" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description> The expanded name of the data contributor or exchange</description>
+                <fieldset tag="bpipe" name="Reference.Source.Name"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceBrokerCode">
+            <description>Reference event containing broker codes used by the source.          
+                SourceReferenceBrokerCode message provides the long name for broker codes used by a     
+                source</description>
+            <element name="BLOOMBERG_BROKER_CODE_RT" id="60" type="String"
+                minOccurs="1" maxOccurs="1">
+                <description>Bloomberg mnemonic for the broker code</description>
+                <fieldset tag="bpipe" name="BrokerCode.Bloomberg"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BLOOMBERG_BROKER_NAME_RT" id="61" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Name associated with the broker code</description>
+                <fieldset tag="bpipe" name="BrokerCode.Name"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceTradeConditionCode">
+            <description>Reference event containing trade condition information for the source</description>
+            <element name="BB_CONDITION_CODE_RT" id="63" type="String"
+                minOccurs="1" maxOccurs="1">
+                <description>This field contains the Bloomberg mnemonic(s) for special conditions on the trade These are condition codes as reflected on the Bloomberg terminal. For example, you can view IBM US Equity MPIS go for the valid condition codes and its definitions for that exchange</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.Bloomberg"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BB_STANDARD_CONDITION_CODE_RT" id="64"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg Condition Code</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.BCC"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BB_TRADE_CATEGORY_RT" id="65" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Trade Category</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.Category"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="ESMA_TRANSACTION_CODE_RT" id="66" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>ESMA Transaction Code</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.ESMA"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_1_TRADE_TYPE_RT" id="67" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Market Mechanism</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT1"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_2_TRADE_TYPE_RT" id="68" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Trading Mode</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT2"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.1_TRADE_TYPE_RT" id="69" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Transaction Category</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT3_1"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.2_TRADE_TYPE_RT" id="70" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Negotiated Transaction Indicator</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT3_2"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.3_TRADE_TYPE_RT" id="71" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Crossing Trade Indicator</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT3_3"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.4_TRADE_TYPE_RT" id="72" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Modification Indicator</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT3_4"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.5_TRADE_TYPE_RT" id="73" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Trade Condition Indicator</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT3_5"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.6_TRADE_TYPE_RT" id="94" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Ex/Cum Dividend Indicator</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT3_6"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_3.7_TRADE_TYPE_RT" id="95" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Off Book Automated Indicator</description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="MMT_LEVEL_4_TRADE_TYPE_RT" id="74" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>Publication Mode</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.MMT4"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CONDITION_CODE_SHORT_NAME_RT" id="75"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg short name for the condition</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.ShortName"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SOURCE_CONDITION_CODE_RT" id="76" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>This field contains the Source mnemonic(s) for special conditions on the trade This is the condition code sent from the exchange These condition codes will populate for example on the Canadian and Copenhagen Exchanges, but are not available for all exchanges</description>
+                <fieldset tag="bpipe" name="Trade.ConditionCode.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceQuoteConditionCode">
+            <description>Reference event containing bid/ask conditions for the source</description>
+            <element name="BB_CONDITION_CODE_RT" id="77" type="String"
+                minOccurs="1" maxOccurs="1">
+                <description>Bloomberg mnemonic for the quote condition</description>
+                <fieldset tag="bpipe" name="Quote.ConditionCode.Bloomberg"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BB_STANDARD_CONDITION_CODE_RT" id="78"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg condition code</description>
+                <fieldset tag="bpipe" name="Quote.ConditionCode.BCC"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CONDITION_CODE_SHORT_NAME_RT" id="79"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg short name for the quote condition</description>
+                <fieldset tag="bpipe" name="Quote.ConditionCode.ShortName"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SOURCE_CONDITION_CODE_RT" id="80" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description>This field contains the Provider assigned condition code mnemonic(s)</description>
+                <fieldset tag="bpipe" name="Quote.ConditionCode.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceMarketDepthConditionCode">
+            <description>Reference event containing bid/ask conditions on market depth messages for the source</description>
+            <element name="BB_CONDITION_CODE_RT" id="81" type="String"
+                minOccurs="1" maxOccurs="1">
+                <description>Bloomberg mnemonic for the  condition</description>
+                <fieldset tag="bpipe"
+                    name="MarketDepth.ConditionCode.Bloomberg"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="CONDITION_CODE_SHORT_NAME_RT" id="82"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg short name for the  condition code </description>
+                <fieldset tag="bpipe"
+                    name="MarketDepth.ConditionCode.ShortName"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="SOURCE_CONDITION_CODE_RT" id="83" type="String"
+                minOccurs="0" maxOccurs="1">
+                <description> This field contains the Provider assigned condition code mnemonic(s)</description>
+                <fieldset tag="bpipe" name="MarketDepth.ConditionCode.Source"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceTradingPeriod">
+            <description>Reference event containing Trading Period for the source</description>
+            <element name="BB_TRADING_PERIOD_MNEMONIC_RT" id="84"
+                type="String" minOccurs="1" maxOccurs="1">
+                <description>Bloomberg assigned mnemonic for the current trading period of a security. Periods are regular phases and some irregular phases of market activity.  During some periods only certain activity is allowed (order entry, trade reporting, etc). </description>
+                <fieldset tag="bpipe" name="Status.Security.Period.Bloomberg"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EQUIVALENT_BB_SIMP_SEC_STAT_RT" id="85"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg assigned simplified status mnemonic for the current market status of a security</description>
+                <fieldset tag="bpipe" name="Status.Security.Simplified"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BB_TRADING_PERIOD_SHORT_NAME_RT" id="86"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg short name for the current trading period of a security. Periods are regular phases and some irregular phases of market activity.  During some periods only certain activity is allowed (order entry, trade reporting, etc). </description>
+                <fieldset tag="bpipe" name="Status.Security.Period.ShortName"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="SourceReferenceTradingStatus">
+            <description>Reference event containing suspension conditions for a security on the source</description>
+            <element name="BB_TRADING_STATUS_MNEMONIC_RT" id="84"
+                type="String" minOccurs="1" maxOccurs="1">
+                <description>Bloomberg assigned mnemonic for the current trading status of a security </description>
+                <fieldset tag="bpipe" name="Status.Security.Bloomberg"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="EQUIVALENT_BB_SIMP_SEC_STAT_RT" id="85"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg assigned simplified status mnemonic for the current market status of a security</description>
+                <fieldset tag="bpipe" name="Status.Security.Simplified"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="BB_TRADING_STATUS_SHORT_NAME_RT" id="86"
+                type="String" minOccurs="0" maxOccurs="1">
+                <description>Bloomberg short name for the market status on a source </description>
+                <fieldset tag="bpipe" name="Status.Security.ShortName"/>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <sequenceType name="TickSizeTableRow">
+            <description> one row of Tick Size table </description>
+            <element name="TICK_SIZE_TABLE_PRICE_TYPE_RT" id="90"
+                type="TickSizeValueType" minOccurs="1" maxOccurs="1">
+                <description>The type of the tick size value. Either a &quot;value&quot; or a &quot;percent&quot; </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TBL_BAND_TICK_SIZE_RT" id="91"
+                type="Float32" minOccurs="1" maxOccurs="1">
+                <description>The tick size value used for the range [TICK_SIZE_TBL_BAND_LOWER_VAL_RT, TICK_SIZE_TBL_BAND_UPPER_VAL_RT if the range exist. Otherwise, the tick size value will be used globally.
+                 </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TBL_BAND_LOWER_VAL_RT" id="92"
+                type="Float32" minOccurs="0" maxOccurs="1">
+                <description> value that TICK_SIZE_TABLE_FIELD_NAME_RT must be greater than or equal to for this row. The data type of the value is defined by TICK_SIZE_TABLE_TYPE_RT </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+            <element name="TICK_SIZE_TBL_BAND_UPPER_VAL_RT" id="93"
+                type="Float32" minOccurs="0" maxOccurs="1">
+                <description>value that TICK_SIZE_TABLE_FIELD_NAME_RT must be less than for each row in the table The data type of the value is defined by TICK_SIZE_TABLE_TYPE_RT </description>
+                <cacheable>true</cacheable>
+                <cachedOnlyOnInitialPaint>false</cachedOnlyOnInitialPaint>
+            </element>
+        </sequenceType>
+        <enumerationType name="SrcrefEventType" type="String">
+            <description>Source Reference Events Types</description>
+            <enumerator name="DESCRIPTION">
+                <description>Source Reference Descripiton event</description>
+                <value>
+                    <String>DESCRIPTION</String>
+                </value>
+            </enumerator>
+            <enumerator name="BROKER_CODE">
+                <description>Source Reference Broker Code event</description>
+                <value>
+                    <String>BROKER_CODE</String>
+                </value>
+            </enumerator>
+            <enumerator name="TRADE_CONDITION_CODE">
+                <description>Source Reference Trade Condition Code</description>
+                <value>
+                    <String>TRADE_CONDITION_CODE</String>
+                </value>
+            </enumerator>
+            <enumerator name="QUOTE_CONDITION_CODE">
+                <description>Source Reference Quote Condition Code</description>
+                <value>
+                    <String>QUOTE_CONDITION_CODE</String>
+                </value>
+            </enumerator>
+            <enumerator name="MKTDEPTH_CONDITION_CODE">
+                <description>Source Reference MarketDepth ConditionCode</description>
+                <value>
+                    <String>MKTDEPTH_CONDITION_CODE</String>
+                </value>
+            </enumerator>
+            <enumerator name="TRADING_PERIOD">
+                <description>Source Reference Trading Period Code</description>
+                <value>
+                    <String>TRADING_PERIOD</String>
+                </value>
+            </enumerator>
+            <enumerator name="TRADING_STATUS">
+                <description>Source Reference Security Suspense Code</description>
+                <value>
+                    <String>TRADING_STATUS</String>
+                </value>
+            </enumerator>
+            <enumerator name="TICK_SIZE_TABLE">
+                <description>Tick Size Table</description>
+                <value>
+                    <String>TICK_SIZE_TABLE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="SrcrefEventSubType" type="String">
+            <description>SourceReferenceEvents SubType</description>
+            <enumerator name="INITPAINT">
+                <description>Initial paint</description>
+                <value>
+                    <String>INITPAINT</String>
+                </value>
+            </enumerator>
+            <enumerator name="REFRESH">
+                <description> daily refresh </description>
+                <value>
+                    <String>REFRESH</String>
+                </value>
+            </enumerator>
+            <enumerator name="UPDATE">
+                <description> intraday update</description>
+                <value>
+                    <String>UPDATE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="TickSizeTableTypes" type="String">
+            <description>Enumeration that specify the type of data in a tick size table</description>
+            <enumerator name="PRICE">
+                <description>The value of </description>
+                <value>
+                    <String>PRICE</String>
+                </value>
+            </enumerator>
+            <enumerator name="DAYS">
+                <description>Price data</description>
+                <value>
+                    <String>DAYS</String>
+                </value>
+            </enumerator>
+            <enumerator name="WEEKS">
+                <description>Price data</description>
+                <value>
+                    <String>WEEKS</String>
+                </value>
+            </enumerator>
+            <enumerator name="MONTHS">
+                <description>Price data</description>
+                <value>
+                    <String>MONTHS</String>
+                </value>
+            </enumerator>
+            <enumerator name="YEARS">
+                <description>Price data</description>
+                <value>
+                    <String>YEARS</String>
+                </value>
+            </enumerator>
+            <enumerator name="DATE">
+                <description>Price data</description>
+                <value>
+                    <String>DATE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="UpdateFrequency" type="String">
+            <description>Enumeration that specifies the frequency with which the tick size can change</description>
+            <enumerator name="REALTIME">
+                <description>The value of the tick size can change with every tick</description>
+                <value>
+                    <String>REALTIME</String>
+                </value>
+            </enumerator>
+            <enumerator name="DAILY">
+                <description>The value of the tick size typically changes daily or less frequently  The tick size is either manually input from exchange provided information or is based on the value of a field that normally changes once a day Note that although  the update freuqncy is normally once a day or less frequently. it is possible for the value to change at any time if the value of the field changes or an exchange issues an update.</description>
+                <value>
+                    <String>DAILY</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+        <enumerationType name="TickSizeValueType" type="String">
+            <description>Enumeration that specifies the type of data in a tick size table</description>
+            <enumerator name="ABSOLUTE">
+                <description>The value of </description>
+                <value>
+                    <String>ABSOLUTE</String>
+                </value>
+            </enumerator>
+            <enumerator name="PERCENTAGE">
+                <description>Price data</description>
+                <value>
+                    <String>PERCENTAGE</String>
+                </value>
+            </enumerator>
+        </enumerationType>
+    </schema>
+</ServiceDefinition>
