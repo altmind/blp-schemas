@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         .blk {
+         border-left: 3px dashed silver;
+         margin: 10px 5px 10px 10px;
+         
+         padding-left: 10px;
+         display: inline-block;
+         }
+         .paramtbl {
+         /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+         border-collapse: collapse;
+         margin: 5px 5px 5px 20px;
+         width:95%;
+         box-sizing: border-box;
+         }
+         .paramtbl thead td {
+         
+         background-color: rgba(0, 0, 0, 0.3);
+         }
+         
+         .paramtbl  td {
+         border: 1px solid rgba(0, 0, 0, 0.7);
+         padding: 6px;
+         transition: 0.5s background-color linear;
+         }
+         .paramtbl  td:hover {
+         background-color: rgba(30, 30, 230, 0.05);
+         transition: 0.5s background-color linear;
+         }
+         .fieldname {
+         background-color: yellow;
+         padding-left: 30px;
+         font-weight: bold;
+         font-style: italic;
+         }
+         .fieldtype{
+         border: 2px dashed silver;
+         background-color: rgba(60,60,255,0.2)
+         }
+         
+      </style>
+   </head>
+</html>
+<body>
+   <h1> Service: blp.pagedata
+      (//blp/pagedata)
+      
+   </h1>
+   <h2>Operations:</h2>
+   <h2>Events:</h2>
+   <h3>PageUpdate</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">numRows</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">numCols</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">rowUpdate</td>
+         <td>RowUpdate</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">rowNum</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">spanUpdate</td>
+                  <td>SpanUpdate</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">startCol</td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">length</td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">text</td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">attr</td>
+                           <td>Attribute</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                              <br></br>
+                              <b>Enum: </b>Attribute(String)
+                              <br></br>
+                              <ul>
+                                 <li>BLINK</li>
+                                 <li>DOUBLEWIDTH</li>
+                                 <li>INTENSIFY</li>
+                                 <li>POINTANDCLICK</li>
+                                 <li>REVERSE</li>
+                                 <li>UNDERLINE</li>
+                                 <li>OVERLINE</li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">fgColor</td>
+                           <td>Color</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                              <br></br>
+                              <b>Enum: </b>Color(String)
+                              <br></br>
+                              <ul>
+                                 <li>AMBER</li>
+                                 <li>BLACK</li>
+                                 <li>DARKBLUE</li>
+                                 <li>DARKGREEN</li>
+                                 <li>DEEPBLUE</li>
+                                 <li>FLASHINGBLUE</li>
+                                 <li>FLASHINGRED</li>
+                                 <li>GRAY</li>
+                                 <li>LIGHTBLUE</li>
+                                 <li>LIGHTGREEN</li>
+                                 <li>ORANGE</li>
+                                 <li>PINK</li>
+                                 <li>RED</li>
+                                 <li>VIOLET</li>
+                                 <li>WHITE</li>
+                                 <li>YELLOW</li>
+                                 <li>CASPERGREY</li>
+                                 <li>CERULIANBLUE</li>
+                                 <li>CHARCOAL</li>
+                                 <li>DARKAMBER</li>
+                                 <li>DARKARMYGREEN</li>
+                                 <li>DARKGREY</li>
+                                 <li>DARKMAGENTA</li>
+                                 <li>DARKNEUTRALGREY</li>
+                                 <li>DARKRED</li>
+                                 <li>DIMBLUE</li>
+                                 <li>DOWNTOWNRED</li>
+                                 <li>DUSK</li>
+                                 <li>GOLD</li>
+                                 <li>GRIME</li>
+                                 <li>HONEYAMBER</li>
+                                 <li>HYPERLINKBLUE</li>
+                                 <li>LIGHTAMBER</li>
+                                 <li>MAUVE</li>
+                                 <li>MEDIUMBLUE</li>
+                                 <li>MIDNIGHT</li>
+                                 <li>NEUTRALGREY</li>
+                                 <li>NOON</li>
+                                 <li>OFFWHITE</li>
+                                 <li>OLIVE</li>
+                                 <li>PALEBLUE</li>
+                                 <li>PRIMARYBLUE</li>
+                                 <li>PUMPKIN</li>
+                                 <li>PURPLE</li>
+                                 <li>SAPPHIRE</li>
+                                 <li>SEABLUE</li>
+                                 <li>SKY</li>
+                                 <li>SMOKEGREY</li>
+                                 <li>SOOT</li>
+                                 <li>SUBMARINE</li>
+                                 <li>SUPERGREY</li>
+                                 <li>TAFFY</li>
+                                 <li>TRUEBLUE</li>
+                                 <li>TRUEGREEN</li>
+                                 <li>TRUERED</li>
+                                 <li>UPTOWNGREEN</li>
+                                 <li>GREEN</li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">bgColor</td>
+                           <td>Color</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                              <br></br>
+                              <b>Enum: </b>Color(String)
+                              <br></br>
+                              <ul>
+                                 <li>AMBER</li>
+                                 <li>BLACK</li>
+                                 <li>DARKBLUE</li>
+                                 <li>DARKGREEN</li>
+                                 <li>DEEPBLUE</li>
+                                 <li>FLASHINGBLUE</li>
+                                 <li>FLASHINGRED</li>
+                                 <li>GRAY</li>
+                                 <li>LIGHTBLUE</li>
+                                 <li>LIGHTGREEN</li>
+                                 <li>ORANGE</li>
+                                 <li>PINK</li>
+                                 <li>RED</li>
+                                 <li>VIOLET</li>
+                                 <li>WHITE</li>
+                                 <li>YELLOW</li>
+                                 <li>CASPERGREY</li>
+                                 <li>CERULIANBLUE</li>
+                                 <li>CHARCOAL</li>
+                                 <li>DARKAMBER</li>
+                                 <li>DARKARMYGREEN</li>
+                                 <li>DARKGREY</li>
+                                 <li>DARKMAGENTA</li>
+                                 <li>DARKNEUTRALGREY</li>
+                                 <li>DARKRED</li>
+                                 <li>DIMBLUE</li>
+                                 <li>DOWNTOWNRED</li>
+                                 <li>DUSK</li>
+                                 <li>GOLD</li>
+                                 <li>GRIME</li>
+                                 <li>HONEYAMBER</li>
+                                 <li>HYPERLINKBLUE</li>
+                                 <li>LIGHTAMBER</li>
+                                 <li>MAUVE</li>
+                                 <li>MEDIUMBLUE</li>
+                                 <li>MIDNIGHT</li>
+                                 <li>NEUTRALGREY</li>
+                                 <li>NOON</li>
+                                 <li>OFFWHITE</li>
+                                 <li>OLIVE</li>
+                                 <li>PALEBLUE</li>
+                                 <li>PRIMARYBLUE</li>
+                                 <li>PUMPKIN</li>
+                                 <li>PURPLE</li>
+                                 <li>SAPPHIRE</li>
+                                 <li>SEABLUE</li>
+                                 <li>SKY</li>
+                                 <li>SMOKEGREY</li>
+                                 <li>SOOT</li>
+                                 <li>SUBMARINE</li>
+                                 <li>SUPERGREY</li>
+                                 <li>TAFFY</li>
+                                 <li>TRUEBLUE</li>
+                                 <li>TRUEGREEN</li>
+                                 <li>TRUERED</li>
+                                 <li>UPTOWNGREEN</li>
+                                 <li>GREEN</li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">Eids</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">Eids</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+   <h3>RowUpdate</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">rowNum</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">spanUpdate</td>
+         <td>SpanUpdate</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">startCol</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">length</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">text</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">attr</td>
+                  <td>Attribute</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>Attribute(String)
+                     <br></br>
+                     <ul>
+                        <li>BLINK</li>
+                        <li>DOUBLEWIDTH</li>
+                        <li>INTENSIFY</li>
+                        <li>POINTANDCLICK</li>
+                        <li>REVERSE</li>
+                        <li>UNDERLINE</li>
+                        <li>OVERLINE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">fgColor</td>
+                  <td>Color</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>Color(String)
+                     <br></br>
+                     <ul>
+                        <li>AMBER</li>
+                        <li>BLACK</li>
+                        <li>DARKBLUE</li>
+                        <li>DARKGREEN</li>
+                        <li>DEEPBLUE</li>
+                        <li>FLASHINGBLUE</li>
+                        <li>FLASHINGRED</li>
+                        <li>GRAY</li>
+                        <li>LIGHTBLUE</li>
+                        <li>LIGHTGREEN</li>
+                        <li>ORANGE</li>
+                        <li>PINK</li>
+                        <li>RED</li>
+                        <li>VIOLET</li>
+                        <li>WHITE</li>
+                        <li>YELLOW</li>
+                        <li>CASPERGREY</li>
+                        <li>CERULIANBLUE</li>
+                        <li>CHARCOAL</li>
+                        <li>DARKAMBER</li>
+                        <li>DARKARMYGREEN</li>
+                        <li>DARKGREY</li>
+                        <li>DARKMAGENTA</li>
+                        <li>DARKNEUTRALGREY</li>
+                        <li>DARKRED</li>
+                        <li>DIMBLUE</li>
+                        <li>DOWNTOWNRED</li>
+                        <li>DUSK</li>
+                        <li>GOLD</li>
+                        <li>GRIME</li>
+                        <li>HONEYAMBER</li>
+                        <li>HYPERLINKBLUE</li>
+                        <li>LIGHTAMBER</li>
+                        <li>MAUVE</li>
+                        <li>MEDIUMBLUE</li>
+                        <li>MIDNIGHT</li>
+                        <li>NEUTRALGREY</li>
+                        <li>NOON</li>
+                        <li>OFFWHITE</li>
+                        <li>OLIVE</li>
+                        <li>PALEBLUE</li>
+                        <li>PRIMARYBLUE</li>
+                        <li>PUMPKIN</li>
+                        <li>PURPLE</li>
+                        <li>SAPPHIRE</li>
+                        <li>SEABLUE</li>
+                        <li>SKY</li>
+                        <li>SMOKEGREY</li>
+                        <li>SOOT</li>
+                        <li>SUBMARINE</li>
+                        <li>SUPERGREY</li>
+                        <li>TAFFY</li>
+                        <li>TRUEBLUE</li>
+                        <li>TRUEGREEN</li>
+                        <li>TRUERED</li>
+                        <li>UPTOWNGREEN</li>
+                        <li>GREEN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bgColor</td>
+                  <td>Color</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>Color(String)
+                     <br></br>
+                     <ul>
+                        <li>AMBER</li>
+                        <li>BLACK</li>
+                        <li>DARKBLUE</li>
+                        <li>DARKGREEN</li>
+                        <li>DEEPBLUE</li>
+                        <li>FLASHINGBLUE</li>
+                        <li>FLASHINGRED</li>
+                        <li>GRAY</li>
+                        <li>LIGHTBLUE</li>
+                        <li>LIGHTGREEN</li>
+                        <li>ORANGE</li>
+                        <li>PINK</li>
+                        <li>RED</li>
+                        <li>VIOLET</li>
+                        <li>WHITE</li>
+                        <li>YELLOW</li>
+                        <li>CASPERGREY</li>
+                        <li>CERULIANBLUE</li>
+                        <li>CHARCOAL</li>
+                        <li>DARKAMBER</li>
+                        <li>DARKARMYGREEN</li>
+                        <li>DARKGREY</li>
+                        <li>DARKMAGENTA</li>
+                        <li>DARKNEUTRALGREY</li>
+                        <li>DARKRED</li>
+                        <li>DIMBLUE</li>
+                        <li>DOWNTOWNRED</li>
+                        <li>DUSK</li>
+                        <li>GOLD</li>
+                        <li>GRIME</li>
+                        <li>HONEYAMBER</li>
+                        <li>HYPERLINKBLUE</li>
+                        <li>LIGHTAMBER</li>
+                        <li>MAUVE</li>
+                        <li>MEDIUMBLUE</li>
+                        <li>MIDNIGHT</li>
+                        <li>NEUTRALGREY</li>
+                        <li>NOON</li>
+                        <li>OFFWHITE</li>
+                        <li>OLIVE</li>
+                        <li>PALEBLUE</li>
+                        <li>PRIMARYBLUE</li>
+                        <li>PUMPKIN</li>
+                        <li>PURPLE</li>
+                        <li>SAPPHIRE</li>
+                        <li>SEABLUE</li>
+                        <li>SKY</li>
+                        <li>SMOKEGREY</li>
+                        <li>SOOT</li>
+                        <li>SUBMARINE</li>
+                        <li>SUPERGREY</li>
+                        <li>TAFFY</li>
+                        <li>TRUEBLUE</li>
+                        <li>TRUEGREEN</li>
+                        <li>TRUERED</li>
+                        <li>UPTOWNGREEN</li>
+                        <li>GREEN</li>
+                     </ul>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">Eids</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+</body>

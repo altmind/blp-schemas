@@ -1,0 +1,2750 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         .blk {
+         border-left: 3px dashed silver;
+         margin: 10px 5px 10px 10px;
+         
+         padding-left: 10px;
+         display: inline-block;
+         }
+         .paramtbl {
+         /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+         border-collapse: collapse;
+         margin: 5px 5px 5px 20px;
+         width:95%;
+         box-sizing: border-box;
+         }
+         .paramtbl thead td {
+         
+         background-color: rgba(0, 0, 0, 0.3);
+         }
+         
+         .paramtbl  td {
+         border: 1px solid rgba(0, 0, 0, 0.7);
+         padding: 6px;
+         transition: 0.5s background-color linear;
+         }
+         .paramtbl  td:hover {
+         background-color: rgba(30, 30, 230, 0.05);
+         transition: 0.5s background-color linear;
+         }
+         .fieldname {
+         background-color: yellow;
+         padding-left: 30px;
+         font-weight: bold;
+         font-style: italic;
+         }
+         .fieldtype{
+         border: 2px dashed silver;
+         background-color: rgba(60,60,255,0.2)
+         }
+         
+      </style>
+   </head>
+</html>
+<body>
+   <h1> Service: blp.refdata
+      (//blp/refdata)
+      
+   </h1>
+   <h2>Operations:</h2>
+   <h3>IntradayBarDateTimeChoiceRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">security</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">eventType</td>
+         <td>BarEventType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>BarEventType(String)
+            <br></br>
+            <ul>
+               <li>TRADE</li>
+               <li>BID</li>
+               <li>ASK</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">interval</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">dateTimeInfo</td>
+         <td>DateTimeInfo</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>choice of setting start end datetime or list start datetimes and duration </pre>
+            </blockquote>
+            <h4 class="fieldtype">Choice of:</h4>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">dateTimeRange</td>
+                  <td>StartEndDateInterval</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>provides start/end datetime</pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">startDateTime</td>
+                           <td>Datetime</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">endDateTime</td>
+                           <td>Datetime</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">startDateDuration</td>
+                  <td>StartDateRangeDuration</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>provides array of start datetime and duration for every day</pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">rangeStartDateTimeList</td>
+                           <td>Datetime</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">duration</td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">gapFillInitialBar</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentNormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentAbnormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentSplit</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentFollowDPDF</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPoints</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPointsOrigin</td>
+         <td>DataPointsOrigin</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>DataPointsOrigin(String)
+            <br></br>
+            <ul>
+               <li>AT_END_TIME</li>
+               <li>AT_START_TIME</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">intervalHasSeconds</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>flag that indicates that value of interval is in seconds</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>PingRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>BeqsRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">screenName</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">screenType</td>
+         <td>ScreenValues</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>ScreenValues(String)
+            <br></br>
+            <ul>
+               <li>GLOBAL</li>
+               <li>PRIVATE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">languageId</td>
+         <td>LanguageType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>LanguageType(String)
+            <br></br>
+            <ul>
+               <li>ENGLISH</li>
+               <li>KANJI</li>
+               <li>FRENCH</li>
+               <li>GERMAN</li>
+               <li>SPANISH</li>
+               <li>PORTUGUESE</li>
+               <li>ITALIAN</li>
+               <li>CHINESE_TRAD</li>
+               <li>KOREAN</li>
+               <li>CHINESE_SIMP</li>
+               <li>THAI = THAIK</li>
+               <li>SWED</li>
+               <li>FINNISH</li>
+               <li>DUTCH</li>
+               <li>MALAY</li>
+               <li>RUSSIAN</li>
+               <li>GREEK</li>
+               <li>POLISH</li>
+               <li>DANISH</li>
+               <li>FLEMISH</li>
+               <li>ESTONIAN</li>
+               <li>TURKISH</li>
+               <li>NORWEGIAN</li>
+               <li>LATVIAN</li>
+               <li>LITHUANIAN</li>
+               <li>INDONESIAN</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">Group</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">pxnum</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Optional Pricing Number</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>PortfolioDataRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">securities</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">fields</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startSequenceNumber</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>ReferenceDataSlowMtgeRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">securities</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">fields</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnFormattedValue</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startSequenceNumber</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">useUTCTime</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">tableOverrides</td>
+         <td>FieldOverrideTable</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">row</td>
+                  <td>FieldOverrideRow</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">value</td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnNullValue</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">gfutOption</td>
+         <td>GfutOption</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">includeSerialContracts</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">querySnapshot</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>CustomEqsRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">securities</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">fields</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">currency</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startSequenceNumber</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>ReferenceDataSlowRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">securities</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">fields</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnFormattedValue</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startSequenceNumber</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">useUTCTime</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">tableOverrides</td>
+         <td>FieldOverrideTable</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">row</td>
+                  <td>FieldOverrideRow</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">value</td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnNullValue</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">gfutOption</td>
+         <td>GfutOption</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">includeSerialContracts</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">querySnapshot</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>ReferenceDataRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">securities</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">fields</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnFormattedValue</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startSequenceNumber</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">useUTCTime</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">tableOverrides</td>
+         <td>FieldOverrideTable</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">row</td>
+                  <td>FieldOverrideRow</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">value</td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnNullValue</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">gfutOption</td>
+         <td>GfutOption</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">includeSerialContracts</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">querySnapshot</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>HistoricalDataRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">securities</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">fields</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startDate</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">endDate</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">periodicityAdjustment</td>
+         <td>PeriodicityAdjustmentType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>PeriodicityAdjustmentType(String)
+            <br></br>
+            <ul>
+               <li>ACTUAL</li>
+               <li>CALENDAR</li>
+               <li>FISCAL</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">periodicitySelection</td>
+         <td>PeriodicitySelectionType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>PeriodicitySelectionType(String)
+            <br></br>
+            <ul>
+               <li>DAILY</li>
+               <li>WEEKLY</li>
+               <li>MONTHLY</li>
+               <li>QUARTERLY</li>
+               <li>SEMI_ANNUALLY</li>
+               <li>YEARLY</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">currency</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrideOption</td>
+         <td>OverrideOption</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>OverrideOption(String)
+            <br></br>
+            <ul>
+               <li>OVERRIDE_OPTION_CLOSE</li>
+               <li>OVERRIDE_OPTION_GPA</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">pricingOption</td>
+         <td>PricingOption</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>PricingOption(String)
+            <br></br>
+            <ul>
+               <li>PRICING_OPTION_PRICE</li>
+               <li>PRICING_OPTION_YIELD</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">nonTradingDayFillOption</td>
+         <td>NonTradingDayFillOption</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>NonTradingDayFillOption(String)
+            <br></br>
+            <ul>
+               <li>NON_TRADING_WEEKDAYS</li>
+               <li>ALL_CALENDAR_DAYS</li>
+               <li>ACTIVE_DAYS_ONLY</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">nonTradingDayFillMethod</td>
+         <td>NonTradingDayFillMethod</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>NonTradingDayFillMethod(String)
+            <br></br>
+            <ul>
+               <li>PREVIOUS_VALUE</li>
+               <li>NIL_VALUE</li>
+               <li>NEXTDAY_VALUE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPoints</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnRelativeDate</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">overrides</td>
+         <td>FieldOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">value</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startSequenceNumber</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentNormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentAbnormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentSplit</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentFollowDPDF</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">calendarCodeOverride</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">calendarOverridesInfo</td>
+         <td>CalendarOverridesInfo</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">calendarOverrides</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">calendarOverridesOperation</td>
+                  <td>CalendarOverridesOperationType</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CalendarOverridesOperationType(String)
+                     <br></br>
+                     <ul>
+                        <li>CDR_AND</li>
+                        <li>CDR_OR</li>
+                     </ul>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnDataIndicator</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnFundamentalPeriodicDateFormat</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>IntradayBarRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">security</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">eventType</td>
+         <td>EventType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>EventType(String)
+            <br></br>
+            <ul>
+               <li>TRADE</li>
+               <li>BID</li>
+               <li>ASK</li>
+               <li>BID_BEST</li>
+               <li>ASK_BEST</li>
+               <li>BID_YIELD</li>
+               <li>ASK_YIELD</li>
+               <li>MID_PRICE</li>
+               <li>AT_TRADE</li>
+               <li>BEST_BID</li>
+               <li>BEST_ASK</li>
+               <li>SETTLE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startDateTime</td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">endDateTime</td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">interval</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">gapFillInitialBar</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentNormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentAbnormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentSplit</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentFollowDPDF</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPoints</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPointsOrigin</td>
+         <td>DataPointsOrigin</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>DataPointsOrigin(String)
+            <br></br>
+            <ul>
+               <li>AT_END_TIME</li>
+               <li>AT_START_TIME</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">intervalHasSeconds</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>flag that indicates that value of interval is in seconds</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h3>IntradayTickRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">security</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">startDateTime</td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">endDateTime</td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">eventTypes</td>
+         <td>EventType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>EventType(String)
+            <br></br>
+            <ul>
+               <li>TRADE</li>
+               <li>BID</li>
+               <li>ASK</li>
+               <li>BID_BEST</li>
+               <li>ASK_BEST</li>
+               <li>BID_YIELD</li>
+               <li>ASK_YIELD</li>
+               <li>MID_PRICE</li>
+               <li>AT_TRADE</li>
+               <li>BEST_BID</li>
+               <li>BEST_ASK</li>
+               <li>SETTLE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeConditionCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeNonPlottableEvents</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeExchangeCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">returnEids</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeBrokerCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeRpsCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPoints</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeBicMicCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">forcedDelay</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeSpreadPrice</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeYield</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeActionCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeIndicatorCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeTradeTime</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeUpfrontPrice</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeEqRefPrice</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentNormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Adjust historical pricing to reflect: Regular Cash, Interim, 1st Interim, 2nd Interim,
+                  3rd Interim, 4th
+                  Interim, 5th Interim, Income, Estimated, Partnership Distribution, Final, Interest
+                  on Capital, 
+                  Distribution, Prorated.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentAbnormal</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Adjust historical pricing to reflect: Special Cash, Liquidation, Capital Gains, Long-Term
+                  Capital Gains, 
+                  Short-Term Capital Gains, Memorial, Return of Capital, Rights Redemption, Miscellaneous,
+                  Return 
+                  Premium, Preferred Rights Redemption, Proceeds/Rights, Proceeds/Shares, Proceeds/Warrants.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentSplit</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Adjust historical pricing and/or volume to reflect: Spin-Offs, Stock Splits/Consolidations,
+                  Stock 
+                  Dividend/Bonus, Rights Offerings/Entitlement.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">adjustmentFollowDPDF</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Adjust historical pricing and/or volume as per user's DPDF screen</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeClientSpecificFields</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve custom fields for new XDF source for currency trades: 
+                  ClientDomicile
+                  ClientSegment
+                  ClientSubsegment
+                  ClientIdentifier
+                  Direction
+                  TradeId
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeTradeId</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve unique identifier for a trade event.                
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxDataPointsOrigin</td>
+         <td>DataPointsOrigin</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>DataPointsOrigin(String)
+            <br></br>
+            <ul>
+               <li>AT_END_TIME</li>
+               <li>AT_START_TIME</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">filter</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>format example: "size&gt;10 &amp;&amp; cc=ob"</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeTradeDate</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve the date of the trade.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeDirtyTicks</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve ticks that had been subsequently cancelled or amended.  Return
+                  cancelledFlag, correctionFlag, and nativeTradeId.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeSubSecondTimestamps</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve sub-second timestamps - where available 
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeBloombergStandardConditionCodes</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve the Bloomberg Standard Condition Codes. Return bloombergStandardConditionCodes.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeMarketModelTypology</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve the Market Model Typology trade type, where available. Return marketModelTypology.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeNativeTradeId</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve he Trade Aggressor. Return tradeAggressor.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeAggressor</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to the Market Model Typology trade type, where available. Return marketModelTypology.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeSecurityStatusEvents</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve trading phase, suspension status and auction status changes. Return
+                  tradingPhase, suspensionState, auctionState and simplifiedState.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">includeESMATradeFlag</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>option to retrieve ESMA Trade flag. Return ESMATradeFlag
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">filters</td>
+         <td>FDMFilterType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>define intraday tick request FDM filter.
+                  
+               </pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">filterName</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>name of the filter: have to be unique, e.g. "filter_0"</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">fieldId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>ticker plant FDM field ID string:e.g. "EVENT_PRICE"</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">filterRule</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>rule apply on this field: e.g. "[10.5, 11.5]"</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <h2>Events:</h2>
+</body>

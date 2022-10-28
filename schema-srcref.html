@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         .blk {
+         border-left: 3px dashed silver;
+         margin: 10px 5px 10px 10px;
+         
+         padding-left: 10px;
+         display: inline-block;
+         }
+         .paramtbl {
+         /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+         border-collapse: collapse;
+         margin: 5px 5px 5px 20px;
+         width:95%;
+         box-sizing: border-box;
+         }
+         .paramtbl thead td {
+         
+         background-color: rgba(0, 0, 0, 0.3);
+         }
+         
+         .paramtbl  td {
+         border: 1px solid rgba(0, 0, 0, 0.7);
+         padding: 6px;
+         transition: 0.5s background-color linear;
+         }
+         .paramtbl  td:hover {
+         background-color: rgba(30, 30, 230, 0.05);
+         transition: 0.5s background-color linear;
+         }
+         .fieldname {
+         background-color: yellow;
+         padding-left: 30px;
+         font-weight: bold;
+         font-style: italic;
+         }
+         .fieldtype{
+         border: 2px dashed silver;
+         background-color: rgba(60,60,255,0.2)
+         }
+         
+      </style>
+   </head>
+</html>
+<body>
+   <h1> Service: blp.srcref
+      (//blp/srcref)
+      
+   </h1>
+   <h2>Operations:</h2>
+   <h2>Events:</h2>
+   <h3>SourceReferenceUpdates</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">SOURCE_REF_EVENT_TYPE_RT (field #1) </td>
+         <td>SrcrefEventType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This specifies the Event Type</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>SrcrefEventType(String)
+            <br></br>
+            <ul>
+               <li>DESCRIPTION</li>
+               <li>BROKER_CODE</li>
+               <li>TRADE_CONDITION_CODE</li>
+               <li>QUOTE_CONDITION_CODE</li>
+               <li>MKTDEPTH_CONDITION_CODE</li>
+               <li>TRADING_PERIOD</li>
+               <li>TRADING_STATUS</li>
+               <li>TICK_SIZE_TABLE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">SOURCE_REF_EVENT_SUBTYPE_RT (field #2) </td>
+         <td>SrcrefEventSubType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This specifies the Event SubType </pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>SrcrefEventSubType(String)
+            <br></br>
+            <ul>
+               <li>INITPAINT</li>
+               <li>REFRESH</li>
+               <li>UPDATE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #3) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Entitlement</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">DESCRIPTIONS (field #10) </td>
+         <td>SourceReferenceDescriptions</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">DESCRIPTION (field #30) </td>
+                  <td>SourceReferenceDescription</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">LOCAL_SOURCE_OF_COMPOSITE_RT (field #58) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> local source of composite source for lookup to condition code and broker,etc.
+                                    
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_SOURCE_DES_RT (field #59) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> The expanded name of the data contributor or exchange</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">BROKER_CODES (field #11) </td>
+         <td>SourceReferenceBrokerCodes</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">BROKER_CODE (field #31) </td>
+                  <td>SourceReferenceBrokerCode</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">BLOOMBERG_BROKER_CODE_RT (field #60) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg mnemonic for the broker code</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BLOOMBERG_BROKER_NAME_RT (field #61) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Name associated with the broker code</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">TRADE_COND_CODES (field #12) </td>
+         <td>SourceReferenceTradeConditionCodes</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TRADE_COND_CODE (field #32) </td>
+                  <td>SourceReferenceTradeConditionCode</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">BB_CONDITION_CODE_RT (field #63) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>This field contains the Bloomberg mnemonic(s) for special conditions on the trade
+                                    These are condition codes as reflected on the Bloomberg terminal. For example, you
+                                    can view IBM US Equity MPIS go for the valid condition codes and its definitions for
+                                    that exchange
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BB_STANDARD_CONDITION_CODE_RT (field #64) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg Condition Code</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BB_TRADE_CATEGORY_RT (field #65) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Trade Category</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ESMA_TRANSACTION_CODE_RT (field #66) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>ESMA Transaction Code</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_1_TRADE_TYPE_RT (field #67) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Market Mechanism</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_2_TRADE_TYPE_RT (field #68) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Trading Mode</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.1_TRADE_TYPE_RT (field #69) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Transaction Category</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.2_TRADE_TYPE_RT (field #70) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Negotiated Transaction Indicator</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.3_TRADE_TYPE_RT (field #71) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Crossing Trade Indicator</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.4_TRADE_TYPE_RT (field #72) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Modification Indicator</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.5_TRADE_TYPE_RT (field #73) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Trade Condition Indicator</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.6_TRADE_TYPE_RT (field #94) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Ex/Cum Dividend Indicator</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_3.7_TRADE_TYPE_RT (field #95) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Off Book Automated Indicator</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MMT_LEVEL_4_TRADE_TYPE_RT (field #74) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Publication Mode</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">CONDITION_CODE_SHORT_NAME_RT (field #75) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg short name for the condition</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">SOURCE_CONDITION_CODE_RT (field #76) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>This field contains the Source mnemonic(s) for special conditions on the trade This
+                                    is the condition code sent from the exchange These condition codes will populate for
+                                    example on the Canadian and Copenhagen Exchanges, but are not available for all exchanges
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">QUOTE_COND_CODES (field #13) </td>
+         <td>SourceReferenceQuoteConditionCodes</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">QUOTE_COND_CODE (field #33) </td>
+                  <td>SourceReferenceQuoteConditionCode</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">BB_CONDITION_CODE_RT (field #77) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg mnemonic for the quote condition</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BB_STANDARD_CONDITION_CODE_RT (field #78) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg condition code</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">CONDITION_CODE_SHORT_NAME_RT (field #79) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg short name for the quote condition</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">SOURCE_CONDITION_CODE_RT (field #80) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>This field contains the Provider assigned condition code mnemonic(s)</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">MKTDEPTH_COND_CODES (field #14) </td>
+         <td>SourceReferenceMarketDepthConditionCodes</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">MKTDEPTH_COND_CODE (field #34) </td>
+                  <td>SourceReferenceMarketDepthConditionCode</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">BB_CONDITION_CODE_RT (field #81) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg mnemonic for the  condition</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">CONDITION_CODE_SHORT_NAME_RT (field #82) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg short name for the  condition code </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">SOURCE_CONDITION_CODE_RT (field #83) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> This field contains the Provider assigned condition code mnemonic(s)</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">TRADING_PERIODS (field #15) </td>
+         <td>SourceReferenceTradingPeriods</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TRADING_PERIOD (field #35) </td>
+                  <td>SourceReferenceTradingPeriod</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">BB_TRADING_PERIOD_MNEMONIC_RT (field #84) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg assigned mnemonic for the current trading period of a security. Periods
+                                    are regular phases and some irregular phases of market activity.  During some periods
+                                    only certain activity is allowed (order entry, trade reporting, etc). 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">EQUIVALENT_BB_SIMP_SEC_STAT_RT (field #85) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg assigned simplified status mnemonic for the current market status of a security</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BB_TRADING_PERIOD_SHORT_NAME_RT (field #86) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg short name for the current trading period of a security. Periods are regular
+                                    phases and some irregular phases of market activity.  During some periods only certain
+                                    activity is allowed (order entry, trade reporting, etc). 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">TRADING_STATUSES (field #16) </td>
+         <td>SourceReferenceTradingStatuses</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TRADING_STATUS (field #36) </td>
+                  <td>SourceReferenceTradingStatus</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">BB_TRADING_STATUS_MNEMONIC_RT (field #84) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg assigned mnemonic for the current trading status of a security </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">EQUIVALENT_BB_SIMP_SEC_STAT_RT (field #85) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg assigned simplified status mnemonic for the current market status of a security</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BB_TRADING_STATUS_SHORT_NAME_RT (field #86) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg short name for the market status on a source </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">TICK_SIZE_TABLES (field #17) </td>
+         <td>TickSizeTable</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #50) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Source</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID (field #51) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Feed Entitlement</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TICK_SIZE_TABLE_IDENTIFIER_RT (field #52) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre> The unique ID assigned to each tick size table </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TICK_SIZE_TABLE_TYPE_RT (field #53) </td>
+                  <td>TickSizeTableTypes</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The type of data in a tick size table </pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>TickSizeTableTypes(String)
+                     <br></br>
+                     <ul>
+                        <li>PRICE</li>
+                        <li>DAYS</li>
+                        <li>WEEKS</li>
+                        <li>MONTHS</li>
+                        <li>YEARS</li>
+                        <li>DATE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TICK_SIZE_TABLE_UPDATE_FREQ_RT (field #54) </td>
+                  <td>UpdateFrequency</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>An indication of the frequency at which the tick size can change</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>UpdateFrequency(String)
+                     <br></br>
+                     <ul>
+                        <li>REALTIME</li>
+                        <li>DAILY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TICK_SIZE_TABLE_FIELD_NAME_RT (field #55) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The name of the field whose value is used to determine the tick size based on the
+                           values in each row of the table
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TICK_SIZE_TABLE_PCT_FLD_NAME_RT (field #56) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The name of the field whose value is used to determine the tick size when TickSizeTableRowsValueType
+                           is "PERCENT"
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TICK_SIZE_TABLE_ROW (field #57) </td>
+                  <td>TickSizeTableRow</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre> one ticksize price band, including ticksize price type, ticksize value, low/high
+                           value range
+                           
+                        </pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">TICK_SIZE_TABLE_PRICE_TYPE_RT (field #90) </td>
+                           <td>TickSizeValueType</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The type of the tick size value. Either a "value" or a "percent" </pre>
+                              </blockquote>
+                              <br></br>
+                              <b>Enum: </b>TickSizeValueType(String)
+                              <br></br>
+                              <ul>
+                                 <li>ABSOLUTE</li>
+                                 <li>PERCENTAGE</li>
+                              </ul>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">TICK_SIZE_TBL_BAND_TICK_SIZE_RT (field #91) </td>
+                           <td>Float32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The tick size value used for the range [TICK_SIZE_TBL_BAND_LOWER_VAL_RT, TICK_SIZE_TBL_BAND_UPPER_VAL_RT
+                                    if the range exist. Otherwise, the tick size value will be used globally.
+                                    
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">TICK_SIZE_TBL_BAND_LOWER_VAL_RT (field #92) </td>
+                           <td>Float32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> value that TICK_SIZE_TABLE_FIELD_NAME_RT must be greater than or equal to for this
+                                    row. The data type of the value is defined by TICK_SIZE_TABLE_TYPE_RT 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">TICK_SIZE_TBL_BAND_UPPER_VAL_RT (field #93) </td>
+                           <td>Float32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>value that TICK_SIZE_TABLE_FIELD_NAME_RT must be less than for each row in the table
+                                    The data type of the value is defined by TICK_SIZE_TABLE_TYPE_RT 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+</body>

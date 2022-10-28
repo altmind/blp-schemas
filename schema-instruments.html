@@ -1,0 +1,2669 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         .blk {
+         border-left: 3px dashed silver;
+         margin: 10px 5px 10px 10px;
+         
+         padding-left: 10px;
+         display: inline-block;
+         }
+         .paramtbl {
+         /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+         border-collapse: collapse;
+         margin: 5px 5px 5px 20px;
+         width:95%;
+         box-sizing: border-box;
+         }
+         .paramtbl thead td {
+         
+         background-color: rgba(0, 0, 0, 0.3);
+         }
+         
+         .paramtbl  td {
+         border: 1px solid rgba(0, 0, 0, 0.7);
+         padding: 6px;
+         transition: 0.5s background-color linear;
+         }
+         .paramtbl  td:hover {
+         background-color: rgba(30, 30, 230, 0.05);
+         transition: 0.5s background-color linear;
+         }
+         .fieldname {
+         background-color: yellow;
+         padding-left: 30px;
+         font-weight: bold;
+         font-style: italic;
+         }
+         .fieldtype{
+         border: 2px dashed silver;
+         background-color: rgba(60,60,255,0.2)
+         }
+         
+      </style>
+   </head>
+</html>
+<body>
+   <h1> Service: apiinstr
+      (//blp/instruments)
+      
+   </h1>
+   <h2>Operations:</h2>
+   <h3>instrumentListRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">query</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>String with keywords</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">yellowKeyFilter</td>
+         <td>YellowKeyFilter</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Yellow key filter</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>YellowKeyFilter(String)
+            <br></br>
+            <ul>
+               <li>YK_FILTER_NONE</li>
+               <li>YK_FILTER_CMDT</li>
+               <li>YK_FILTER_EQTY</li>
+               <li>YK_FILTER_MUNI</li>
+               <li>YK_FILTER_PRFD</li>
+               <li>YK_FILTER_CLNT</li>
+               <li>YK_FILTER_MMKT</li>
+               <li>YK_FILTER_GOVT</li>
+               <li>YK_FILTER_CORP</li>
+               <li>YK_FILTER_INDX</li>
+               <li>YK_FILTER_CURR</li>
+               <li>YK_FILTER_MTGE</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">languageOverride</td>
+         <td>LanguageOverride</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Language override</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>LanguageOverride(String)
+            <br></br>
+            <ul>
+               <li>LANG_OVERRIDE_NONE</li>
+               <li>LANG_OVERRIDE_ENGLISH</li>
+               <li>LANG_OVERRIDE_KANJI</li>
+               <li>LANG_OVERRIDE_FRENCH</li>
+               <li>LANG_OVERRIDE_GERMAN</li>
+               <li>LANG_OVERRIDE_SPANISH</li>
+               <li>LANG_OVERRIDE_PORTUGUESE</li>
+               <li>LANG_OVERRIDE_ITALIAN</li>
+               <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+               <li>LANG_OVERRIDE_KOREAN</li>
+               <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+               <li>LANG_OVERRIDE_NONE_1</li>
+               <li>LANG_OVERRIDE_NONE_2</li>
+               <li>LANG_OVERRIDE_NONE_3</li>
+               <li>LANG_OVERRIDE_NONE_4</li>
+               <li>LANG_OVERRIDE_NONE_5</li>
+               <li>LANG_OVERRIDE_RUSSIAN</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxResults</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of results requested</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">InstrumentListRequest</td>
+         <td>InstrumentListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">yellowKeyFilter</td>
+                  <td>YellowKeyFilter</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Yellow key filter</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>YellowKeyFilter(String)
+                     <br></br>
+                     <ul>
+                        <li>YK_FILTER_NONE</li>
+                        <li>YK_FILTER_CMDT</li>
+                        <li>YK_FILTER_EQTY</li>
+                        <li>YK_FILTER_MUNI</li>
+                        <li>YK_FILTER_PRFD</li>
+                        <li>YK_FILTER_CLNT</li>
+                        <li>YK_FILTER_MMKT</li>
+                        <li>YK_FILTER_GOVT</li>
+                        <li>YK_FILTER_CORP</li>
+                        <li>YK_FILTER_INDX</li>
+                        <li>YK_FILTER_CURR</li>
+                        <li>YK_FILTER_MTGE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">languageOverride</td>
+                  <td>LanguageOverride</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Language override</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>LanguageOverride(String)
+                     <br></br>
+                     <ul>
+                        <li>LANG_OVERRIDE_NONE</li>
+                        <li>LANG_OVERRIDE_ENGLISH</li>
+                        <li>LANG_OVERRIDE_KANJI</li>
+                        <li>LANG_OVERRIDE_FRENCH</li>
+                        <li>LANG_OVERRIDE_GERMAN</li>
+                        <li>LANG_OVERRIDE_SPANISH</li>
+                        <li>LANG_OVERRIDE_PORTUGUESE</li>
+                        <li>LANG_OVERRIDE_ITALIAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+                        <li>LANG_OVERRIDE_KOREAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+                        <li>LANG_OVERRIDE_NONE_1</li>
+                        <li>LANG_OVERRIDE_NONE_2</li>
+                        <li>LANG_OVERRIDE_NONE_3</li>
+                        <li>LANG_OVERRIDE_NONE_4</li>
+                        <li>LANG_OVERRIDE_NONE_5</li>
+                        <li>LANG_OVERRIDE_RUSSIAN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CurveListRequest</td>
+         <td>CurveListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested; 0 if all available results should be provided.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">countryCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the two character country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currencyCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the three character currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the type.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the subtype.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given curve ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GovtListRequest</td>
+         <td>GovtListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker filter</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">partialMatch</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>If true do partial match, else do exact match</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">results</td>
+         <td>InstrumentRecord</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">security</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">description</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">InstrumentListRequest</td>
+         <td>InstrumentListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">yellowKeyFilter</td>
+                  <td>YellowKeyFilter</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Yellow key filter</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>YellowKeyFilter(String)
+                     <br></br>
+                     <ul>
+                        <li>YK_FILTER_NONE</li>
+                        <li>YK_FILTER_CMDT</li>
+                        <li>YK_FILTER_EQTY</li>
+                        <li>YK_FILTER_MUNI</li>
+                        <li>YK_FILTER_PRFD</li>
+                        <li>YK_FILTER_CLNT</li>
+                        <li>YK_FILTER_MMKT</li>
+                        <li>YK_FILTER_GOVT</li>
+                        <li>YK_FILTER_CORP</li>
+                        <li>YK_FILTER_INDX</li>
+                        <li>YK_FILTER_CURR</li>
+                        <li>YK_FILTER_MTGE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">languageOverride</td>
+                  <td>LanguageOverride</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Language override</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>LanguageOverride(String)
+                     <br></br>
+                     <ul>
+                        <li>LANG_OVERRIDE_NONE</li>
+                        <li>LANG_OVERRIDE_ENGLISH</li>
+                        <li>LANG_OVERRIDE_KANJI</li>
+                        <li>LANG_OVERRIDE_FRENCH</li>
+                        <li>LANG_OVERRIDE_GERMAN</li>
+                        <li>LANG_OVERRIDE_SPANISH</li>
+                        <li>LANG_OVERRIDE_PORTUGUESE</li>
+                        <li>LANG_OVERRIDE_ITALIAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+                        <li>LANG_OVERRIDE_KOREAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+                        <li>LANG_OVERRIDE_NONE_1</li>
+                        <li>LANG_OVERRIDE_NONE_2</li>
+                        <li>LANG_OVERRIDE_NONE_3</li>
+                        <li>LANG_OVERRIDE_NONE_4</li>
+                        <li>LANG_OVERRIDE_NONE_5</li>
+                        <li>LANG_OVERRIDE_RUSSIAN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CurveListRequest</td>
+         <td>CurveListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested; 0 if all available results should be provided.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">countryCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the two character country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currencyCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the three character currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the type.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the subtype.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given curve ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GovtListRequest</td>
+         <td>GovtListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker filter</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">partialMatch</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>If true do partial match, else do exact match</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h3>curveListRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">query</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>String with keywords</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxResults</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of results requested; 0 if all available results should be provided.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">countryCode</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Filter selecting only curves matching the two character country code.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">currencyCode</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Filter selecting only curves matching the three character currency code.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">type</td>
+         <td>CurveCategoryEnum</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Filter selecting only curves matching the type.</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>CurveCategoryEnum(String)
+            <br></br>
+            <ul>
+               <li>INVALID</li>
+               <li>UNASSIGNED</li>
+               <li>IRS</li>
+               <li>GOVT</li>
+               <li>AGENCY</li>
+               <li>MUNI</li>
+               <li>CORP</li>
+               <li>MTGE</li>
+               <li>MMKT</li>
+               <li>CURNCY</li>
+               <li>COMDTY</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">subtype</td>
+         <td>CurveSubclassEnum</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Filter selecting only curves matching the subtype.</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>CurveSubclassEnum(String)
+            <br></br>
+            <ul>
+               <li>INVALID</li>
+               <li>UNASSIGNED</li>
+               <li>SENIOR</li>
+               <li>SUBORDINATED</li>
+               <li>ZERO</li>
+               <li>OIS</li>
+               <li>INFLATION</li>
+               <li>SPREAD</li>
+               <li>CDS</li>
+               <li>RATE</li>
+               <li>SECTOR</li>
+               <li>ISSUER</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">curveid</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Filter selecting only the curve with the given curve ID.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">bbgid</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">InstrumentListRequest</td>
+         <td>InstrumentListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">yellowKeyFilter</td>
+                  <td>YellowKeyFilter</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Yellow key filter</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>YellowKeyFilter(String)
+                     <br></br>
+                     <ul>
+                        <li>YK_FILTER_NONE</li>
+                        <li>YK_FILTER_CMDT</li>
+                        <li>YK_FILTER_EQTY</li>
+                        <li>YK_FILTER_MUNI</li>
+                        <li>YK_FILTER_PRFD</li>
+                        <li>YK_FILTER_CLNT</li>
+                        <li>YK_FILTER_MMKT</li>
+                        <li>YK_FILTER_GOVT</li>
+                        <li>YK_FILTER_CORP</li>
+                        <li>YK_FILTER_INDX</li>
+                        <li>YK_FILTER_CURR</li>
+                        <li>YK_FILTER_MTGE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">languageOverride</td>
+                  <td>LanguageOverride</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Language override</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>LanguageOverride(String)
+                     <br></br>
+                     <ul>
+                        <li>LANG_OVERRIDE_NONE</li>
+                        <li>LANG_OVERRIDE_ENGLISH</li>
+                        <li>LANG_OVERRIDE_KANJI</li>
+                        <li>LANG_OVERRIDE_FRENCH</li>
+                        <li>LANG_OVERRIDE_GERMAN</li>
+                        <li>LANG_OVERRIDE_SPANISH</li>
+                        <li>LANG_OVERRIDE_PORTUGUESE</li>
+                        <li>LANG_OVERRIDE_ITALIAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+                        <li>LANG_OVERRIDE_KOREAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+                        <li>LANG_OVERRIDE_NONE_1</li>
+                        <li>LANG_OVERRIDE_NONE_2</li>
+                        <li>LANG_OVERRIDE_NONE_3</li>
+                        <li>LANG_OVERRIDE_NONE_4</li>
+                        <li>LANG_OVERRIDE_NONE_5</li>
+                        <li>LANG_OVERRIDE_RUSSIAN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CurveListRequest</td>
+         <td>CurveListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested; 0 if all available results should be provided.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">countryCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the two character country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currencyCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the three character currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the type.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the subtype.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given curve ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GovtListRequest</td>
+         <td>GovtListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker filter</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">partialMatch</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>If true do partial match, else do exact match</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">results</td>
+         <td>CurveRecord</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">curve</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker of the curve.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">description</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Description of the curve.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">country</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The curve's two letter country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currency</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The curve's three letter currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Unique identifier of the curve.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Type of the curve.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Subtype of the curve.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">publisher</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Publisher of the curve.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Bloomberg identifier of the curve.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">InstrumentListRequest</td>
+         <td>InstrumentListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">yellowKeyFilter</td>
+                  <td>YellowKeyFilter</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Yellow key filter</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>YellowKeyFilter(String)
+                     <br></br>
+                     <ul>
+                        <li>YK_FILTER_NONE</li>
+                        <li>YK_FILTER_CMDT</li>
+                        <li>YK_FILTER_EQTY</li>
+                        <li>YK_FILTER_MUNI</li>
+                        <li>YK_FILTER_PRFD</li>
+                        <li>YK_FILTER_CLNT</li>
+                        <li>YK_FILTER_MMKT</li>
+                        <li>YK_FILTER_GOVT</li>
+                        <li>YK_FILTER_CORP</li>
+                        <li>YK_FILTER_INDX</li>
+                        <li>YK_FILTER_CURR</li>
+                        <li>YK_FILTER_MTGE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">languageOverride</td>
+                  <td>LanguageOverride</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Language override</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>LanguageOverride(String)
+                     <br></br>
+                     <ul>
+                        <li>LANG_OVERRIDE_NONE</li>
+                        <li>LANG_OVERRIDE_ENGLISH</li>
+                        <li>LANG_OVERRIDE_KANJI</li>
+                        <li>LANG_OVERRIDE_FRENCH</li>
+                        <li>LANG_OVERRIDE_GERMAN</li>
+                        <li>LANG_OVERRIDE_SPANISH</li>
+                        <li>LANG_OVERRIDE_PORTUGUESE</li>
+                        <li>LANG_OVERRIDE_ITALIAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+                        <li>LANG_OVERRIDE_KOREAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+                        <li>LANG_OVERRIDE_NONE_1</li>
+                        <li>LANG_OVERRIDE_NONE_2</li>
+                        <li>LANG_OVERRIDE_NONE_3</li>
+                        <li>LANG_OVERRIDE_NONE_4</li>
+                        <li>LANG_OVERRIDE_NONE_5</li>
+                        <li>LANG_OVERRIDE_RUSSIAN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CurveListRequest</td>
+         <td>CurveListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested; 0 if all available results should be provided.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">countryCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the two character country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currencyCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the three character currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the type.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the subtype.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given curve ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GovtListRequest</td>
+         <td>GovtListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker filter</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">partialMatch</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>If true do partial match, else do exact match</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h3>govtListRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">query</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>String with keywords</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ticker</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Ticker filter</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">partialMatch</td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>If true do partial match, else do exact match</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">maxResults</td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of results requested</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">InstrumentListRequest</td>
+         <td>InstrumentListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">yellowKeyFilter</td>
+                  <td>YellowKeyFilter</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Yellow key filter</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>YellowKeyFilter(String)
+                     <br></br>
+                     <ul>
+                        <li>YK_FILTER_NONE</li>
+                        <li>YK_FILTER_CMDT</li>
+                        <li>YK_FILTER_EQTY</li>
+                        <li>YK_FILTER_MUNI</li>
+                        <li>YK_FILTER_PRFD</li>
+                        <li>YK_FILTER_CLNT</li>
+                        <li>YK_FILTER_MMKT</li>
+                        <li>YK_FILTER_GOVT</li>
+                        <li>YK_FILTER_CORP</li>
+                        <li>YK_FILTER_INDX</li>
+                        <li>YK_FILTER_CURR</li>
+                        <li>YK_FILTER_MTGE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">languageOverride</td>
+                  <td>LanguageOverride</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Language override</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>LanguageOverride(String)
+                     <br></br>
+                     <ul>
+                        <li>LANG_OVERRIDE_NONE</li>
+                        <li>LANG_OVERRIDE_ENGLISH</li>
+                        <li>LANG_OVERRIDE_KANJI</li>
+                        <li>LANG_OVERRIDE_FRENCH</li>
+                        <li>LANG_OVERRIDE_GERMAN</li>
+                        <li>LANG_OVERRIDE_SPANISH</li>
+                        <li>LANG_OVERRIDE_PORTUGUESE</li>
+                        <li>LANG_OVERRIDE_ITALIAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+                        <li>LANG_OVERRIDE_KOREAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+                        <li>LANG_OVERRIDE_NONE_1</li>
+                        <li>LANG_OVERRIDE_NONE_2</li>
+                        <li>LANG_OVERRIDE_NONE_3</li>
+                        <li>LANG_OVERRIDE_NONE_4</li>
+                        <li>LANG_OVERRIDE_NONE_5</li>
+                        <li>LANG_OVERRIDE_RUSSIAN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CurveListRequest</td>
+         <td>CurveListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested; 0 if all available results should be provided.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">countryCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the two character country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currencyCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the three character currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the type.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the subtype.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given curve ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GovtListRequest</td>
+         <td>GovtListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker filter</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">partialMatch</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>If true do partial match, else do exact match</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">results</td>
+         <td>GovtRecord</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">parseky</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">name</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">InstrumentListRequest</td>
+         <td>InstrumentListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">yellowKeyFilter</td>
+                  <td>YellowKeyFilter</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Yellow key filter</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>YellowKeyFilter(String)
+                     <br></br>
+                     <ul>
+                        <li>YK_FILTER_NONE</li>
+                        <li>YK_FILTER_CMDT</li>
+                        <li>YK_FILTER_EQTY</li>
+                        <li>YK_FILTER_MUNI</li>
+                        <li>YK_FILTER_PRFD</li>
+                        <li>YK_FILTER_CLNT</li>
+                        <li>YK_FILTER_MMKT</li>
+                        <li>YK_FILTER_GOVT</li>
+                        <li>YK_FILTER_CORP</li>
+                        <li>YK_FILTER_INDX</li>
+                        <li>YK_FILTER_CURR</li>
+                        <li>YK_FILTER_MTGE</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">languageOverride</td>
+                  <td>LanguageOverride</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Language override</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>LanguageOverride(String)
+                     <br></br>
+                     <ul>
+                        <li>LANG_OVERRIDE_NONE</li>
+                        <li>LANG_OVERRIDE_ENGLISH</li>
+                        <li>LANG_OVERRIDE_KANJI</li>
+                        <li>LANG_OVERRIDE_FRENCH</li>
+                        <li>LANG_OVERRIDE_GERMAN</li>
+                        <li>LANG_OVERRIDE_SPANISH</li>
+                        <li>LANG_OVERRIDE_PORTUGUESE</li>
+                        <li>LANG_OVERRIDE_ITALIAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_TRAD</li>
+                        <li>LANG_OVERRIDE_KOREAN</li>
+                        <li>LANG_OVERRIDE_CHINESE_SIMP</li>
+                        <li>LANG_OVERRIDE_NONE_1</li>
+                        <li>LANG_OVERRIDE_NONE_2</li>
+                        <li>LANG_OVERRIDE_NONE_3</li>
+                        <li>LANG_OVERRIDE_NONE_4</li>
+                        <li>LANG_OVERRIDE_NONE_5</li>
+                        <li>LANG_OVERRIDE_RUSSIAN</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CurveListRequest</td>
+         <td>CurveListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested; 0 if all available results should be provided.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">countryCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the two character country code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">currencyCode</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the three character currency code.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">type</td>
+                  <td>CurveCategoryEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the type.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveCategoryEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>IRS</li>
+                        <li>GOVT</li>
+                        <li>AGENCY</li>
+                        <li>MUNI</li>
+                        <li>CORP</li>
+                        <li>MTGE</li>
+                        <li>MMKT</li>
+                        <li>CURNCY</li>
+                        <li>COMDTY</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">subtype</td>
+                  <td>CurveSubclassEnum</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only curves matching the subtype.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>CurveSubclassEnum(String)
+                     <br></br>
+                     <ul>
+                        <li>INVALID</li>
+                        <li>UNASSIGNED</li>
+                        <li>SENIOR</li>
+                        <li>SUBORDINATED</li>
+                        <li>ZERO</li>
+                        <li>OIS</li>
+                        <li>INFLATION</li>
+                        <li>SPREAD</li>
+                        <li>CDS</li>
+                        <li>RATE</li>
+                        <li>SECTOR</li>
+                        <li>ISSUER</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">curveid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given curve ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">bbgid</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Filter selecting only the curve with the given Bloomberg ID.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GovtListRequest</td>
+         <td>GovtListRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">query</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>String with keywords</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ticker</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Ticker filter</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">partialMatch</td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>If true do partial match, else do exact match</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">maxResults</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of results requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h2>Events:</h2>
+</body>

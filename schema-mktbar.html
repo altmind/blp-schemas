@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         .blk {
+         border-left: 3px dashed silver;
+         margin: 10px 5px 10px 10px;
+         
+         padding-left: 10px;
+         display: inline-block;
+         }
+         .paramtbl {
+         /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+         border-collapse: collapse;
+         margin: 5px 5px 5px 20px;
+         width:95%;
+         box-sizing: border-box;
+         }
+         .paramtbl thead td {
+         
+         background-color: rgba(0, 0, 0, 0.3);
+         }
+         
+         .paramtbl  td {
+         border: 1px solid rgba(0, 0, 0, 0.7);
+         padding: 6px;
+         transition: 0.5s background-color linear;
+         }
+         .paramtbl  td:hover {
+         background-color: rgba(30, 30, 230, 0.05);
+         transition: 0.5s background-color linear;
+         }
+         .fieldname {
+         background-color: yellow;
+         padding-left: 30px;
+         font-weight: bold;
+         font-style: italic;
+         }
+         .fieldtype{
+         border: 2px dashed silver;
+         background-color: rgba(60,60,255,0.2)
+         }
+         
+      </style>
+   </head>
+</html>
+<body>
+   <h1> Service: blp.mktbar
+      (//blp/mktbar)
+      
+   </h1>
+   <h2>Operations:</h2>
+   <h2>Events:</h2>
+   <h3>MarketBarStart</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">TIME (field #1) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPEN (field #2) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Open Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">HIGH (field #3) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>High Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LOW (field #4) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Low Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CLOSE (field #5) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Close Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">NUMBER_OF_TICKS (field #6) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of Ticks in the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VOLUME (field #7) </td>
+         <td>Int64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Volume of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">DATE_TIME (field #8) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Date and Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #65523) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Entitlement Id</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VALUE (field #10) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Value of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+   <h3>MarketBarUpdate</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">TIME (field #1) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPEN (field #2) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Open Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">HIGH (field #3) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>High Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LOW (field #4) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Low Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CLOSE (field #5) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Close Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">NUMBER_OF_TICKS (field #6) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of Ticks in the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VOLUME (field #7) </td>
+         <td>Int64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Volume of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">DATE_TIME (field #8) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Date and Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #65523) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Entitlement Id</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VALUE (field #10) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Value of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+   <h3>MarketBarEnd</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">TIME (field #1) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPEN (field #2) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Open Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">HIGH (field #3) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>High Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LOW (field #4) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Low Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CLOSE (field #5) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Close Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">NUMBER_OF_TICKS (field #6) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of Ticks in the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VOLUME (field #7) </td>
+         <td>Int64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Volume of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">DATE_TIME (field #8) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Date and Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #65523) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Entitlement Id</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VALUE (field #10) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Value of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+   <h3>MarketBarIntervalEnd</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">TIME (field #1) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPEN (field #2) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Open Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">HIGH (field #3) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>High Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LOW (field #4) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Low Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CLOSE (field #5) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Close Price of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">NUMBER_OF_TICKS (field #6) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of Ticks in the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VOLUME (field #7) </td>
+         <td>Int64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Volume of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">DATE_TIME (field #8) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Date and Time of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #65523) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Entitlement Id</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">VALUE (field #10) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Value of the Bar</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+</body>

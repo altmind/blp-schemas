@@ -1,0 +1,3183 @@
+<?xml version="1.0" encoding="UTF-8"?><html>
+   <head>
+      <style>
+         .blk {
+         border-left: 3px dashed silver;
+         margin: 10px 5px 10px 10px;
+         
+         padding-left: 10px;
+         display: inline-block;
+         }
+         .paramtbl {
+         /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+         border-collapse: collapse;
+         margin: 5px 5px 5px 20px;
+         width:95%;
+         box-sizing: border-box;
+         }
+         .paramtbl thead td {
+         
+         background-color: rgba(0, 0, 0, 0.3);
+         }
+         
+         .paramtbl  td {
+         border: 1px solid rgba(0, 0, 0, 0.7);
+         padding: 6px;
+         transition: 0.5s background-color linear;
+         }
+         .paramtbl  td:hover {
+         background-color: rgba(30, 30, 230, 0.05);
+         transition: 0.5s background-color linear;
+         }
+         .fieldname {
+         background-color: yellow;
+         padding-left: 30px;
+         font-weight: bold;
+         font-style: italic;
+         }
+         .fieldtype{
+         border: 2px dashed silver;
+         background-color: rgba(60,60,255,0.2)
+         }
+         
+      </style>
+   </head>
+</html>
+<body>
+   <h1> Service: blp.mktlist
+      (//blp/mktlist)
+      
+   </h1>
+   <h2>Operations:</h2>
+   <h3>SnapshotRequest</h3> Request: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">security</td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The security for which snapshot is requested</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">SnapshotRequest</td>
+         <td>SnapshotRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">security</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The security for which snapshot is requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <br></br> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">responseCode</td>
+         <td>ResultCode</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Response Information Metadata</pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">resultText</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Description of the result </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">sourceId</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>SouceID of the result</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">resultCode</td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Result Code</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">snapshot</td>
+         <td>ListRecap</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The actual response data</pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">LIST_ID (field #1) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>This is the list identifier provided by the service.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">EID (field #2) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>This is the list identifier provided by the service.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_LISTTYPE (field #3) </td>
+                  <td>ListType</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Describes the nature of the members of a list.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>ListType(Int32)
+                     <br></br>
+                     <ul>
+                        <li>Currency Options = 0</li>
+                        <li>EID List = 1</li>
+                        <li>Source List = 2</li>
+                        <li>GDCO List = 3</li>
+                        <li>Index Options = 4</li>
+                        <li>Index Futures = 5</li>
+                        <li>Index Warrants = 6</li>
+                        <li>UNASSIGNED_7 = 7</li>
+                        <li>UNASSIGNED_8 = 8</li>
+                        <li>UNASSIGNED_9 = 9</li>
+                        <li>UNASSIGNED_10 = 10</li>
+                        <li>UNASSIGNED_11 = 11</li>
+                        <li>UNASSIGNED_12 = 12</li>
+                        <li>UNASSIGNED_13 = 13</li>
+                        <li>UNASSIGNED_14 = 14</li>
+                        <li>UNASSIGNED_15 = 15</li>
+                        <li>UNASSIGNED_16 = 16</li>
+                        <li>UNASSIGNED_17 = 17</li>
+                        <li>UNASSIGNED_18 = 18</li>
+                        <li>UNASSIGNED_19 = 19</li>
+                        <li>UNASSIGNED_20 = 20</li>
+                        <li>UNASSIGNED_21 = 21</li>
+                        <li>UNASSIGNED_22 = 22</li>
+                        <li>UNASSIGNED_23 = 23</li>
+                        <li>UNASSIGNED_24 = 24</li>
+                        <li>UNASSIGNED_25 = 25</li>
+                        <li>UNASSIGNED_26 = 26</li>
+                        <li>UNASSIGNED_27 = 27</li>
+                        <li>UNASSIGNED_28 = 28</li>
+                        <li>UNASSIGNED_29 = 29</li>
+                        <li>UNASSIGNED_30 = 30</li>
+                        <li>UNASSIGNED_31 = 31</li>
+                        <li>UNASSIGNED_32 = 32</li>
+                        <li>UNASSIGNED_33 = 33</li>
+                        <li>UNASSIGNED_34 = 34</li>
+                        <li>UNASSIGNED_35 = 35</li>
+                        <li>UNASSIGNED_36 = 36</li>
+                        <li>UNASSIGNED_37 = 37</li>
+                        <li>UNASSIGNED_38 = 38</li>
+                        <li>UNASSIGNED_39 = 39</li>
+                        <li>UNASSIGNED_40 = 40</li>
+                        <li>UNASSIGNED_41 = 41</li>
+                        <li>UNASSIGNED_42 = 42</li>
+                        <li>UNASSIGNED_43 = 43</li>
+                        <li>UNASSIGNED_44 = 44</li>
+                        <li>UNASSIGNED_45 = 45</li>
+                        <li>UNASSIGNED_46 = 46</li>
+                        <li>UNASSIGNED_47 = 47</li>
+                        <li>UNASSIGNED_48 = 48</li>
+                        <li>UNASSIGNED_49 = 49</li>
+                        <li>UNASSIGNED_50 = 50</li>
+                        <li>UNASSIGNED_51 = 51</li>
+                        <li>UNASSIGNED_52 = 52</li>
+                        <li>UNASSIGNED_53 = 53</li>
+                        <li>UNASSIGNED_54 = 54</li>
+                        <li>UNASSIGNED_55 = 55</li>
+                        <li>UNASSIGNED_56 = 56</li>
+                        <li>UNASSIGNED_57 = 57</li>
+                        <li>UNASSIGNED_58 = 58</li>
+                        <li>UNASSIGNED_59 = 59</li>
+                        <li>UNASSIGNED_60 = 60</li>
+                        <li>UNASSIGNED_61 = 61</li>
+                        <li>UNASSIGNED_62 = 62</li>
+                        <li>UNASSIGNED_63 = 63</li>
+                        <li>UNASSIGNED_64 = 64</li>
+                        <li>UNASSIGNED_65 = 65</li>
+                        <li>UNASSIGNED_66 = 66</li>
+                        <li>UNASSIGNED_67 = 67</li>
+                        <li>UNASSIGNED_68 = 68</li>
+                        <li>UNASSIGNED_69 = 69</li>
+                        <li>UNASSIGNED_70 = 70</li>
+                        <li>UNASSIGNED_71 = 71</li>
+                        <li>UNASSIGNED_72 = 72</li>
+                        <li>UNASSIGNED_73 = 73</li>
+                        <li>UNASSIGNED_74 = 74</li>
+                        <li>UNASSIGNED_75 = 75</li>
+                        <li>UNASSIGNED_76 = 76</li>
+                        <li>UNASSIGNED_77 = 77</li>
+                        <li>UNASSIGNED_78 = 78</li>
+                        <li>UNASSIGNED_79 = 79</li>
+                        <li>UNASSIGNED_80 = 80</li>
+                        <li>UNASSIGNED_81 = 81</li>
+                        <li>UNASSIGNED_82 = 82</li>
+                        <li>UNASSIGNED_83 = 83</li>
+                        <li>UNASSIGNED_84 = 84</li>
+                        <li>UNASSIGNED_85 = 85</li>
+                        <li>UNASSIGNED_86 = 86</li>
+                        <li>UNASSIGNED_87 = 87</li>
+                        <li>UNASSIGNED_88 = 88</li>
+                        <li>UNASSIGNED_89 = 89</li>
+                        <li>UNASSIGNED_90 = 90</li>
+                        <li>UNASSIGNED_91 = 91</li>
+                        <li>UNASSIGNED_92 = 92</li>
+                        <li>UNASSIGNED_93 = 93</li>
+                        <li>UNASSIGNED_94 = 94</li>
+                        <li>UNASSIGNED_95 = 95</li>
+                        <li>UNASSIGNED_96 = 96</li>
+                        <li>UNASSIGNED_97 = 97</li>
+                        <li>UNASSIGNED_98 = 98</li>
+                        <li>UNASSIGNED_99 = 99</li>
+                        <li>UNASSIGNED_100 = 100</li>
+                        <li>UNASSIGNED_101 = 101</li>
+                        <li>UNASSIGNED_102 = 102</li>
+                        <li>UNASSIGNED_103 = 103</li>
+                        <li>UNASSIGNED_104 = 104</li>
+                        <li>UNASSIGNED_105 = 105</li>
+                        <li>UNASSIGNED_106 = 106</li>
+                        <li>UNASSIGNED_107 = 107</li>
+                        <li>UNASSIGNED_108 = 108</li>
+                        <li>UNASSIGNED_109 = 109</li>
+                        <li>UNASSIGNED_110 = 110</li>
+                        <li>UNASSIGNED_111 = 111</li>
+                        <li>UNASSIGNED_112 = 112</li>
+                        <li>UNASSIGNED_113 = 113</li>
+                        <li>UNASSIGNED_114 = 114</li>
+                        <li>UNASSIGNED_115 = 115</li>
+                        <li>UNASSIGNED_116 = 116</li>
+                        <li>UNASSIGNED_117 = 117</li>
+                        <li>UNASSIGNED_118 = 118</li>
+                        <li>UNASSIGNED_119 = 119</li>
+                        <li>UNASSIGNED_120 = 120</li>
+                        <li>UNASSIGNED_121 = 121</li>
+                        <li>UNASSIGNED_122 = 122</li>
+                        <li>UNASSIGNED_123 = 123</li>
+                        <li>Fixed Income Agency Tenors = 124</li>
+                        <li>Fund Warrants = 125</li>
+                        <li>Fund Futures = 126</li>
+                        <li>Fund Options = 127</li>
+                        <li>Equity Options = 128</li>
+                        <li>Equity Warrants = 129</li>
+                        <li>Equity Futures = 130</li>
+                        <li>Futures = 131</li>
+                        <li>Future Options = 132</li>
+                        <li>Index Members = 133</li>
+                        <li>Yield Curve = 134</li>
+                        <li>Unknown = 135</li>
+                        <li>Security IDs = 136</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_INSERT_ENTRIES (field #4) </td>
+                  <td>ListEntry</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>List.ListType</pre>
+                     </blockquote>
+                     <table class="paramtbl">
+                        <thead>
+                           <tr>
+                              <td>Field</td>
+                              <td>Type</td>
+                              <td>Cardinality</td>
+                           </tr>
+                        </thead>
+                        <tr>
+                           <td class="fieldname">ID_BB_SEC_NUM_SRC (field #13) </td>
+                           <td>Int64</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>This is the unique realtime Bloomberg identifier.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_SOURCE (field #14) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg identifier for the source of the information.
+                                    The market data source is the exchange or pricing contributor mnemonic that 
+                                    uniquely identifies the market data originator. In the case of an NYSE 
+                                    listed security which trade on multiple exchanges, this would be the market 
+                                    center originator of the data, such as The Chicago Stock Exchange, The 
+                                    Archipelago Stock Exchange, or the NYSE. In the case of a composite market 
+                                    data source such the US composite for exchange-traded securities, it is 
+                                    possible to have a local market data source in addition to the composite data 
+                                    source. With a composite daily high price, the security reference may be the 
+                                    US composite (such as INTC US), and the exchange that generated the high price 
+                                    may be the Cincinnati Stock Exchange or NASDAQ. The local market data source is 
+                                    an optional field, so on non-composite securities, it will not be present -- 
+                                    only the MD.Source will be available.The MD.Source mnemonic will be the same as 
+                                    the exchange or contributor mnemonic on the Bloomberg professional in many cases,
+                                    
+                                    but is not guaranteed to match.In the case of contributor data the MD.Source 
+                                    mnemonic will be the same mnemonic for fixed income securities as the Price 
+                                    Contributor Source or PCS in many cases, but is not guaranteed to match.
+                                    Contributed currency market data will have also use the XDF code in many cases, 
+                                    but is not guaranteed to match.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_BB_SEC_NUM_DES (field #15) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>This identifier is a string that uniquely identifies an instrument.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_BB_UNIQUE (field #16) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Unique identifier assigned by Bloomberg to all securities.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">PARSEKYABLE_DES_SOURCE (field #17) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>This identifier is the string that can be entered into the Bloomberg 
+                                    professional to uniquely select this security.This description includes the source
+                                    of the 
+                                    security. The parsekeyable string has the 'at sign'  in it when the security has multiple
+                                    
+                                    sources. This is available for fixed income and currency objects. The format is 'ticker
+                                    
+                                    at sign pcs yellowkey'. To view on the Bloomberg professional replace the 'at sign'
+                                    with 
+                                    a space. Equities, index options, currency options, future options and indices have
+                                    
+                                    parsekeyable string 'ticker source yellowkey'. Equity options do not have a parsekeyable
+                                    
+                                    string.As for How many spaces exist between the PCS code and the yellow key for 
+                                    Reference.Security.ID.ParsekeyableDescription?  This is a 4 character field regardless
+                                    
+                                    of the PCS code. For PCS codes that contain 3 letters, there will be 2 spaces before
+                                    the 
+                                    yellow key. For PCS codes that contain 4 letters, there will only be 1 space.
+                                    
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">SECURITY_TYP2 (field #18) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Additional description of the security type that required further 
+                                    detail. The field value delivered should be used in conjunction with the value 
+                                    delivered in the Security Type
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_PUT_CALL (field #19) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Indicates whether the contract is a put or a call.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FUT_CONTRACT_DT (field #20) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The month and year of contract expiration</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_EXPIRE_DT (field #21) </td>
+                           <td>Date</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The day on which an option contract becomes void.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_STRIKE_PX (field #22) </td>
+                           <td>Float64</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Price at which an option holder may buy or sell the underlying security.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">REFERENCE_SECURITY_ID_BBGID (field #24) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>BloombBerg Global IDentifier - ID135</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_BB_GLOBAL (field #25) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>BloombBerg Global IDentifier - ID135</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_EID1 (field #26) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The feed entitlement ID for level 1.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_EID2 (field #27) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The feed entitlement ID for level 2.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_EID3 (field #28) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The feed entitlement ID for level 2.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_EID4 (field #29) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> The feed entitlement ID for PCS/class.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">LAST_UPDATE (field #30) </td>
+                           <td>Datetime</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Either the time or date at which the security last traded/updated. All values are
+                                    translated into the user's
+                                    date and time. If the last trade/update occurred today, it will show the time of the
+                                    trade/update,
+                                    otherwise it will show the date on which the security last traded/updated.  
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">PRICING_SOURCE (field #31) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> Acronym or short code for the market pricing source. Returns are based on the user's
+                                    settings.
+                                    If there is no price from the chosen source, the next available source will be used.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_ADJ_CONTRACT (field #32) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre> Returns 'Y' if the contract terms have been adjusted. This usually occurs 
+                                    due to a merger, split, or other corporate action 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_EXER_TYP (field #33) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>There are three ways an option can be exercised: American Style, Bermuda Style
+                                    and European Style. 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FEED_DELAYED_EID1 (field #34) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Entitlement identifier for the level one delayed data feed.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">BPIPE_REFERENCE_SECURITY_CLASS (field #35) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Top level asset class designation for the reference security event
+                                    on the B-Pipe feed.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FUT_MONTH_YR (field #36) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The month and year of contract expiration</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_EXCH_SYMBOL (field #38) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Local exchange security symbol.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">LAST_TRADEABLE_DT (field #39) </td>
+                           <td>Date</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Last date that the contract is available for trade.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FUT_TRADING_SESSION (field #40) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Determines if the data displayed for a contract is from that contract's day or night
+                                    session.
+                                    Does not apply to all contracts.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">CRNCY (field #1473) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Currency in which the security was issued.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">GENERATION_NUMBER (field #17434) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Number created for new option series that are created after a capital adjustment.
+                                    All new created series will 
+                                    get this number. The generation number stays unchanged for the lifetime of a series.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_FULL_EXCHANGE_SYMBOL (field #15303) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Contains the exchange symbol for futures and options, and indices inclusive of base
+                                    symbol and other security elements.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_ISIN (field #1444) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>A twelve-character number assigned by the local national numbering agency.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_CUSIP (field #4148) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Security identification number for the U.S. and Canada.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_MIC_LOCAL_EXCH (field #17234) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>ISO Market Identification Code (MIC) of the local exchange on which this instrument
+                                    is traded for equities
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_MIC_PRIM_EXCH (field #17233) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>ISO Market Identification Code (MIC) of the Bloomberg assigned primary exchange on
+                                    which this specific security is traded. 
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">NAME (field #1106) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Name of the company or brief description of the instrument.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">SECURITY_TYP (field #3694) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Description of the specific instrument type within its market sector.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">EXPIRATION_PERIODICITY (field #50898) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Specifies the periodicity of the option's expiration. Possible values are:
+                                    D - Daily Expiration
+                                    W - Weekly Expiration
+                                    M - Monthly Expiration
+                                    Q - End of Month Expiration (includes Quarter End Expirations)
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">TRADING_SYSTEM_IDENTIFIER (field #50102) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Unique identifier for the instrument, as used on the source trading system.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FUTURES_CATEGORY (field #8707) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The type of future (or option) the security is.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_UNDL_EXP_DT (field #8166) </td>
+                           <td>Date</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The expiration date of the option's underlying future.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ID_MIC1 (field #17228) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>ISO Market Identification Code (MIC) for the market on which the security trades.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">EXCHANGE_ALTERNATIVE_IDENTIFIER (field #79282) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Exchange alternative identifier used in the exchange market data feed or system.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">CASH_SETTLED (field #6541) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre></pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">ISSUER_INDUSTRY (field #1472) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The industry classification of the issuer of the security.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">TAPPED_INDICATOR (field #80357) </td>
+                           <td>Boolean</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Returns 'Y' if the bond has been tapped or reopened allowing borrowers to sell bonds
+                                    or other debt instruments from past issues.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MTY_TYP (field #1701) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Displays the bond's structure, i.e., Callable, Putable, Sinkable.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">DAYS_TO_MTY_TDY (field #4358) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The number of days from today to the maturity date.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">WEEK_NUMBER (field #91458) </td>
+                           <td>Int32</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Provides the numerical week number that the weekly option ticker represents in the
+                                    month.
+                                    Valid values are 0 when not applicable, 1 through 5 when applicable.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FLAG_144A (field #7553) </td>
+                           <td>Boolean</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Returns a Y or N. An N also represents unknown or undisclosed.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MSCI_SEC_CODE (field #14526) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>MSCI Security Code is a unique identifier assigned to each security by MSCI.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">COUNTRY (field #1474) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Bloomberg country code of the issuer.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPTION_ROOT_TICKER (field #15300) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The option root ticker symbol for equity options  and equity index options.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">MARKET_STATUS (field #5799) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Trading status of an equity.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">CURRENT_CONTRACT_MONTH_YR (field #32194) </td>
+                           <td>String</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Month and year of the current contract, which can be futures, generics, spreads, or
+                                    generic spreads.
+                                 </pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">FUT_CONT_SIZE (field #1614) </td>
+                           <td>Float64</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>The smallest available value of tradable contract.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="fieldname">OPT_CONT_SIZE (field #5849) </td>
+                           <td>Float64</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <blockquote color="gray">
+                                 <pre>Number of shares that can be exchanged for each option contract exercised.</pre>
+                              </blockquote>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_UNDERLYING_ID_BSID (field #5) </td>
+                  <td>Int64</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The MD.Security.ID.BSID of the list's underlying instrument</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_UNDERLYING_FEED_SOURCE (field #6) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The MD.Source of the list's underlying instrument</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_UNDERLYING_SECURITY_CLASS (field #7) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The Reference.Security.Class of the list's underlying instrument</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_UNDERLYING_SECURITY_TYP2 (field #8) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The Reference.Security.Type of the list's underlying instrument</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_DES (field #9) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Description of a list.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_ORDERED (field #10) </td>
+                  <td>Order</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Field that indicates whether the list is ordered or not.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>Order(Int32)
+                     <br></br>
+                     <ul>
+                        <li>ORDERED = 0</li>
+                        <li>NOTORDERED = 1</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LIST_MUTABLE (field #11) </td>
+                  <td>Mutable</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Field that indicates whether list is mutable.</pre>
+                     </blockquote>
+                     <br></br>
+                     <b>Enum: </b>Mutable(Int32)
+                     <br></br>
+                     <ul>
+                        <li>MUTABLE = 0</li>
+                        <li>IMMUTABLE = 1</li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">RT_API_LIST_MACHINE (field #37) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Name of the machine providing data for the list request</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h4 class="fieldtype">Choice of:</h4>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">SnapshotRequest</td>
+         <td>SnapshotRequest</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">security</td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The security for which snapshot is requested</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <h2>Events:</h2>
+   <h3>ListRecap</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">LIST_ID (field #1) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This is the list identifier provided by the service.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #2) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This is the list identifier provided by the service.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_LISTTYPE (field #3) </td>
+         <td>ListType</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Describes the nature of the members of a list.</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>ListType(Int32)
+            <br></br>
+            <ul>
+               <li>Currency Options = 0</li>
+               <li>EID List = 1</li>
+               <li>Source List = 2</li>
+               <li>GDCO List = 3</li>
+               <li>Index Options = 4</li>
+               <li>Index Futures = 5</li>
+               <li>Index Warrants = 6</li>
+               <li>UNASSIGNED_7 = 7</li>
+               <li>UNASSIGNED_8 = 8</li>
+               <li>UNASSIGNED_9 = 9</li>
+               <li>UNASSIGNED_10 = 10</li>
+               <li>UNASSIGNED_11 = 11</li>
+               <li>UNASSIGNED_12 = 12</li>
+               <li>UNASSIGNED_13 = 13</li>
+               <li>UNASSIGNED_14 = 14</li>
+               <li>UNASSIGNED_15 = 15</li>
+               <li>UNASSIGNED_16 = 16</li>
+               <li>UNASSIGNED_17 = 17</li>
+               <li>UNASSIGNED_18 = 18</li>
+               <li>UNASSIGNED_19 = 19</li>
+               <li>UNASSIGNED_20 = 20</li>
+               <li>UNASSIGNED_21 = 21</li>
+               <li>UNASSIGNED_22 = 22</li>
+               <li>UNASSIGNED_23 = 23</li>
+               <li>UNASSIGNED_24 = 24</li>
+               <li>UNASSIGNED_25 = 25</li>
+               <li>UNASSIGNED_26 = 26</li>
+               <li>UNASSIGNED_27 = 27</li>
+               <li>UNASSIGNED_28 = 28</li>
+               <li>UNASSIGNED_29 = 29</li>
+               <li>UNASSIGNED_30 = 30</li>
+               <li>UNASSIGNED_31 = 31</li>
+               <li>UNASSIGNED_32 = 32</li>
+               <li>UNASSIGNED_33 = 33</li>
+               <li>UNASSIGNED_34 = 34</li>
+               <li>UNASSIGNED_35 = 35</li>
+               <li>UNASSIGNED_36 = 36</li>
+               <li>UNASSIGNED_37 = 37</li>
+               <li>UNASSIGNED_38 = 38</li>
+               <li>UNASSIGNED_39 = 39</li>
+               <li>UNASSIGNED_40 = 40</li>
+               <li>UNASSIGNED_41 = 41</li>
+               <li>UNASSIGNED_42 = 42</li>
+               <li>UNASSIGNED_43 = 43</li>
+               <li>UNASSIGNED_44 = 44</li>
+               <li>UNASSIGNED_45 = 45</li>
+               <li>UNASSIGNED_46 = 46</li>
+               <li>UNASSIGNED_47 = 47</li>
+               <li>UNASSIGNED_48 = 48</li>
+               <li>UNASSIGNED_49 = 49</li>
+               <li>UNASSIGNED_50 = 50</li>
+               <li>UNASSIGNED_51 = 51</li>
+               <li>UNASSIGNED_52 = 52</li>
+               <li>UNASSIGNED_53 = 53</li>
+               <li>UNASSIGNED_54 = 54</li>
+               <li>UNASSIGNED_55 = 55</li>
+               <li>UNASSIGNED_56 = 56</li>
+               <li>UNASSIGNED_57 = 57</li>
+               <li>UNASSIGNED_58 = 58</li>
+               <li>UNASSIGNED_59 = 59</li>
+               <li>UNASSIGNED_60 = 60</li>
+               <li>UNASSIGNED_61 = 61</li>
+               <li>UNASSIGNED_62 = 62</li>
+               <li>UNASSIGNED_63 = 63</li>
+               <li>UNASSIGNED_64 = 64</li>
+               <li>UNASSIGNED_65 = 65</li>
+               <li>UNASSIGNED_66 = 66</li>
+               <li>UNASSIGNED_67 = 67</li>
+               <li>UNASSIGNED_68 = 68</li>
+               <li>UNASSIGNED_69 = 69</li>
+               <li>UNASSIGNED_70 = 70</li>
+               <li>UNASSIGNED_71 = 71</li>
+               <li>UNASSIGNED_72 = 72</li>
+               <li>UNASSIGNED_73 = 73</li>
+               <li>UNASSIGNED_74 = 74</li>
+               <li>UNASSIGNED_75 = 75</li>
+               <li>UNASSIGNED_76 = 76</li>
+               <li>UNASSIGNED_77 = 77</li>
+               <li>UNASSIGNED_78 = 78</li>
+               <li>UNASSIGNED_79 = 79</li>
+               <li>UNASSIGNED_80 = 80</li>
+               <li>UNASSIGNED_81 = 81</li>
+               <li>UNASSIGNED_82 = 82</li>
+               <li>UNASSIGNED_83 = 83</li>
+               <li>UNASSIGNED_84 = 84</li>
+               <li>UNASSIGNED_85 = 85</li>
+               <li>UNASSIGNED_86 = 86</li>
+               <li>UNASSIGNED_87 = 87</li>
+               <li>UNASSIGNED_88 = 88</li>
+               <li>UNASSIGNED_89 = 89</li>
+               <li>UNASSIGNED_90 = 90</li>
+               <li>UNASSIGNED_91 = 91</li>
+               <li>UNASSIGNED_92 = 92</li>
+               <li>UNASSIGNED_93 = 93</li>
+               <li>UNASSIGNED_94 = 94</li>
+               <li>UNASSIGNED_95 = 95</li>
+               <li>UNASSIGNED_96 = 96</li>
+               <li>UNASSIGNED_97 = 97</li>
+               <li>UNASSIGNED_98 = 98</li>
+               <li>UNASSIGNED_99 = 99</li>
+               <li>UNASSIGNED_100 = 100</li>
+               <li>UNASSIGNED_101 = 101</li>
+               <li>UNASSIGNED_102 = 102</li>
+               <li>UNASSIGNED_103 = 103</li>
+               <li>UNASSIGNED_104 = 104</li>
+               <li>UNASSIGNED_105 = 105</li>
+               <li>UNASSIGNED_106 = 106</li>
+               <li>UNASSIGNED_107 = 107</li>
+               <li>UNASSIGNED_108 = 108</li>
+               <li>UNASSIGNED_109 = 109</li>
+               <li>UNASSIGNED_110 = 110</li>
+               <li>UNASSIGNED_111 = 111</li>
+               <li>UNASSIGNED_112 = 112</li>
+               <li>UNASSIGNED_113 = 113</li>
+               <li>UNASSIGNED_114 = 114</li>
+               <li>UNASSIGNED_115 = 115</li>
+               <li>UNASSIGNED_116 = 116</li>
+               <li>UNASSIGNED_117 = 117</li>
+               <li>UNASSIGNED_118 = 118</li>
+               <li>UNASSIGNED_119 = 119</li>
+               <li>UNASSIGNED_120 = 120</li>
+               <li>UNASSIGNED_121 = 121</li>
+               <li>UNASSIGNED_122 = 122</li>
+               <li>UNASSIGNED_123 = 123</li>
+               <li>Fixed Income Agency Tenors = 124</li>
+               <li>Fund Warrants = 125</li>
+               <li>Fund Futures = 126</li>
+               <li>Fund Options = 127</li>
+               <li>Equity Options = 128</li>
+               <li>Equity Warrants = 129</li>
+               <li>Equity Futures = 130</li>
+               <li>Futures = 131</li>
+               <li>Future Options = 132</li>
+               <li>Index Members = 133</li>
+               <li>Yield Curve = 134</li>
+               <li>Unknown = 135</li>
+               <li>Security IDs = 136</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_INSERT_ENTRIES (field #4) </td>
+         <td>ListEntry</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>List.ListType</pre>
+            </blockquote>
+            <table class="paramtbl">
+               <thead>
+                  <tr>
+                     <td>Field</td>
+                     <td>Type</td>
+                     <td>Cardinality</td>
+                  </tr>
+               </thead>
+               <tr>
+                  <td class="fieldname">ID_BB_SEC_NUM_SRC (field #13) </td>
+                  <td>Int64</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>This is the unique realtime Bloomberg identifier.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_SOURCE (field #14) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Bloomberg identifier for the source of the information.
+                           The market data source is the exchange or pricing contributor mnemonic that 
+                           uniquely identifies the market data originator. In the case of an NYSE 
+                           listed security which trade on multiple exchanges, this would be the market 
+                           center originator of the data, such as The Chicago Stock Exchange, The 
+                           Archipelago Stock Exchange, or the NYSE. In the case of a composite market 
+                           data source such the US composite for exchange-traded securities, it is 
+                           possible to have a local market data source in addition to the composite data 
+                           source. With a composite daily high price, the security reference may be the 
+                           US composite (such as INTC US), and the exchange that generated the high price 
+                           may be the Cincinnati Stock Exchange or NASDAQ. The local market data source is 
+                           an optional field, so on non-composite securities, it will not be present -- 
+                           only the MD.Source will be available.The MD.Source mnemonic will be the same as 
+                           the exchange or contributor mnemonic on the Bloomberg professional in many cases,
+                           
+                           but is not guaranteed to match.In the case of contributor data the MD.Source 
+                           mnemonic will be the same mnemonic for fixed income securities as the Price 
+                           Contributor Source or PCS in many cases, but is not guaranteed to match.
+                           Contributed currency market data will have also use the XDF code in many cases, 
+                           but is not guaranteed to match.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_BB_SEC_NUM_DES (field #15) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>This identifier is a string that uniquely identifies an instrument.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_BB_UNIQUE (field #16) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Unique identifier assigned by Bloomberg to all securities.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">PARSEKYABLE_DES_SOURCE (field #17) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>This identifier is the string that can be entered into the Bloomberg 
+                           professional to uniquely select this security.This description includes the source
+                           of the 
+                           security. The parsekeyable string has the 'at sign'  in it when the security has multiple
+                           
+                           sources. This is available for fixed income and currency objects. The format is 'ticker
+                           
+                           at sign pcs yellowkey'. To view on the Bloomberg professional replace the 'at sign'
+                           with 
+                           a space. Equities, index options, currency options, future options and indices have
+                           
+                           parsekeyable string 'ticker source yellowkey'. Equity options do not have a parsekeyable
+                           
+                           string.As for How many spaces exist between the PCS code and the yellow key for 
+                           Reference.Security.ID.ParsekeyableDescription?  This is a 4 character field regardless
+                           
+                           of the PCS code. For PCS codes that contain 3 letters, there will be 2 spaces before
+                           the 
+                           yellow key. For PCS codes that contain 4 letters, there will only be 1 space.
+                           
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">SECURITY_TYP2 (field #18) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Additional description of the security type that required further 
+                           detail. The field value delivered should be used in conjunction with the value 
+                           delivered in the Security Type
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_PUT_CALL (field #19) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Indicates whether the contract is a put or a call.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FUT_CONTRACT_DT (field #20) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The month and year of contract expiration</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_EXPIRE_DT (field #21) </td>
+                  <td>Date</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The day on which an option contract becomes void.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_STRIKE_PX (field #22) </td>
+                  <td>Float64</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Price at which an option holder may buy or sell the underlying security.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">REFERENCE_SECURITY_ID_BBGID (field #24) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>BloombBerg Global IDentifier - ID135</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_BB_GLOBAL (field #25) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>BloombBerg Global IDentifier - ID135</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID1 (field #26) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The feed entitlement ID for level 1.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID2 (field #27) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The feed entitlement ID for level 2.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID3 (field #28) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The feed entitlement ID for level 2.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_EID4 (field #29) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre> The feed entitlement ID for PCS/class.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LAST_UPDATE (field #30) </td>
+                  <td>Datetime</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Either the time or date at which the security last traded/updated. All values are
+                           translated into the user's
+                           date and time. If the last trade/update occurred today, it will show the time of the
+                           trade/update,
+                           otherwise it will show the date on which the security last traded/updated.  
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">PRICING_SOURCE (field #31) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre> Acronym or short code for the market pricing source. Returns are based on the user's
+                           settings.
+                           If there is no price from the chosen source, the next available source will be used.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_ADJ_CONTRACT (field #32) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre> Returns 'Y' if the contract terms have been adjusted. This usually occurs 
+                           due to a merger, split, or other corporate action 
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_EXER_TYP (field #33) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>There are three ways an option can be exercised: American Style, Bermuda Style
+                           and European Style. 
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FEED_DELAYED_EID1 (field #34) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Entitlement identifier for the level one delayed data feed.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">BPIPE_REFERENCE_SECURITY_CLASS (field #35) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Top level asset class designation for the reference security event
+                           on the B-Pipe feed.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FUT_MONTH_YR (field #36) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The month and year of contract expiration</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_EXCH_SYMBOL (field #38) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Local exchange security symbol.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">LAST_TRADEABLE_DT (field #39) </td>
+                  <td>Date</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Last date that the contract is available for trade.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FUT_TRADING_SESSION (field #40) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Determines if the data displayed for a contract is from that contract's day or night
+                           session.
+                           Does not apply to all contracts.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">CRNCY (field #1473) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Currency in which the security was issued.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">GENERATION_NUMBER (field #17434) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number created for new option series that are created after a capital adjustment.
+                           All new created series will 
+                           get this number. The generation number stays unchanged for the lifetime of a series.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_FULL_EXCHANGE_SYMBOL (field #15303) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Contains the exchange symbol for futures and options, and indices inclusive of base
+                           symbol and other security elements.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_ISIN (field #1444) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>A twelve-character number assigned by the local national numbering agency.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_CUSIP (field #4148) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Security identification number for the U.S. and Canada.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_MIC_LOCAL_EXCH (field #17234) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>ISO Market Identification Code (MIC) of the local exchange on which this instrument
+                           is traded for equities
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_MIC_PRIM_EXCH (field #17233) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>ISO Market Identification Code (MIC) of the Bloomberg assigned primary exchange on
+                           which this specific security is traded. 
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">NAME (field #1106) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Name of the company or brief description of the instrument.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">SECURITY_TYP (field #3694) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Description of the specific instrument type within its market sector.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">EXPIRATION_PERIODICITY (field #50898) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Specifies the periodicity of the option's expiration. Possible values are:
+                           D - Daily Expiration
+                           W - Weekly Expiration
+                           M - Monthly Expiration
+                           Q - End of Month Expiration (includes Quarter End Expirations)
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TRADING_SYSTEM_IDENTIFIER (field #50102) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Unique identifier for the instrument, as used on the source trading system.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FUTURES_CATEGORY (field #8707) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The type of future (or option) the security is.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_UNDL_EXP_DT (field #8166) </td>
+                  <td>Date</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The expiration date of the option's underlying future.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ID_MIC1 (field #17228) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>ISO Market Identification Code (MIC) for the market on which the security trades.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">EXCHANGE_ALTERNATIVE_IDENTIFIER (field #79282) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Exchange alternative identifier used in the exchange market data feed or system.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">CASH_SETTLED (field #6541) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre></pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">ISSUER_INDUSTRY (field #1472) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The industry classification of the issuer of the security.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">TAPPED_INDICATOR (field #80357) </td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Returns 'Y' if the bond has been tapped or reopened allowing borrowers to sell bonds
+                           or other debt instruments from past issues.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">MTY_TYP (field #1701) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Displays the bond's structure, i.e., Callable, Putable, Sinkable.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">DAYS_TO_MTY_TDY (field #4358) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The number of days from today to the maturity date.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">WEEK_NUMBER (field #91458) </td>
+                  <td>Int32</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Provides the numerical week number that the weekly option ticker represents in the
+                           month.
+                           Valid values are 0 when not applicable, 1 through 5 when applicable.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FLAG_144A (field #7553) </td>
+                  <td>Boolean</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Returns a Y or N. An N also represents unknown or undisclosed.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">MSCI_SEC_CODE (field #14526) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>MSCI Security Code is a unique identifier assigned to each security by MSCI.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">COUNTRY (field #1474) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Bloomberg country code of the issuer.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPTION_ROOT_TICKER (field #15300) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The option root ticker symbol for equity options  and equity index options.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">MARKET_STATUS (field #5799) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Trading status of an equity.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">CURRENT_CONTRACT_MONTH_YR (field #32194) </td>
+                  <td>String</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Month and year of the current contract, which can be futures, generics, spreads, or
+                           generic spreads.
+                        </pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">FUT_CONT_SIZE (field #1614) </td>
+                  <td>Float64</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>The smallest available value of tradable contract.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="fieldname">OPT_CONT_SIZE (field #5849) </td>
+                  <td>Float64</td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td colspan="3">
+                     <blockquote color="gray">
+                        <pre>Number of shares that can be exchanged for each option contract exercised.</pre>
+                     </blockquote>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_UNDERLYING_ID_BSID (field #5) </td>
+         <td>Int64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The MD.Security.ID.BSID of the list's underlying instrument</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_UNDERLYING_FEED_SOURCE (field #6) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The MD.Source of the list's underlying instrument</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_UNDERLYING_SECURITY_CLASS (field #7) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The Reference.Security.Class of the list's underlying instrument</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_UNDERLYING_SECURITY_TYP2 (field #8) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The Reference.Security.Type of the list's underlying instrument</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_DES (field #9) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Description of a list.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_ORDERED (field #10) </td>
+         <td>Order</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Field that indicates whether the list is ordered or not.</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>Order(Int32)
+            <br></br>
+            <ul>
+               <li>ORDERED = 0</li>
+               <li>NOTORDERED = 1</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_MUTABLE (field #11) </td>
+         <td>Mutable</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Field that indicates whether list is mutable.</pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>Mutable(Int32)
+            <br></br>
+            <ul>
+               <li>MUTABLE = 0</li>
+               <li>IMMUTABLE = 1</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">RT_API_LIST_MACHINE (field #37) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Name of the machine providing data for the list request</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+   <h3>ListData</h3> Response: 
+   <br></br>
+   <table class="paramtbl">
+      <thead>
+         <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Cardinality</td>
+         </tr>
+      </thead>
+      <tr>
+         <td class="fieldname">LIST_ID (field #1) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This is the list identifier provided by the service.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EID (field #2) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This is the list identifier provided by the service.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LIST_ACTION (field #23) </td>
+         <td>ListAction</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Bitmap with information about how to deal with all the list of members pointed to
+                  by List.NextMember.
+                  Possible actions are:
+                  Clear  = Delete all of the existing list members before adding any.
+                  Add    = Add all the list members in this set.
+                  Delete = Delete all the list members in this set. 
+                  Member IDs to be deleted must match exactly current member IDs.
+                  End    = This is the last set in the sequence.
+                  Either Add or Delete, but not both, must be set.
+                  Clear should only be set with Add and for the first set of members in a list.
+                  
+               </pre>
+            </blockquote>
+            <br></br>
+            <b>Enum: </b>ListAction(Int32)
+            <br></br>
+            <ul>
+               <li>UNASSIGNED_0 = 0</li>
+               <li>CLEAR = 1</li>
+               <li>ADD = 2</li>
+               <li>CLEAR_AND_ADD = 3</li>
+               <li>DELETE = 4</li>
+               <li>UNASSIGNED_5 = 5</li>
+               <li>UNASSIGNED_6 = 6</li>
+               <li>UNASSIGNED_7 = 7</li>
+               <li>END = 8</li>
+               <li>CLEAR_AND_END = 9</li>
+               <li>ADD_AND_END = 10</li>
+               <li>CLEAR_AND_ADD_AND_END = 11</li>
+               <li>DELETE_AND_END = 12</li>
+               <li>UNASSIGNED_13 = 13</li>
+               <li>UNASSIGNED_14 = 14</li>
+               <li>UNASSIGNED_15 = 15</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_BB_SEC_NUM_SRC (field #13) </td>
+         <td>Int64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This is the unique realtime Bloomberg identifier.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FEED_SOURCE (field #14) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Bloomberg identifier for the source of the information.
+                  The market data source is the exchange or pricing contributor mnemonic that 
+                  uniquely identifies the market data originator. In the case of an NYSE 
+                  listed security which trade on multiple exchanges, this would be the market 
+                  center originator of the data, such as The Chicago Stock Exchange, The 
+                  Archipelago Stock Exchange, or the NYSE. In the case of a composite market 
+                  data source such the US composite for exchange-traded securities, it is 
+                  possible to have a local market data source in addition to the composite data 
+                  source. With a composite daily high price, the security reference may be the 
+                  US composite (such as INTC US), and the exchange that generated the high price 
+                  may be the Cincinnati Stock Exchange or NASDAQ. The local market data source is 
+                  an optional field, so on non-composite securities, it will not be present -- 
+                  only the MD.Source will be available.The MD.Source mnemonic will be the same as 
+                  the exchange or contributor mnemonic on the Bloomberg professional in many cases,
+                  
+                  but is not guaranteed to match.In the case of contributor data the MD.Source 
+                  mnemonic will be the same mnemonic for fixed income securities as the Price 
+                  Contributor Source or PCS in many cases, but is not guaranteed to match.
+                  Contributed currency market data will have also use the XDF code in many cases, 
+                  but is not guaranteed to match.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_BB_SEC_NUM_DES (field #15) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This identifier is a string that uniquely identifies an instrument.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_BB_UNIQUE (field #16) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Unique identifier assigned by Bloomberg to all securities.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">PARSEKYABLE_DES_SOURCE (field #17) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>This identifier is the string that can be entered into the Bloomberg 
+                  professional to uniquely select this security.This description includes the source
+                  of the 
+                  security. The parsekeyable string has the 'at sign'  in it when the security has multiple
+                  
+                  sources. This is available for fixed income and currency objects. The format is 'ticker
+                  
+                  at sign pcs yellowkey'. To view on the Bloomberg professional replace the 'at sign'
+                  with 
+                  a space. Equities, index options, currency options, future options and indices have
+                  
+                  parsekeyable string 'ticker source yellowkey'. Equity options do not have a parsekeyable
+                  
+                  string.As for How many spaces exist between the PCS code and the yellow key for 
+                  Reference.Security.ID.ParsekeyableDescription?  This is a 4 character field regardless
+                  
+                  of the PCS code. For PCS codes that contain 3 letters, there will be 2 spaces before
+                  the 
+                  yellow key. For PCS codes that contain 4 letters, there will only be 1 space.
+                  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">SECURITY_TYP2 (field #18) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Additional description of the security type that required further 
+                  detail. The field value delivered should be used in conjunction with the value 
+                  delivered in the Security Type
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_PUT_CALL (field #19) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Indicates whether the contract is a put or a call.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FUT_CONTRACT_DT (field #20) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The month and year of contract expiration</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_EXPIRE_DT (field #21) </td>
+         <td>Date</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The day on which an option contract becomes void.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_STRIKE_PX (field #22) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Price at which an option holder may buy or sell the underlying security.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">REFERENCE_SECURITY_ID_BBGID (field #24) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>BloombBerg Global IDentifier - ID135</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_BB_GLOBAL (field #25) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>BloombBerg Global IDentifier - ID135</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FEED_EID1 (field #26) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The feed entitlement ID for level 1.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FEED_EID2 (field #27) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The feed entitlement ID for level 2.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FEED_EID3 (field #28) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The feed entitlement ID for level 2.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FEED_EID4 (field #29) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre> The feed entitlement ID for PCS/class.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LAST_UPDATE (field #30) </td>
+         <td>Datetime</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Either the time or date at which the security last traded/updated. All values are
+                  translated into the user's date and time.
+                  If the last trade/update occurred today, it will show the time of the trade/update,
+                  otherwise it will show the date on which the security last traded/updated.  
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">PRICING_SOURCE (field #31) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre> Acronym or short code for the market pricing source. Returns are based on the user's
+                  settings.
+                  If there is no price from the chosen source, the next available source will be used.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_ADJ_CONTRACT (field #32) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre> Returns 'Y' if the contract terms have been adjusted. This usually occurs 
+                  due to a merger, split, or other corporate action 
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_EXER_TYP (field #33) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>There are three ways an option can be exercised: American Style, Bermuda Style
+                  and European Style. 
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FEED_DELAYED_EID1 (field #34) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Entitlement identifier for the level one delayed data feed.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">BPIPE_REFERENCE_SECURITY_CLASS (field #35) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Top level asset class designation for the reference security event
+                  on the B-Pipe feed.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FUT_MONTH_YR (field #36) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The month and year of contract expiration</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_EXCH_SYMBOL (field #38) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Local exchange security symbol.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">LAST_TRADEABLE_DT (field #39) </td>
+         <td>Date</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Last date that the contract is available for trade.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FUT_TRADING_SESSION (field #40) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Determines if the data displayed for a contract is from that contract's day or night
+                  session.
+                  Does not apply to all contracts.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CRNCY (field #1473) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Currency in which the security was issued.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">GENERATION_NUMBER (field #17434) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number created for new option series that are created after a capital adjustment.
+                  All new created series will 
+                  get this number. The generation number stays unchanged for the lifetime of a series.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_FULL_EXCHANGE_SYMBOL (field #15303) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Contains the exchange symbol for futures and options, and indices inclusive of base
+                  symbol and other security elements.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_ISIN (field #1444) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>A twelve-character number assigned by the local national numbering agency.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_CUSIP (field #4148) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Security identification number for the U.S. and Canada.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_MIC_LOCAL_EXCH (field #17234) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>ISO Market Identification Code (MIC) of the local exchange on which this instrument
+                  is traded for equities
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_MIC_PRIM_EXCH (field #17233) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>ISO Market Identification Code (MIC) of the Bloomberg assigned primary exchange on
+                  which this specific security is traded. 
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">NAME (field #1106) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Name of the company or brief description of the instrument.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">SECURITY_TYP (field #3694) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Description of the specific instrument type within its market sector.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EXPIRATION_PERIODICITY (field #50898) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Specifies the periodicity of the option's expiration. Possible values are:
+                  D - Daily Expiration
+                  W - Weekly Expiration
+                  M - Monthly Expiration
+                  Q - End of Month Expiration (includes Quarter End Expirations)
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">TRADING_SYSTEM_IDENTIFIER (field #50102) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Unique identifier for the instrument, as used on the source trading system.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FUTURES_CATEGORY (field #8707) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The type of future (or option) the security is.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_UNDL_EXP_DT (field #8166) </td>
+         <td>Date</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The expiration date of the option's underlying future.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ID_MIC1 (field #17228) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>ISO Market Identification Code (MIC) for the market on which the security trades.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">EXCHANGE_ALTERNATIVE_IDENTIFIER (field #79282) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Exchange alternative identifier used in the exchange market data feed or system.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CASH_SETTLED (field #6541) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre></pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">ISSUER_INDUSTRY (field #1472) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The industry classification of the issuer of the security.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">TAPPED_INDICATOR (field #80357) </td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Returns 'Y' if the bond has been tapped or reopened allowing borrowers to sell bonds
+                  or other debt instruments from past issues.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">MTY_TYP (field #1701) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Displays the bond's structure, i.e., Callable, Putable, Sinkable.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">DAYS_TO_MTY_TDY (field #4358) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The number of days from today to the maturity date.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">WEEK_NUMBER (field #91458) </td>
+         <td>Int32</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Provides the numerical week number that the weekly option ticker represents in the
+                  month.
+                  Valid values are 0 when not applicable, 1 through 5 when applicable.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FLAG_144A (field #7553) </td>
+         <td>Boolean</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Returns a Y or N. An N also represents unknown or undisclosed.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">MSCI_SEC_CODE (field #14526) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>MSCI Security Code is a unique identifier assigned to each security by MSCI.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">COUNTRY (field #1474) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Bloomberg country code of the issuer.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPTION_ROOT_TICKER (field #15300) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The option root ticker symbol for equity options  and equity index options.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">MARKET_STATUS (field #5799) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Trading status of an equity.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">CURRENT_CONTRACT_MONTH_YR (field #32194) </td>
+         <td>String</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Month and year of the current contract, which can be futures, generics, spreads, or
+                  generic spreads.
+               </pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">FUT_CONT_SIZE (field #1614) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>The smallest available value of tradable contract.</pre>
+            </blockquote>
+         </td>
+      </tr>
+      <tr>
+         <td class="fieldname">OPT_CONT_SIZE (field #5849) </td>
+         <td>Float64</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            <blockquote color="gray">
+               <pre>Number of shares that can be exchanged for each option contract exercised.</pre>
+            </blockquote>
+         </td>
+      </tr>
+   </table>
+   <br></br>
+</body>
